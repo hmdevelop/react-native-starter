@@ -47,7 +47,7 @@ export class Home extends React.Component<IScreen> {
             resizeMode="contain"
           />
 
-          <Text style={s.text}>Welcome Home</Text>
+          <Text style={s.text}>Welcome Home Rigel-Native-Alpha</Text>
         </View>
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
