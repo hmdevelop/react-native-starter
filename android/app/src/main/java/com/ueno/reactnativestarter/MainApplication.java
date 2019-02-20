@@ -26,6 +26,7 @@ import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.sentry.RNSentryPackage;
 import com.apsl.versionnumber.RNVersionNumberPackage;
+import com.imagepicker.ImagePickerPackage; // <-- add this import
 
 public class MainApplication extends NavigationApplication {
 
@@ -43,6 +44,7 @@ public class MainApplication extends NavigationApplication {
             protected String getJSBundleFile() {
                 return CodePush.getJSBundleFile();
             }
+
             @Override
             protected String getJSMainModuleName() {
                 return "index";
@@ -59,13 +61,9 @@ public class MainApplication extends NavigationApplication {
     // Add custom packages here
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-          new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
-          new ReactNativeConfigPackage(),
-          new RNVersionNumberPackage(),
-          new RNSentryPackage(),
-          new RNFirebasePackage(),
-          new RNFirebaseAnalyticsPackage()
-        );
+                new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
+                new ReactNativeConfigPackage(), new RNVersionNumberPackage(), new RNSentryPackage(),
+                new RNFirebasePackage(), new RNFirebaseAnalyticsPackage(), new ImagePickerPackage());
     }
 
     @Override
@@ -73,4 +71,3 @@ public class MainApplication extends NavigationApplication {
         return getPackages();
     }
 }
-
