@@ -44,6 +44,11 @@ PODS:
     - React
   - react-native-version-number (0.3.5):
     - React
+  - react-native-video (4.4.0):
+    - React
+    - react-native-video/Video (= 4.4.0)
+  - react-native-video/Video (4.4.0):
+    - React
   - React/Core (0.57.8):
     - yoga (= 0.57.8.React)
   - React/CxxBridge (0.57.8):
@@ -109,6 +114,7 @@ DEPENDENCIES:
   - react-native-config (from `../node_modules/react-native-config`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-version-number (from `../node_modules/react-native-version-number`)
+  - react-native-video (from `../node_modules/react-native-video`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -156,6 +162,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-image-picker"
   react-native-version-number:
     :path: "../node_modules/react-native-version-number"
+  react-native-video:
+    :path: "../node_modules/react-native-video"
   ReactNativeNavigation:
     :path: "../node_modules/react-native-navigation"
   RNFirebase:
@@ -185,6 +193,7 @@ SPEC CHECKSUMS:
   react-native-config: 8c2a92aa66a6cec1a23d9eda7ba6fcf31a63ace5
   react-native-image-picker: f42de90075c5b1af53417af927631d909a1a746e
   react-native-version-number: 36c0d8eb57a275a6239a860f8dbab3d18299b0e0
+  react-native-video: 44c6befbc1526283ca1919891fcebe4680feade4
   ReactNativeNavigation: 20522060de61b1c293ec50681a6aa11488596286
   RNFirebase: 57f6c2adb24355b4e6211e028a8e97e473432245
   RNVectorIcons: 8c52e1e8da1153613fdef44748e865c25556cb9c
@@ -193,6 +202,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: cc36a35dea3c842188c70e7c6bb96a1d714c37d9
+PODFILE CHECKSUM: 5ab5bdd56d2f4e035f715b89bd6e3355ec4a61a3
 
 COCOAPODS: 1.5.3

@@ -12,6 +12,7 @@ import { Button } from "components/button/Button";
 import ImagePicker from "../../components/examples/ImagePicker.js";
 // @ts-ignore
 import Icon from "react-native-vector-icons/FontAwesome5";
+import Video from "react-native-video";
 
 const s = require("./Home.scss");
 
@@ -40,6 +41,10 @@ export class Home extends React.Component<IScreen> {
     });
   };
 
+  videoError = (e: any) => {
+    window.alert(JSON.stringify(e));
+  };
+
   render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
@@ -50,6 +55,19 @@ export class Home extends React.Component<IScreen> {
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
         <ImagePicker />
+        <Video
+          source={{
+            uri:
+              "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_10mb.mp4"
+          }} // Can be a URL or a local file.
+          // @ts-ignore
+          ref={ref => {
+            // @ts-ignore
+            this.player = ref;
+          }} // Store reference
+          onError={this.videoError} // Callback when video cannot be loaded
+          style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }}
+        />
       </View>
     );
   }

@@ -29,4 +29,6 @@ target 'react-native-starter' do
     'RCTPushNotification',
     'DevSupport',
   ]
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
 end
