@@ -45,11 +45,11 @@
     "react-native-code-push": "5.5.1",
     "react-native-config": "0.11.7",
     "react-native-firebase": "5.2.0",
+    "react-native-image-picker": "^0.28.0",
     "react-native-navigation": "2.5.2",
     "react-native-sentry": "0.40.2",
     "react-native-ueno-css-modules": "1.0.12",
-    "react-native-version-number": "0.3.5",
-    "react-native-image-picker": "0.28.0"
+    "react-native-version-number": "0.3.5"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
