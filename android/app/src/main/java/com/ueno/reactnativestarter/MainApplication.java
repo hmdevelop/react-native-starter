@@ -26,7 +26,8 @@ import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.sentry.RNSentryPackage;
 import com.apsl.versionnumber.RNVersionNumberPackage;
-import com.imagepicker.ImagePickerPackage; // <-- add this import
+import com.imagepicker.ImagePickerPackage;
+import com.brentvatne.react.ReactVideoPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -63,7 +64,8 @@ public class MainApplication extends NavigationApplication {
         return Arrays.<ReactPackage>asList(
                 new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
                 new ReactNativeConfigPackage(), new RNVersionNumberPackage(), new RNSentryPackage(),
-                new RNFirebasePackage(), new RNFirebaseAnalyticsPackage(), new ImagePickerPackage());
+                new RNFirebasePackage(), new ReactVideoPackage(), new RNFirebaseAnalyticsPackage(),
+                new ImagePickerPackage());
     }
 
     @Override

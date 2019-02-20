@@ -177,7 +177,7 @@ configurations.all {
 dependencies {
 
      compile project(':react-native-image-picker')
-     
+      compile project(':react-native-video')
     // Local implementations
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
