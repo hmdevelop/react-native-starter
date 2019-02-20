@@ -1,27 +1,27 @@
-import * as React from 'react';
-import { View, Text, Image } from 'react-native';
-import { observer } from 'mobx-react';
-import { Navigation } from 'react-native-navigation';
-import CodePush from 'react-native-code-push';
+import * as React from "react";
+import { View, Text, Image } from "react-native";
+import { observer } from "mobx-react";
+import { Navigation } from "react-native-navigation";
+import CodePush from "react-native-code-push";
 
-import { UIStore } from 'stores/UIStore';
-import { codePushConfig } from 'utils/code-push';
-import { COUNTER, IScreen } from 'screens';
-import { Button } from 'components/button/Button';
+import { UIStore } from "stores/UIStore";
+import { codePushConfig } from "utils/code-push";
+import { COUNTER, IScreen } from "screens";
+import { Button } from "components/button/Button";
+import ImagePicker from "../../components/examples/ImagePicker.js";
 
-const s = require('./Home.scss');
+const s = require("./Home.scss");
 
 @CodePush(codePushConfig())
 @observer
 export class Home extends React.Component<IScreen> {
-
   static get options() {
     return {
       topBar: {
         title: {
-          text: 'Home',
-        },
-      },
+          text: "Home"
+        }
+      }
     };
   }
 
@@ -32,10 +32,10 @@ export class Home extends React.Component<IScreen> {
   onCounterScreenPress = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: COUNTER,
-      },
+        name: COUNTER
+      }
     });
-  }
+  };
 
   render() {
     return (
@@ -43,7 +43,7 @@ export class Home extends React.Component<IScreen> {
         <View style={s.content}>
           <Image
             style={s.logo}
-            source={require('assets/images/logo.png')}
+            source={require("assets/images/logo.png")}
             resizeMode="contain"
           />
 
@@ -51,6 +51,7 @@ export class Home extends React.Component<IScreen> {
         </View>
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
+        <ImagePicker />
       </View>
     );
   }
