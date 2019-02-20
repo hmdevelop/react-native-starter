@@ -90,6 +90,8 @@ PODS:
   - RNFirebase (5.2.0):
     - Firebase/Core
     - React
+  - RNVectorIcons (6.3.0):
+    - React
   - Sentry (4.0.1):
     - Sentry/Core (= 4.0.1)
   - Sentry/Core (4.0.1)
@@ -120,6 +122,7 @@ DEPENDENCIES:
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - RNFirebase (from `../node_modules/react-native-firebase/ios/RNFirebase.podspec`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - SentryReactNative (from `../node_modules/react-native-sentry`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -157,6 +160,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNFirebase:
     :path: "../node_modules/react-native-firebase/ios/RNFirebase.podspec"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   SentryReactNative:
     :path: "../node_modules/react-native-sentry"
   yoga:
@@ -182,11 +187,12 @@ SPEC CHECKSUMS:
   react-native-version-number: 36c0d8eb57a275a6239a860f8dbab3d18299b0e0
   ReactNativeNavigation: 20522060de61b1c293ec50681a6aa11488596286
   RNFirebase: 57f6c2adb24355b4e6211e028a8e97e473432245
+  RNVectorIcons: 8c52e1e8da1153613fdef44748e865c25556cb9c
   Sentry: a38f7879924c02239e121b19d993d23bdd1684db
   SentryReactNative: d476259b21060a59dc637a29a40d60f0aac09cf7
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: fa1aad831099c94f397c2b2b6ec6d1bbf1535f9b
+PODFILE CHECKSUM: cc36a35dea3c842188c70e7c6bb96a1d714c37d9
 
 COCOAPODS: 1.5.3
