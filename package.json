@@ -3,6 +3,8 @@
   "version": "2.1.0",
   "private": true,
   "scripts": {
+    "and": "react-native run-android",
+    "ios": "react-native run-ios",
     "build:env": "sh ./scripts/build-env.sh",
     "build:e2e:ios": "detox build --configuration ios.sim.release",
     "build:e2e:android": "detox build --configuration android.emu.release",
@@ -49,6 +51,7 @@
     "react-native-navigation": "2.5.2",
     "react-native-sentry": "0.40.2",
     "react-native-ueno-css-modules": "1.0.12",
+    "react-native-vector-icons": "^6.3.0",
     "react-native-version-number": "0.3.5"
   },
   "devDependencies": {

@@ -41,13 +41,7 @@ export class Home extends React.Component<IScreen> {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
-          <Image
-            style={s.logo}
-            source={require("assets/images/logo.png")}
-            resizeMode="contain"
-          />
-
-          <Text style={s.text}>Welcome Home Rigel-Native-Alpha</Text>
+          <Text style={s.text}>Welcome Home Rigel-Native-Beta</Text>
         </View>
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
