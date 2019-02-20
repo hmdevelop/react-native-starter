@@ -44,7 +44,7 @@ export class Home extends React.Component<IScreen> {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
-          <Text style={s.text}>Welcome Home Rigel-Native-Gamma</Text>
+          <Text style={s.text}>Welcome Home Rigel-Native-Delta</Text>
         </View>
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
