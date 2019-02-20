@@ -9,6 +9,7 @@ import { codePushConfig } from "utils/code-push";
 import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import ImagePicker from "../../components/examples/ImagePicker.js";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const s = require("./Home.scss");
 
@@ -40,6 +41,7 @@ export class Home extends React.Component<IScreen> {
   render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
+        <Icon name="rocket" size={30} color="#900" />
         <View style={s.content}>
           <Text style={s.text}>Welcome Home Rigel-Native-Beta</Text>
         </View>
