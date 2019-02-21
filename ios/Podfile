@@ -33,4 +33,6 @@ target 'react-native-starter' do
 
   pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
 
+  pod 'RNShare', :path => '../node_modules/react-native-share'
+
 end

@@ -8,8 +8,7 @@ import { UIStore } from "stores/UIStore";
 import { codePushConfig } from "utils/code-push";
 import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
-import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
-
+import Share from "react-native-share";
 const s = require("./Home.scss");
 
 @CodePush(codePushConfig())
@@ -37,8 +36,19 @@ export class Home extends React.Component<IScreen> {
     });
   };
 
-  videoError = (e: any) => {
-    window.alert(JSON.stringify(e));
+  share = () => {
+    let shareOptions = {
+      title: "React Native",
+      message: "Hola mundo",
+      url: "http://facebook.github.io/react-native/",
+      subject: "Share Link" //  for email
+    };
+
+    Share.shareSingle(
+      Object.assign(shareOptions, {
+        social: "googleplus"
+      })
+    );
   };
 
   render() {
@@ -46,6 +56,7 @@ export class Home extends React.Component<IScreen> {
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
           <Text style={s.text}>Welcome Home Rigel-Native-Delta</Text>
+          <Button title="share" onPress={this.share} />
         </View>
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
