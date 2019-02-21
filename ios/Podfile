@@ -31,4 +31,6 @@ target 'react-native-starter' do
   ]
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
+
 end

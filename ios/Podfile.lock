@@ -26,9 +26,21 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.4)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
   - GoogleToolboxForMac/Defines (2.2.0)
   - "GoogleToolboxForMac/NSData+zlib (2.2.0)":
     - GoogleToolboxForMac/Defines (= 2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
+  - GTMSessionFetcher/Core (1.2.1)
   - JWT (3.0.0-beta.11):
     - Base64 (~> 1.1.2)
   - nanopb (0.3.901):
@@ -95,6 +107,9 @@ PODS:
   - RNFirebase (5.2.0):
     - Firebase/Core
     - React
+  - RNGoogleSignin (1.2.0):
+    - GoogleSignIn
+    - React
   - RNVectorIcons (6.3.0):
     - React
   - Sentry (4.0.1):
@@ -128,6 +143,7 @@ DEPENDENCIES:
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - RNFirebase (from `../node_modules/react-native-firebase/ios/RNFirebase.podspec`)
+  - RNGoogleSignin (from `../node_modules/react-native-google-signin`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - SentryReactNative (from `../node_modules/react-native-sentry`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -141,7 +157,9 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - glog
+    - GoogleSignIn
     - GoogleToolboxForMac
+    - GTMSessionFetcher
     - JWT
     - nanopb
     - Sentry
@@ -168,6 +186,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNFirebase:
     :path: "../node_modules/react-native-firebase/ios/RNFirebase.podspec"
+  RNGoogleSignin:
+    :path: "../node_modules/react-native-google-signin"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   SentryReactNative:
@@ -186,7 +206,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
   Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
   glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   JWT: 05028b9624591bba9681bb57df2c5f95fa258bad
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
@@ -196,12 +218,13 @@ SPEC CHECKSUMS:
   react-native-video: 44c6befbc1526283ca1919891fcebe4680feade4
   ReactNativeNavigation: 20522060de61b1c293ec50681a6aa11488596286
   RNFirebase: 57f6c2adb24355b4e6211e028a8e97e473432245
+  RNGoogleSignin: 8b08beabff7f3b1373b2821b0944b38de36ba95e
   RNVectorIcons: 8c52e1e8da1153613fdef44748e865c25556cb9c
   Sentry: a38f7879924c02239e121b19d993d23bdd1684db
   SentryReactNative: d476259b21060a59dc637a29a40d60f0aac09cf7
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 5ab5bdd56d2f4e035f715b89bd6e3355ec4a61a3
+PODFILE CHECKSUM: 910fa41ff30619b659687f87aa539d7eec21cd43
 
 COCOAPODS: 1.5.3

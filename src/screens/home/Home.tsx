@@ -8,6 +8,7 @@ import { UIStore } from "stores/UIStore";
 import { codePushConfig } from "utils/code-push";
 import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
+import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
 
 const s = require("./Home.scss");
 
@@ -48,6 +49,11 @@ export class Home extends React.Component<IScreen> {
         </View>
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
+        <GoogleSigninButton
+          style={{ width: 192, height: 48 }}
+          size={GoogleSigninButton.Size.Wide}
+          color={GoogleSigninButton.Color.Dark}
+        />
       </View>
     );
   }
