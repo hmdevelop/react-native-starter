@@ -9,6 +9,7 @@ import java.util.List;
 // React Native
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactApplication;
+import com.cmcewen.blurview.BlurViewPackage;
 import cl.json.RNSharePackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.react.ReactNativeHost;
@@ -67,8 +68,8 @@ public class MainApplication extends NavigationApplication implements ShareAppli
         return Arrays.<ReactPackage>asList(
                 new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
                 new ReactNativeConfigPackage(), new RNVersionNumberPackage(), new RNSentryPackage(),
-                new RNFirebasePackage(), new RNGoogleSigninPackage(), new RNSharePackage(), new ReactVideoPackage(),
-                new RNFirebaseAnalyticsPackage(), new ImagePickerPackage());
+                new RNFirebasePackage(), new BlurViewPackage(), new RNGoogleSigninPackage(), new RNSharePackage(),
+                new ReactVideoPackage(), new RNFirebaseAnalyticsPackage(), new ImagePickerPackage());
     }
 
     @Override
