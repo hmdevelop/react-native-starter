@@ -35,4 +35,6 @@ target 'react-native-starter' do
 
   pod 'RNShare', :path => '../node_modules/react-native-share'
 
+  pod 'react-native-blur', :path => '../node_modules/react-native-blur'
+
 end
