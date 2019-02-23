@@ -9,6 +9,7 @@ import java.util.List;
 // React Native
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactApplication;
+import cl.json.RNSharePackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -29,8 +30,9 @@ import io.sentry.RNSentryPackage;
 import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.brentvatne.react.ReactVideoPackage;
+import cl.json.ShareApplication;
 
-public class MainApplication extends NavigationApplication {
+public class MainApplication extends NavigationApplication implements ShareApplication, ReactApplication {
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -65,12 +67,17 @@ public class MainApplication extends NavigationApplication {
         return Arrays.<ReactPackage>asList(
                 new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
                 new ReactNativeConfigPackage(), new RNVersionNumberPackage(), new RNSentryPackage(),
-                new RNFirebasePackage(), new RNGoogleSigninPackage(), new ReactVideoPackage(),
+                new RNFirebasePackage(), new RNGoogleSigninPackage(), new RNSharePackage(), new ReactVideoPackage(),
                 new RNFirebaseAnalyticsPackage(), new ImagePickerPackage());
     }
 
     @Override
     public List<ReactPackage> createAdditionalReactPackages() {
         return getPackages();
+    }
+
+    @Override
+    public String getFileProviderAuthority() {
+        return BuildConfig.APPLICATION_ID + ".provider";
     }
 }

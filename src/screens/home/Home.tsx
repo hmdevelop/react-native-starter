@@ -8,6 +8,8 @@ import { UIStore } from "stores/UIStore";
 import { codePushConfig } from "utils/code-push";
 import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
+// @ts-ignore
+import Share from "react-native-share";
 
 const s = require("./Home.scss");
 
@@ -36,6 +38,20 @@ export class Home extends React.Component<IScreen> {
     });
   };
 
+  share = () => {
+    const shareOptions = {
+      title: "React Native",
+      message: "Hola mundo",
+      url: "http://facebook.github.io/react-native/",
+      subject: "Share Link" //  for email
+    };
+    Share.shareSingle(
+      Object.assign(shareOptions, {
+        social: "email"
+      })
+    );
+  };
+
   render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
@@ -44,6 +60,7 @@ export class Home extends React.Component<IScreen> {
         </View>
 
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
+        <Button onPress={this.share} title="Share" />
       </View>
     );
   }
