@@ -58,7 +58,7 @@ export class Home extends React.Component<IScreen> {
     const unitId =
       Platform.OS === "ios"
         ? "ca-app-pub-3940256099942544/2934735716"
-        : "	ca-app-pub-3940256099942544/6300978111";
+        : "ca-app-pub-3940256099942544/6300978111";
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
