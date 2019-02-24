@@ -5,6 +5,7 @@
   "scripts": {
     "and": "react-native run-android",
     "ios": "react-native run-ios",
+    "xcode": "cd ios && open react-native-starter.xcworkspace ",
     "build:env": "sh ./scripts/build-env.sh",
     "build:e2e:ios": "detox build --configuration ios.sim.release",
     "build:e2e:android": "detox build --configuration android.emu.release",
