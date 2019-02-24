@@ -195,6 +195,15 @@ dependencies {
     implementation(project(':react-native-firebase')) {
         transitive = false
     }
+  implementation('com.google.firebase:firebase-ads:15.0.1') {
+    // exclude `customtabs` as the support lib version is out of date
+    // we manually add it as a dependency below with a custom version
+    exclude group: 'com.android.support', module: 'customtabs'
+  }
+
+  // Authentication
+  implementation "com.google.firebase:firebase-auth:16.1.0"
+
 
     // Other implementations
     implementation "com.google.android.gms:play-services-base:16.0.1"

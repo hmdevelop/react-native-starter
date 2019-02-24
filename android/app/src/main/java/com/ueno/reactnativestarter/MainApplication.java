@@ -32,6 +32,8 @@ import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import cl.json.ShareApplication;
+import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 
 public class MainApplication extends NavigationApplication implements ShareApplication, ReactApplication {
 
@@ -69,7 +71,8 @@ public class MainApplication extends NavigationApplication implements ShareAppli
                 new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
                 new ReactNativeConfigPackage(), new RNVersionNumberPackage(), new RNSentryPackage(),
                 new RNFirebasePackage(), new BlurViewPackage(), new RNGoogleSigninPackage(), new RNSharePackage(),
-                new ReactVideoPackage(), new RNFirebaseAnalyticsPackage(), new ImagePickerPackage());
+                new ReactVideoPackage(), new RNFirebaseAuthPackage(), new RNFirebaseAdMobPackage(),
+                new RNFirebaseAnalyticsPackage(), new ImagePickerPackage());
     }
 
     @Override
