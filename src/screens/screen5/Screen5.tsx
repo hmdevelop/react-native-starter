@@ -10,20 +10,20 @@ import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
 
-const s = require("./Screen4.scss");
+const s = require("./Screen5.scss");
 
 @CodePush(codePushConfig())
 @observer
-export class Screen4 extends React.Component<IScreen> {
+export class Screen5 extends React.Component<IScreen> {
   static get options() {
     return {
       topBar: {
         title: {
-          text: "Screen4"
+          text: "Screen5"
         }
       },
       bottomTab: {
-        text: "Screen4",
+        text: "Screen5",
 
         testID: "bottomTabTestID",
         icon: require("../../assets/dog.png"),
@@ -38,23 +38,17 @@ export class Screen4 extends React.Component<IScreen> {
   componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
-
   push = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: "ueno-rns.Screen5",
-        options: {}
-      }
-    });
+    Navigation.pop(this.props.componentId);
   };
 
   render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
-          <Text style={s.text}>Screen4</Text>
+          <Text style={s.text}>Screen5</Text>
           <Button
-            title="Go to screen5"
+            title="Go to screen4"
             onPress={this.push}
             style={s.counter__button}
           />

@@ -4,6 +4,7 @@ import { Home } from "./home/Home";
 import { Screen2 } from "./screen2/Screen2";
 import { Screen3 } from "./screen3/Screen3";
 import { Screen4 } from "./screen4/Screen4";
+import { Screen5 } from "./screen5/Screen5";
 import { Counter } from "./counter/Counter";
 import { Drawer } from "./drawer/Drawer";
 export interface IScreen {
@@ -17,6 +18,7 @@ export const HOME = "ueno-rns.Home";
 export const SCREEN2 = "ueno-rns.Screen2";
 export const SCREEN3 = "ueno-rns.Screen3";
 export const SCREEN4 = "ueno-rns.Screen4";
+export const SCREEN5 = "ueno-rns.Screen5";
 export const COUNTER = "ueno-rns.Counter";
 export const DRAWER = "ueno-rns.Drawer";
 
@@ -24,6 +26,7 @@ Screens.set(HOME, Home);
 Screens.set(SCREEN2, Screen2);
 Screens.set(SCREEN3, Screen3);
 Screens.set(SCREEN4, Screen4);
+Screens.set(SCREEN5, Screen5);
 Screens.set(COUNTER, Counter);
 Screens.set(DRAWER, Drawer);
 
@@ -79,10 +82,19 @@ export const startApp = () => {
                 }
               },
               {
-                component: {
-                  name: SCREEN4,
-                  passProps: {
-                    text: "This is tab 2"
+                stack: {
+                  children: [
+                    {
+                      component: { name: SCREEN4 }
+                    },
+                    {
+                      component: { name: SCREEN5 }
+                    }
+                  ],
+                  options: {
+                    topBar: {
+                      visible: false
+                    }
                   }
                 }
               }
