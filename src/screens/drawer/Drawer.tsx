@@ -65,7 +65,7 @@ export class Drawer extends React.Component<IScreen> {
   push2 = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: "ueno-rns.Screen5",
+        name: "ueno-rns.Screen6",
         options: {}
       }
     });
@@ -85,7 +85,7 @@ export class Drawer extends React.Component<IScreen> {
             />
           ))}
           <Button
-            title="Go to screen5"
+            title="Go to screen6"
             onPress={this.push2}
             style={s.counter__button}
           />
