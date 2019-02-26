@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform } from "react-native";
+import { View, Text, Image, StyleSheet, Platform, Linking } from "react-native";
 import { observer } from "mobx-react";
 import { Navigation } from "react-native-navigation";
 import CodePush from "react-native-code-push";
@@ -59,6 +59,10 @@ export class Home extends React.Component<IScreen> {
     });
   };
 
+  _goToURL = () => {
+    Linking.openURL("https://github.com/hmdevelop/rigel-app");
+  };
+
   render() {
     const Banner = firebase.admob.Banner;
     const AdRequest = firebase.admob.AdRequest;
@@ -83,6 +87,9 @@ export class Home extends React.Component<IScreen> {
             console.log("Advert loaded");
           }}
         />
+        <Text style={{ marginTop: 20 }} onPress={this._goToURL}>
+          --> See Rigel-app documentation
+        </Text>
       </View>
     );
   }
