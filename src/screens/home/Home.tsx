@@ -39,6 +39,28 @@ export class Home extends React.Component<IScreen> {
     });
   };
 
+  pop = () => {
+    Navigation.pop(this.props.componentId);
+  };
+
+  pushtocounter = () => {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: "ueno-rns.Counter",
+        passProps: {
+          text: "Pushed screen"
+        },
+        options: {
+          topBar: {
+            title: {
+              text: "Pushed screen title"
+            }
+          }
+        }
+      }
+    });
+  };
+
   fire = () => {
     window.alert("fire");
     firebase
@@ -49,6 +71,16 @@ export class Home extends React.Component<IScreen> {
           isAuthenticated: true
         });
       });
+  };
+
+  drawer = () => {
+    Navigation.mergeOptions(this.props.componentId, {
+      sideMenu: {
+        left: {
+          visible: true
+        }
+      }
+    });
   };
 
   render() {
@@ -74,6 +106,9 @@ export class Home extends React.Component<IScreen> {
             }}
           />
         </View>
+        <Button title="pop" onPress={this.pop} />
+        <Button title="drawer" onPress={this.drawer} />
+        <Button title="pushtocounter" onPress={this.onCounterScreenPress} />
       </View>
     );
   }
