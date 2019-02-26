@@ -62,6 +62,14 @@ export class Drawer extends React.Component<IScreen> {
     }
   ];
 
+  push2 = () => {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: "ueno-rns.Screen5",
+        options: {}
+      }
+    });
+  };
   render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
@@ -76,6 +84,11 @@ export class Drawer extends React.Component<IScreen> {
               onPress={() => window.alert(item.title)}
             />
           ))}
+          <Button
+            title="Go to screen5"
+            onPress={this.push2}
+            style={s.counter__button}
+          />
         </View>
       </View>
     );

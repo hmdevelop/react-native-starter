@@ -5,6 +5,7 @@ import { Screen2 } from "./screen2/Screen2";
 import { Screen3 } from "./screen3/Screen3";
 import { Screen4 } from "./screen4/Screen4";
 import { Screen5 } from "./screen5/Screen5";
+
 import { Counter } from "./counter/Counter";
 import { Drawer } from "./drawer/Drawer";
 export interface IScreen {
@@ -30,73 +31,87 @@ Screens.set(SCREEN5, Screen5);
 Screens.set(COUNTER, Counter);
 Screens.set(DRAWER, Drawer);
 
+const drawer = {
+  sideMenu: {
+    left: {
+      component: {
+        name: DRAWER,
+        passProps: {
+          text: "This is a left side menu screen"
+        }
+      }
+    },
+    center: {
+      bottomTabs: {
+        animate: true,
+        visible: true,
+        currentTabIndex: 1,
+        drawBehind: false,
+        children: [
+          {
+            component: {
+              name: HOME,
+              passProps: {
+                text: "This is tab 1",
+                myFunction: () => "Hello from a function!"
+              }
+            }
+          },
+          {
+            component: {
+              name: SCREEN2,
+              passProps: {
+                text: "This is tab 2"
+              }
+            }
+          },
+          {
+            component: {
+              name: SCREEN3,
+              passProps: {
+                text: "This is tab 2"
+              }
+            }
+          },
+          {
+            stack: {
+              children: [
+                {
+                  component: { name: SCREEN4 }
+                },
+                {
+                  component: { name: SCREEN5 }
+                }
+              ],
+              options: {
+                topBar: {
+                  visible: false
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+};
+
 export const startApp = () => {
   Navigation.setRoot({
     root: {
-      backButton: {
-        visible: true
-      },
-      sideMenu: {
-        left: {
-          component: {
-            name: DRAWER,
-            passProps: {
-              text: "This is a left side menu screen"
+      stack: {
+        options: {},
+        children: [
+          drawer,
+          {
+            component: {
+              name: SCREEN5,
+              passProps: {
+                text: "This is tab 2"
+              }
             }
           }
-        },
-        center: {
-          bottomTabs: {
-            animate: true,
-            visible: true,
-            currentTabIndex: 1,
-            drawBehind: false,
-            children: [
-              {
-                component: {
-                  name: HOME,
-                  passProps: {
-                    text: "This is tab 1",
-                    myFunction: () => "Hello from a function!"
-                  }
-                }
-              },
-              {
-                component: {
-                  name: SCREEN2,
-                  passProps: {
-                    text: "This is tab 2"
-                  }
-                }
-              },
-              {
-                component: {
-                  name: SCREEN3,
-                  passProps: {
-                    text: "This is tab 2"
-                  }
-                }
-              },
-              {
-                stack: {
-                  children: [
-                    {
-                      component: { name: SCREEN4 }
-                    },
-                    {
-                      component: { name: SCREEN5 }
-                    }
-                  ],
-                  options: {
-                    topBar: {
-                      visible: false
-                    }
-                  }
-                }
-              }
-            ]
-          }
-        }
+        ]
       }
     }
   });
