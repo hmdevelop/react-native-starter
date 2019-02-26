@@ -1,5 +1,12 @@
 import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Platform,
+  FlatList
+} from "react-native";
 import { observer } from "mobx-react";
 import { Navigation } from "react-native-navigation";
 import CodePush from "react-native-code-push";
@@ -9,6 +16,22 @@ import { codePushConfig } from "utils/code-push";
 import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
+import { ListItem } from "react-native-elements";
+
+const list = [
+  {
+    name: "Amy Farha",
+    avatar_url:
+      "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg",
+    subtitle: "Vice President"
+  },
+  {
+    name: "Chris Jackson",
+    avatar_url:
+      "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
+    subtitle: "Vice Chairman"
+  }
+];
 
 const s = require("./Screen3.scss");
 
@@ -37,6 +60,16 @@ export class Screen3 extends React.Component<IScreen> {
     };
   }
 
+  keyExtractor = (item, index) => index;
+
+  renderItem = ({ item }) => (
+    <ListItem
+      title={item.name}
+      subtitle={item.subtitle}
+      leftAvatar={{ source: { uri: item.avatar_url } }}
+    />
+  );
+
   componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
@@ -46,6 +79,11 @@ export class Screen3 extends React.Component<IScreen> {
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
           <Text style={s.text}>Screen3</Text>
+          <FlatList
+            keyExtractor={this.keyExtractor}
+            data={list}
+            renderItem={this.renderItem}
+          />
         </View>
       </View>
     );
