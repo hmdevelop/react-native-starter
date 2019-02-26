@@ -6,10 +6,10 @@ import CodePush from "react-native-code-push";
 
 import { UIStore } from "stores/UIStore";
 import { codePushConfig } from "utils/code-push";
-import { COUNTER, IScreen, HOME } from "screens";
 
 import { Button } from "components/button/Button";
-import firebase from "react-native-firebase";
+
+import { ListItem } from "react-native-elements";
 
 const s = require("./Drawer.scss");
 
@@ -47,14 +47,34 @@ export class Drawer extends React.Component<IScreen> {
       }
     });
   };
-
+  list = [
+    {
+      title: "Appointments",
+      icon: "av-timer"
+    },
+    {
+      title: "Trips",
+      icon: "flight-takeoff"
+    },
+    {
+      title: "Payments",
+      icon: "shopping-cart"
+    }
+  ];
   render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
           <Text style={s.text}>Drawer Menu</Text>
-          <Button title="go" onPress={this.push} />
-          <Button title="go" onPress={this.onCounterScreenPress} />
+
+          {this.list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.title}
+              leftIcon={{ name: item.icon }}
+              onPress={() => window.alert(item.title)}
+            />
+          ))}
         </View>
       </View>
     );
