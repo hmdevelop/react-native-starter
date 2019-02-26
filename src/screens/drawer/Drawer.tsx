@@ -61,6 +61,7 @@ export class Drawer extends React.Component<IScreen> {
       icon: "shopping-cart"
     }
   ];
+
   render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">

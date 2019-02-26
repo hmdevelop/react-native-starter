@@ -38,10 +38,6 @@ export const startApp = () => {
       },
       sideMenu: {
         left: {
-          width: 100,
-          height: 270,
-          visible: true,
-          enabled: true,
           component: {
             name: DRAWER,
             passProps: {
