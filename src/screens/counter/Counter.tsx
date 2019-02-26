@@ -1,24 +1,36 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
-import { observer } from 'mobx-react';
+import * as React from "react";
+import { View, Text } from "react-native";
+import { observer } from "mobx-react";
 
-import { UIStore } from 'stores/UIStore';
-import { CounterStore } from 'stores/CounterStore';
-import { Button } from 'components/button/Button';
-import { IScreen } from 'screens';
+import { UIStore } from "stores/UIStore";
+import { CounterStore } from "stores/CounterStore";
+import { Button } from "components/button/Button";
+import { IScreen } from "screens";
 
-const s = require('./Counter.scss');
+const s = require("./Counter.scss");
 
 @observer
 export class Counter extends React.Component<IScreen> {
-
   static get options() {
     return {
       topBar: {
         title: {
-          text: 'Counter',
-        },
+          text: "Counter"
+        }
       },
+      bottomTab: {
+        text: "Tab 2",
+        badge: "3",
+        badgeColor: "red",
+        testID: "bottomTabTestID",
+
+        iconColor: "red",
+        selectedIconColor: "blue",
+        textColor: "red",
+        selectedTextColor: "blue",
+
+        fontSize: 10
+      }
     };
   }
 

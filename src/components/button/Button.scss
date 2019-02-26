@@ -1,6 +1,7 @@
 .button {
   border-radius: 4px;
-  background-color: #eee;
+  background-color: rgb(230, 65, 65);
+  margin: 20px;
 }
 
 .button__disabled {
@@ -16,5 +17,5 @@
 }
 
 .text__disabled {
-  color: #b8b8b8;
+  color: #979191;
 }
