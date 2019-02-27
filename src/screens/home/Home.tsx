@@ -1,5 +1,13 @@
 import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform, Linking } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Platform,
+  Linking,
+  ScrollView
+} from "react-native";
 import { observer } from "mobx-react";
 import { Navigation } from "react-native-navigation";
 import CodePush from "react-native-code-push";
@@ -72,7 +80,7 @@ export class Home extends React.Component<IScreen> {
         ? "ca-app-pub-3940256099942544/2934735716"
         : "ca-app-pub-3940256099942544/6300978111";
     return (
-      <View style={s.host} testID="HOME_SCREEN">
+      <ScrollView style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
           <Text style={s.text}>Welcome Home </Text>
           <Text style={s.text}> Rigel-Native-Eta</Text>
@@ -90,7 +98,10 @@ export class Home extends React.Component<IScreen> {
         <Text style={{ marginTop: 20 }} onPress={this._goToURL}>
           --> See Rigel-app documentation
         </Text>
-      </View>
+        <View style={s.box}>
+          <Text style={s.text}> Rigel-Native-Eta</Text>
+        </View>
+      </ScrollView>
     );
   }
 }
