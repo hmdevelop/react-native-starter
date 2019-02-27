@@ -32,5 +32,11 @@
   width: 100%;
 
   padding: 10px;
-  background-color: $info;
+  background-color: lighten($info, 35%);
+}
+
+.text2 {
+  margin-bottom: 10px;
+
+  font-size: var(--head-font);
 }
