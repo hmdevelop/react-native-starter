@@ -6,7 +6,7 @@ It is very easy to get started, no environment variables or anything are require
 
 ```bash
 # Clone the repository to your own folder
-git clone git@github.com:ueno-llc/react-native-starter.git my-new-app
+git clone  https://github.com/libratechs/react-native-starter.git my-new-app
 
 # Move to the new folder
 cd my-new-app
@@ -15,7 +15,7 @@ cd my-new-app
 yarn install
 
 # Rename the application, Cocoapods will be installed automatically
-yarn rename "My New App" co.ueno.mynewapp
+yarn rename "My New App" com.company.mynewapp
 
 # Link the folder to your repository
 git remote add origin git@github.com:username/new_repo
@@ -27,7 +27,7 @@ yarn start
 react-native run-ios
 ```
 
-Alternatively you can use `create-ueno-app`:
+Alternatively you can use `rigel-app`:
 
 ```bash
 yarn create ueno-app native my-new-app co.ueno.mynewapp
@@ -52,15 +52,15 @@ Let's create your first screen and start developing!
 Let's add a new screen called `About`
 
 ```js
-import { Navigation } from 'react-native-navigation';
+import { Navigation } from "react-native-navigation";
 
-import Home from './home';
-import Counter from './counter';
-import About from './about';
+import Home from "./home";
+import Counter from "./counter";
+import About from "./about";
 
-export const HOME = 'ueno-rns.Home';
-export const COUNTER = 'ueno-rns.Counter';
-export const ABOUT = 'ueno-rns.About'; // You can name it anything you want
+export const HOME = "ueno-rns.Home";
+export const COUNTER = "ueno-rns.Counter";
+export const ABOUT = "ueno-rns.About"; // You can name it anything you want
 
 export const Screens = new Map();
 
@@ -72,12 +72,14 @@ export const startApp = () => {
   Navigation.setRoot({
     root: {
       stack: {
-        id: 'ROOT_STACK',
-        children: [{
-          component: { name: HOME },
-        }],
-      },
-    },
+        id: "ROOT_STACK",
+        children: [
+          {
+            component: { name: HOME }
+          }
+        ]
+      }
+    }
   });
 };
 ```
