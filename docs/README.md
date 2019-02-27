@@ -1,9 +1,3 @@
-[![logo](https://user-images.githubusercontent.com/937328/50185086-cb7e7a80-030e-11e9-8d95-436082e38de6.png)](https://ueno.co/?utm_source=github&utm_campaign=react-native-starter)
-<br /><br />
-![banner](https://user-images.githubusercontent.com/937328/50185090-cb7e7a80-030e-11e9-9077-8fcc4e5ac900.png)
-<br /><br />
-[![about](https://user-images.githubusercontent.com/937328/51540139-999c8e80-1e4d-11e9-866d-284657a34744.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
-
 ## React Native Starter
 
 ![Dependencies](https://david-dm.org/ueno-llc/react-native-starter/status.svg) ![devDependencies](https://david-dm.org/ueno-llc/react-native-starter/dev-status.svg)
