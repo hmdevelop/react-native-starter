@@ -1,4 +1,4 @@
-## React Native Starter
+## Libra React Native Starter
 
 ![Dependencies](https://david-dm.org/ueno-llc/react-native-starter/status.svg) ![devDependencies](https://david-dm.org/ueno-llc/react-native-starter/dev-status.svg)
 
