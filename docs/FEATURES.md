@@ -2,7 +2,7 @@
 
 React Native Starter is packed with a lot great features. These dependencies are shipped by default. They are strictly opinionated by Ueno and may change over time.
 
-## Native modules
+## Native modules for Master Branch
 
 [react-native-navigation](https://github.com/wix/react-native-navigation) This library is the heart of the app. It provides excellent native navigation, while being easy to use. We are using the v2 which is still under developement, but we already use on several projects and we didn't noticed any reason to not using it.
 
@@ -14,7 +14,13 @@ React Native Starter is packed with a lot great features. These dependencies are
 
 [react-native-firebase](https://github.com/invertase/react-native-firebase) Everything you need to make an app. Database, analaytics, push notifications, etc. All in one place. Only downside is that it can get pretty heavy when using all the features. [Read more](/FIREBASE.md)
 
-_____________
+---
+
+## Native modules for Branchs
+
+## `alpha` Branch
+
+Master + react-native-image-picker
 
 ## Other modules
 
