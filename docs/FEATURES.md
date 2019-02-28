@@ -22,6 +22,18 @@ React Native Starter is packed with a lot great features. These dependencies are
 
 Master + react-native-image-picker
 
+`beta` Branch
+
+`alpha` + react-native-vector-icons
+
+`gamma` Branch
+
+`beta` + react-native-video
+
+`delta` Branch
+
+`gamma` + react-native-google-signin
+
 ## Other modules
 
 [typescript](https://www.typescriptlang.org/) We like Typescript. It takes a bit of time to get used to it, but it makes the app more solid, easier to read, it's very well embed with vscode for example, and it makes the build time faster.
