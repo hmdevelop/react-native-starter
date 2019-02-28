@@ -6,6 +6,7 @@ The Professional React Native Starter with everything you'll ever need to deploy
 
 - Opinionated dependencies
 - React Native Navigation 2
+-
 - TypeScript 3
 - Cocoapods
 - Gradle 4
@@ -17,23 +18,17 @@ The Professional React Native Starter with everything you'll ever need to deploy
 Super-Quick Start
 
 ```bash
-git clone git@github.com:ueno-llc/react-native-starter.git my-new-app
+git clone  https://github.com/ueno-llc/react-native-starter.git  --branch alpha my-new-app
 ```
 
 ```bash
 cd my-new-app
 yarn
-yarn rename "MyNewApp" com.ueno.mynewapp
+yarn rename "MyNewApp" com.company.mynewapp
 yarn start
 react-native run-(ios/android)
 ```
 
-Alternatively you can use [`create-ueno-app`](https://github.com/ueno-llc/create-ueno-app#native):
-
-```bash
-yarn create ueno-app native my-new-app co.ueno.mynewapp
-```
-
 ## Documentation
 
-The **[documentation is available here](https://ueno-llc.github.io/react-native-starter)** on GitHub Pages.
+The **[documentation is available here](https://libratechs.github.io/react-native-starter)** on GitHub Pages.
