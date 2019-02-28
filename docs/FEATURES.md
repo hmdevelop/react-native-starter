@@ -18,7 +18,7 @@ React Native Starter is packed with a lot great features. These dependencies are
 
 ## Native modules for Branchs
 
-## `alpha` Branch
+`alpha` Branch
 
 Master + react-native-image-picker
 
