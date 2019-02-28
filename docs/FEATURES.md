@@ -34,6 +34,22 @@ Master + react-native-image-picker
 
 `gamma` + react-native-google-signin
 
+`epsilon` Branch
+
+`delta` + react-native-share
+
+`zeta` Branch
+
+`epsilon` + react-native-blur
+
+`eta` Branch
+
+`zeta` + react-native-firebase (AdMob , Auth)
+
+`theta` Branch
+
+`eta` + Navigation , Theming Demo
+
 ## Other modules
 
 [typescript](https://www.typescriptlang.org/) We like Typescript. It takes a bit of time to get used to it, but it makes the app more solid, easier to read, it's very well embed with vscode for example, and it makes the build time faster.
