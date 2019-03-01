@@ -45,10 +45,13 @@ const drawer = {
     },
     center: {
       bottomTabs: {
+        options: {
+          backgroundColor: "green"
+        },
         visible: true,
         animate: true,
         currentTabIndex: 2,
-        drawBehind: false,
+
         backgroundColor: "green",
         children: [
           {
