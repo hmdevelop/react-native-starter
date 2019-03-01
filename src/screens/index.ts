@@ -49,7 +49,7 @@ const drawer = {
         animate: true,
         currentTabIndex: 2,
         drawBehind: false,
-        backgroundColor: "#7b1fa2",
+        backgroundColor: "green",
         children: [
           {
             component: {
