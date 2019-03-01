@@ -32,6 +32,7 @@ export async function updateTheme() {
   setVar("--top-bar-height", res.topBarHeight);
 
   setVars({
+    font: "Helvetica",
     primary: `#7b1fa2`,
     plight: `#ae52d4`,
     pdark: `#4a0072`,

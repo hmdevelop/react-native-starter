@@ -10,6 +10,9 @@ import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
 
+import { getVar } from "react-native-ueno-css-modules";
+import { normalize } from "../../helpers/normalize.js";
+
 const s = require("./Screen6.scss");
 
 @CodePush(codePushConfig())
@@ -18,8 +21,20 @@ export class Screen6 extends React.Component<IScreen> {
   static get options() {
     return {
       topBar: {
+        visible: true,
+        background: {
+          color: getVar(`primary`)
+        },
         title: {
-          text: "Screen6"
+          text: "Screen6",
+          fontSize: normalize(20),
+          color: getVar(`white`),
+          fontFamily: getVar(`font`)
+        },
+        backButton: {
+          icon: require("../../assets/back.png"),
+          visible: true,
+          color: getVar(`white`)
         }
       },
       bottomTab: {

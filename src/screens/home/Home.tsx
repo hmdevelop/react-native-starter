@@ -38,9 +38,8 @@ export class Home extends React.Component<IScreen> {
         badgeColor: "red",
         testID: "bottomTabTestID",
         icon: require("../../assets/bird.png"),
-
         textColor: getVar("primary"),
-        selectedTextColor: getVar("primary"),
+        selectedTextColor: getVar("secondary"),
         backgroundColor: "blue",
         fontSize: 10
       }
@@ -97,12 +96,7 @@ export class Home extends React.Component<IScreen> {
             console.log("Advert loaded");
           }}
         />
-        <Text style={{ marginTop: 20 }} onPress={this._goToURL}>
-          --> See Rigel-app documentation
-        </Text>
-        <View style={s.box}>
-          <Text style={s.text}> Rigel-Native-Eta</Text>
-        </View>
+
         <Text style={s.text2}> text2</Text>
       </ScrollView>
     );
