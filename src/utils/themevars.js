@@ -3,9 +3,9 @@ import { normalize } from "../helpers/normalize.js";
 export default (vars = {
   font: "Helvetica",
 
-  primary: `#d81b60`,
-  plight: `#ae52d4`,
-  pdark: `#4a0072`,
+  primary: `#9c27b0`,
+  plight: `#d05ce3`,
+  pdark: `#6a0080`,
   secondary: `#f4511e`,
   slight: `#ff844c`,
   sdark: `#b91400`,
