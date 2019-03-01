@@ -18,6 +18,8 @@ import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
 
+import { getVar } from "react-native-ueno-css-modules";
+
 const s = require("./Home.scss");
 
 @CodePush(codePushConfig())
@@ -37,9 +39,9 @@ export class Home extends React.Component<IScreen> {
         testID: "bottomTabTestID",
         icon: require("../../assets/bird.png"),
 
-        textColor: "#979191",
-        selectedTextColor: "black",
-
+        textColor: getVar("primary"),
+        selectedTextColor: getVar("primary"),
+        backgroundColor: "blue",
         fontSize: 10
       }
     };

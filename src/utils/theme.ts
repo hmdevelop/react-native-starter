@@ -32,6 +32,20 @@ export async function updateTheme() {
   setVar("--top-bar-height", res.topBarHeight);
 
   setVars({
+    primary: `#7b1fa2`,
+    plight: `#ae52d4`,
+    pdark: `#4a0072`,
+    secondary: `#f4511e`,
+    slight: `#ff844c`,
+    sdark: `#b91400`,
+    success: `#30a54a`,
+    danger: `#d93749`,
+    warning: `#fdc02f`,
+    info: `#24a2b6`,
+    light: `#f8f9fa`,
+    dark: `#343a40`,
+    white: `#ffffff`,
+
     r1: normalize(1),
     r2: normalize(2),
     r3: normalize(3),

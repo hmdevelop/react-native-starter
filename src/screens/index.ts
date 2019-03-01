@@ -107,17 +107,7 @@ export const startApp = () => {
             visible: false
           }
         },
-        children: [
-          drawer,
-          {
-            component: {
-              name: SCREEN6,
-              passProps: {
-                text: "This is tab 2"
-              }
-            }
-          }
-        ]
+        children: [drawer]
       }
     }
   });
