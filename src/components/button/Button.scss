@@ -1,6 +1,8 @@
+@import "../../screens/variables.scss";
+
 .button {
   border-radius: 4px;
-  background-color: rgb(230, 65, 65);
+  background-color: $success;
   margin: 20px;
 }
 
