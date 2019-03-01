@@ -9,6 +9,8 @@ import { Screen6 } from "./screen6/Screen6";
 import { Counter } from "./counter/Counter";
 import { Drawer } from "./drawer/Drawer";
 import { getVar } from "react-native-ueno-css-modules";
+import vars from "./themevars";
+
 export interface IScreen {
   componentId: string;
   testID?: string;

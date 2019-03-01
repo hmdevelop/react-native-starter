@@ -82,9 +82,9 @@ export class Screen3 extends React.Component<IScreen> {
         <View style={s.content}>
           <Text style={s.text}>Screen3</Text>
           <FlatList
-            keyExtractor={this.keyExtractor}
             data={list}
             renderItem={this.renderItem}
+            keyExtractor={(item, index) => item.name}
           />
         </View>
       </View>
