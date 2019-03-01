@@ -55,7 +55,7 @@ export class Screen3 extends React.Component<IScreen> {
         testID: "bottomTabTestID",
         icon: require("../../assets/polar-bear.png"),
         textColor: "#979191",
-        selectedTextColor: getVar("white"),
+        selectedTextColor: getVar("white_"),
 
         fontSize: normalize(10)
       }

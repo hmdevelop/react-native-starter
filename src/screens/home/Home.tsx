@@ -40,7 +40,7 @@ export class Home extends React.Component<IScreen> {
         testID: "bottomTabTestID",
         icon: require("../../assets/bird.png"),
         textColor: "#979191",
-        selectedTextColor: getVar("white"),
+        selectedTextColor: getVar("white_"),
 
         fontSize: normalize(10)
       }

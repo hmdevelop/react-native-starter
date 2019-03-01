@@ -33,7 +33,7 @@ export class Screen4 extends React.Component<IScreen> {
         icon: require("../../assets/dog.png"),
 
         textColor: "#979191",
-        selectedTextColor: getVar("white"),
+        selectedTextColor: getVar("white_"),
 
         fontSize: normalize(10)
       }
