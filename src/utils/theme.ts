@@ -32,8 +32,9 @@ export async function updateTheme() {
   setVar("--bottom-tabs-height", res.bottomTabsHeight);
   setVar("--status-bar-height", res.statusBarHeight);
   setVar("--top-bar-height", res.topBarHeight);
-
+  setVar("p", "#d81b60");
   setVars(vars);
+
   // Add dynamic variables here
   // ...
 

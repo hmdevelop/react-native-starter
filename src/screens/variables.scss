@@ -1,4 +1,4 @@
-$primary: #7b1fa2;
+$primary: var(primary);
 $p-light: #ae52d4;
 $p-dark: #4a0072;
 $secondary: #f4511e;
@@ -11,6 +11,8 @@ $info: #24a2b6;
 $light: #f8f9fa;
 $dark: #343a40;
 $white: #ffffff;
+
+$asd: $primary;
 
 $p1: var(r1);
 $p2: var(r2);

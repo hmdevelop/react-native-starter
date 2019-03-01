@@ -9,7 +9,8 @@ import { Screen6 } from "./screen6/Screen6";
 import { Counter } from "./counter/Counter";
 import { Drawer } from "./drawer/Drawer";
 import { getVar } from "react-native-ueno-css-modules";
-import vars from "./themevars";
+// @ts-ignore
+import vars from "../utils/themevars.js";
 
 export interface IScreen {
   componentId: string;
@@ -46,7 +47,7 @@ const drawer = {
         },
         options: {
           bottomTabs: {
-            backgroundColor: "#7b1fa2"
+            backgroundColor: vars.primary
           }
         }
       }
@@ -64,7 +65,7 @@ const drawer = {
               },
               options: {
                 bottomTabs: {
-                  backgroundColor: "#7b1fa2"
+                  backgroundColor: vars.primary
                 }
               }
             }
@@ -77,7 +78,7 @@ const drawer = {
               },
               options: {
                 bottomTabs: {
-                  backgroundColor: "#7b1fa2"
+                  backgroundColor: vars.primary
                 }
               }
             }
@@ -90,7 +91,7 @@ const drawer = {
               },
               options: {
                 bottomTabs: {
-                  backgroundColor: "#7b1fa2"
+                  backgroundColor: vars.primary
                 }
               }
             }
@@ -113,7 +114,7 @@ const drawer = {
                     name: SCREEN5,
                     options: {
                       bottomTabs: {
-                        backgroundColor: "#7b1fa2"
+                        backgroundColor: vars.primary
                       }
                     }
                   }
@@ -124,7 +125,7 @@ const drawer = {
                   visible: false
                 },
                 bottomTabs: {
-                  backgroundColor: "#7b1fa2"
+                  backgroundColor: vars.primary
                 }
               }
             }

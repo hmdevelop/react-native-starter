@@ -2,7 +2,7 @@ import { normalize } from "../helpers/normalize.js";
 
 export default (vars = {
   font: "Helvetica",
-  primary: `#7b1fa2`,
+  primary: `#d81b60`,
   plight: `#ae52d4`,
   pdark: `#4a0072`,
   secondary: `#f4511e`,
