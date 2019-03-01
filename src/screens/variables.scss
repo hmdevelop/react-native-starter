@@ -1,18 +1,16 @@
 $primary: var(primary);
-$p-light: #ae52d4;
-$p-dark: #4a0072;
-$secondary: #f4511e;
-$s-light: #ff844c;
-$s-dark: #b91400;
-$success: #30a54a;
-$danger: #d93749;
-$warning: #fdc02f;
-$info: #24a2b6;
-$light: #f8f9fa;
-$dark: #343a40;
-$white: #ffffff;
-
-$asd: $primary;
+$plight: var(plight);
+$pdark: var(pdark);
+$secondary: var(secondary);
+$slight: var(slight);
+$sdark: var(sdark);
+$success: var(success);
+$danger: var(danger);
+$warning: var(warning);
+$info: var(info);
+$light: var(light);
+$dark: var(dark);
+$white: var(white_);
 
 $p1: var(r1);
 $p2: var(r2);

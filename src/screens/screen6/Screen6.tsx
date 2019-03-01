@@ -28,13 +28,13 @@ export class Screen6 extends React.Component<IScreen> {
         title: {
           text: "Screen6",
           fontSize: normalize(20),
-          color: getVar(`white`),
+          color: getVar("white_"),
           fontFamily: getVar(`font`)
         },
         backButton: {
           icon: require("../../assets/back.png"),
           visible: true,
-          color: getVar(`white`)
+          color: getVar("white_")
         }
       },
       bottomTab: {
@@ -44,7 +44,7 @@ export class Screen6 extends React.Component<IScreen> {
         icon: require("../../assets/dog.png"),
 
         textColor: "#979191",
-        selectedTextColor: getVar("white"),
+        selectedTextColor: getVar("white_"),
 
         fontSize: normalize(10)
       }

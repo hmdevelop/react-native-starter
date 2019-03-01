@@ -15,7 +15,7 @@ export default (vars = {
   info: `#24a2b6`,
   light: `#f8f9fa`,
   dark: `#343a40`,
-  white: `#ffffff`,
+  white_: `#ffffff`,
 
   r1: normalize(1),
   r2: normalize(2),
