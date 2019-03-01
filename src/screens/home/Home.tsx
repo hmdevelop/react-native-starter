@@ -101,7 +101,7 @@ export class Home extends React.Component<IScreen> {
         <View style={s.box}>
           <Text style={s.text}> Rigel-Native-Eta</Text>
         </View>
-        <Text style={s.text2}> Rigel--Eta</Text>
+        <Text style={s.text2}> text2</Text>
       </ScrollView>
     );
   }
