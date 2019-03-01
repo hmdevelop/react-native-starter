@@ -38,8 +38,8 @@ export class Home extends React.Component<IScreen> {
         badgeColor: "red",
         testID: "bottomTabTestID",
         icon: require("../../assets/bird.png"),
-        textColor: getVar("primary"),
-        selectedTextColor: getVar("secondary"),
+
+        selectedTextColor: getVar("white"),
         backgroundColor: "blue",
         fontSize: 10
       }

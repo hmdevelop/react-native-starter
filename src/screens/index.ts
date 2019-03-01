@@ -8,6 +8,7 @@ import { Screen5 } from "./screen5/Screen5";
 import { Screen6 } from "./screen6/Screen6";
 import { Counter } from "./counter/Counter";
 import { Drawer } from "./drawer/Drawer";
+import { getVar } from "react-native-ueno-css-modules";
 export interface IScreen {
   componentId: string;
   testID?: string;
@@ -40,19 +41,17 @@ const drawer = {
         name: DRAWER,
         passProps: {
           text: "This is a left side menu screen"
+        },
+        options: {
+          bottomTabs: {
+            backgroundColor: "#7b1fa2"
+          }
         }
       }
     },
     center: {
       bottomTabs: {
-        options: {
-          backgroundColor: "green"
-        },
-        visible: true,
-        animate: true,
-        currentTabIndex: 2,
-
-        backgroundColor: "green",
+        backgroundColor: "blue",
         children: [
           {
             component: {
@@ -60,6 +59,11 @@ const drawer = {
               passProps: {
                 text: "This is tab 1",
                 myFunction: () => "Hello from a function!"
+              },
+              options: {
+                bottomTabs: {
+                  backgroundColor: "#7b1fa2"
+                }
               }
             }
           },
@@ -68,6 +72,11 @@ const drawer = {
               name: SCREEN2,
               passProps: {
                 text: "This is tab 2"
+              },
+              options: {
+                bottomTabs: {
+                  backgroundColor: "#7b1fa2"
+                }
               }
             }
           },
@@ -76,6 +85,11 @@ const drawer = {
               name: SCREEN3,
               passProps: {
                 text: "This is tab 2"
+              },
+              options: {
+                bottomTabs: {
+                  backgroundColor: "#7b1fa2"
+                }
               }
             }
           },
@@ -83,15 +97,32 @@ const drawer = {
             stack: {
               children: [
                 {
-                  component: { name: SCREEN4 }
+                  component: {
+                    name: SCREEN4,
+                    options: {
+                      bottomTabs: {
+                        backgroundColor: "#7b1fa2"
+                      }
+                    }
+                  }
                 },
                 {
-                  component: { name: SCREEN5 }
+                  component: {
+                    name: SCREEN5,
+                    options: {
+                      bottomTabs: {
+                        backgroundColor: "#7b1fa2"
+                      }
+                    }
+                  }
                 }
               ],
               options: {
                 topBar: {
                   visible: false
+                },
+                bottomTabs: {
+                  backgroundColor: "red"
                 }
               }
             }
