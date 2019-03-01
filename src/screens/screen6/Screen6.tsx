@@ -44,8 +44,9 @@ export class Screen6 extends React.Component<IScreen> {
         icon: require("../../assets/dog.png"),
 
         textColor: "#979191",
-        selectedTextColor: "black",
-        fontSize: 10
+        selectedTextColor: getVar("white"),
+
+        fontSize: normalize(10)
       }
     };
   }

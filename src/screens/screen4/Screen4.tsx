@@ -10,6 +10,10 @@ import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
 
+import { getVar } from "react-native-ueno-css-modules";
+
+import { normalize } from "../../helpers/normalize.js";
+
 const s = require("./Screen4.scss");
 
 @CodePush(codePushConfig())
@@ -29,8 +33,9 @@ export class Screen4 extends React.Component<IScreen> {
         icon: require("../../assets/dog.png"),
 
         textColor: "#979191",
-        selectedTextColor: "black",
-        fontSize: 10
+        selectedTextColor: getVar("white"),
+
+        fontSize: normalize(10)
       }
     };
   }

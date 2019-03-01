@@ -10,6 +10,10 @@ import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
 
+import { getVar } from "react-native-ueno-css-modules";
+
+import { normalize } from "../../helpers/normalize.js";
+
 const s = require("./Screen2.scss");
 
 @CodePush(codePushConfig())
@@ -30,9 +34,9 @@ export class Screen2 extends React.Component<IScreen> {
         icon: require("../../assets/teddy-bear.png"),
 
         textColor: "#979191",
-        selectedTextColor: "black",
+        selectedTextColor: getVar("white"),
 
-        fontSize: 10
+        fontSize: normalize(10)
       }
     };
   }

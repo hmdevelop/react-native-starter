@@ -19,6 +19,7 @@ import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
 
 import { getVar } from "react-native-ueno-css-modules";
+import { normalize } from "../../helpers/normalize.js";
 
 const s = require("./Home.scss");
 
@@ -38,10 +39,10 @@ export class Home extends React.Component<IScreen> {
         badgeColor: "red",
         testID: "bottomTabTestID",
         icon: require("../../assets/bird.png"),
-
+        textColor: "#979191",
         selectedTextColor: getVar("white"),
-        backgroundColor: "blue",
-        fontSize: 10
+
+        fontSize: normalize(10)
       }
     };
   }

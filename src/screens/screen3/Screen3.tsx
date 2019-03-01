@@ -17,6 +17,9 @@ import { COUNTER, IScreen } from "screens";
 import { Button } from "components/button/Button";
 import firebase from "react-native-firebase";
 import { ListItem } from "react-native-elements";
+import { getVar } from "react-native-ueno-css-modules";
+
+import { normalize } from "../../helpers/normalize.js";
 
 const list = [
   {
@@ -51,11 +54,10 @@ export class Screen3 extends React.Component<IScreen> {
         badgeColor: "red",
         testID: "bottomTabTestID",
         icon: require("../../assets/polar-bear.png"),
-
         textColor: "#979191",
-        selectedTextColor: "black",
+        selectedTextColor: getVar("white"),
 
-        fontSize: 10
+        fontSize: normalize(10)
       }
     };
   }

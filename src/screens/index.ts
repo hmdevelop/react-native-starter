@@ -122,7 +122,7 @@ const drawer = {
                   visible: false
                 },
                 bottomTabs: {
-                  backgroundColor: "red"
+                  backgroundColor: "#7b1fa2"
                 }
               }
             }
