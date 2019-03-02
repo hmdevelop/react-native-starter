@@ -145,6 +145,7 @@ export const startApp = () => {
             visible: false,
           },
         },
+        // @ts-ignore
         children: [drawer],
       },
     },

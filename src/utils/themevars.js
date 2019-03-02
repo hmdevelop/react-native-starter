@@ -1,13 +1,16 @@
+/* tslint:disable */
 import { normalize } from "../helpers/normalize.js";
 
 export default (vars = {
   font: "Helvetica",
 
-  primary: `#9c27b0`,
-  plight: `#d05ce3`,
   pdark: `#6a0080`,
+  plight: `#d05ce3`,
+  primary: `#9c27b0`,
+
   secondary: `#f4511e`,
   slight: `#ff844c`,
+
   sdark: `#b91400`,
   success: `#30a54a`,
   danger: `#d93749`,
@@ -35,5 +38,5 @@ export default (vars = {
   r34: normalize(34),
   r48: normalize(48),
   r60: normalize(60),
-  r96: normalize(96),
+  r96: normalize(96)
 });

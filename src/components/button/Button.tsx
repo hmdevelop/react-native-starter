@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent, Platform, AccessibilityTrait, ViewStyle } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+  GestureResponderEvent,
+  Platform,
+  AccessibilityTrait,
+  ViewStyle,
+} from 'react-native';
 
 interface IProps {
   title: string;
@@ -14,9 +23,16 @@ interface IProps {
 const s = require('./Button.scss');
 
 export class Button extends React.PureComponent<IProps> {
-
   public render() {
-    const { title, accessibilityLabel, disabled, style, onPress, hasTVPreferredFocus, testID } = this.props;
+    const {
+      title,
+      accessibilityLabel,
+      disabled,
+      style,
+      onPress,
+      hasTVPreferredFocus,
+      testID,
+    } = this.props;
     const buttonStyles = [s.button];
     const textStyles = [s.text];
     const accessibilityTraits: AccessibilityTrait[] = ['button'];
@@ -27,8 +43,10 @@ export class Button extends React.PureComponent<IProps> {
       accessibilityTraits.push('disabled');
     }
 
-    const Touchable: any = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
-    const titleLabel = Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
+    const Touchable: any =
+      Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+    const titleLabel =
+      Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
 
     return (
       <Touchable
@@ -39,12 +57,10 @@ export class Button extends React.PureComponent<IProps> {
         disabled={disabled}
         onPress={onPress}
         style={style}
-        {...Platform.OS === 'ios' ? { hasTVPreferredFocus } : {}}
+        {...(Platform.OS === 'ios' ? { hasTVPreferredFocus } : {})}
       >
         <View style={buttonStyles}>
-          <Text style={textStyles}>
-            {titleLabel}
-          </Text>
+          <Text style={textStyles}>{titleLabel}</Text>
         </View>
       </Touchable>
     );

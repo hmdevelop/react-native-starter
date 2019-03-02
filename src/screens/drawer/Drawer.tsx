@@ -41,10 +41,12 @@ export class Drawer extends React.Component {
   ];
 
   public componentDidAppear() {
+    // @ts-ignore
     UIStore.setComponentId(this.props.componentId);
   }
 
   public push = () => {
+    // @ts-ignore
     Navigation.mergeOptions(this.props.componentId, {
       sideMenu: {
         left: {
@@ -55,6 +57,7 @@ export class Drawer extends React.Component {
   }
 
   public push2 = () => {
+    // @ts-ignore
     Navigation.push(this.props.componentId, {
       component: {
         name: 'ueno-rns.Screen6',
