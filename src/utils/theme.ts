@@ -1,38 +1,38 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions } from 'react-native';
 import {
   setVar,
   setTheme,
   setThemeVars,
-  setVars
-} from "react-native-ueno-css-modules";
-import { Navigation } from "react-native-navigation";
+  setVars,
+} from 'react-native-ueno-css-modules';
+import { Navigation } from 'react-native-navigation';
 // @ts-ignore
-import { normalize } from "../helpers/normalize.js";
+import { normalize } from '../helpers/normalize.js';
 
-import vars from "./themevars";
+import vars from './themevars';
 
 // Add some static re-usable css variables here
-setVar("--hairline-width", StyleSheet.hairlineWidth);
+setVar('--hairline-width', StyleSheet.hairlineWidth);
 
 // Add themes here
-setTheme("default");
+setTheme('default');
 
-setThemeVars("default", {
-  "--gutter": 16
+setThemeVars('default', {
+  '--gutter': 16,
 });
 
 export async function updateTheme() {
   // Add device width and height
-  const { width, height } = Dimensions.get("window");
-  setVar("--window-width", width);
-  setVar("--window-height", height);
+  const { width, height } = Dimensions.get('window');
+  setVar('--window-width', width);
+  setVar('--window-height', height);
 
   // Add navigation constants
   const res = await Navigation.constants();
-  setVar("--bottom-tabs-height", res.bottomTabsHeight);
-  setVar("--status-bar-height", res.statusBarHeight);
-  setVar("--top-bar-height", res.topBarHeight);
-  setVar("p", "#d81b60");
+  setVar('--bottom-tabs-height', res.bottomTabsHeight);
+  setVar('--status-bar-height', res.statusBarHeight);
+  setVar('--top-bar-height', res.topBarHeight);
+  setVar('p', '#d81b60');
   setVars(vars);
 
   // Add dynamic variables here

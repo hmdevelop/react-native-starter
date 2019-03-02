@@ -63,7 +63,5 @@ export const normalize = size => {
     }
     // catch larger phablet devices
     return size * 1.4;
-  }
-  // if older device ie pixelRatio !== 2 || 3 || 3.5
-  else return size;
+  } else { return size; }
 };

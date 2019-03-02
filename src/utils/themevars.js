@@ -35,5 +35,5 @@ export default (vars = {
   r34: normalize(34),
   r48: normalize(48),
   r60: normalize(60),
-  r96: normalize(96)
+  r96: normalize(96),
 });

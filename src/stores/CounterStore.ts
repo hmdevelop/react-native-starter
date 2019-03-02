@@ -3,7 +3,7 @@ import { types } from 'mobx-state-tree';
 export const CounterStore = types.model('CounterStore', {
   counter: 0,
 })
-.actions(self => ({
+.actions((self) => ({
   increment(): void {
     self.counter += 1;
   },

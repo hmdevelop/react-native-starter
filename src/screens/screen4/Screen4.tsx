@@ -1,20 +1,20 @@
-import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform } from "react-native";
-import { observer } from "mobx-react";
-import { Navigation } from "react-native-navigation";
-import CodePush from "react-native-code-push";
+import * as React from 'react';
+import { View, Text, Image, StyleSheet, Platform } from 'react-native';
+import { observer } from 'mobx-react';
+import { Navigation } from 'react-native-navigation';
+import CodePush from 'react-native-code-push';
 
-import { UIStore } from "stores/UIStore";
-import { codePushConfig } from "utils/code-push";
-import { COUNTER, IScreen } from "screens";
-import { Button } from "components/button/Button";
-import firebase from "react-native-firebase";
+import { UIStore } from 'stores/UIStore';
+import { codePushConfig } from 'utils/code-push';
+import { COUNTER, IScreen } from 'screens';
+import { Button } from 'components/button/Button';
+import firebase from 'react-native-firebase';
 
-import { getVar } from "react-native-ueno-css-modules";
+import { getVar } from 'react-native-ueno-css-modules';
 
-import { normalize } from "../../helpers/normalize.js";
+import { normalize } from '../../helpers/normalize.js';
 
-const s = require("./Screen4.scss");
+const s = require('./Screen4.scss');
 
 @CodePush(codePushConfig())
 @observer
@@ -23,43 +23,43 @@ export class Screen4 extends React.Component<IScreen> {
     return {
       topBar: {
         title: {
-          text: "Screen4"
-        }
+          text: 'Screen4',
+        },
       },
       bottomTab: {
-        text: "Screen4",
+        text: 'Screen4',
 
-        testID: "bottomTabTestID",
-        icon: require("../../assets/dog.png"),
+        testID: 'bottomTabTestID',
+        icon: require('../../assets/dog.png'),
 
-        textColor: "#979191",
-        selectedTextColor: getVar("white_"),
+        textColor: '#979191',
+        selectedTextColor: getVar('white_'),
 
-        fontSize: normalize(10)
-      }
+        fontSize: normalize(10),
+      },
     };
   }
 
-  componentDidAppear() {
+  public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
 
-  push = () => {
+  public push = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: "ueno-rns.Screen5",
-        options: {}
-      }
+        name: 'ueno-rns.Screen5',
+        options: {},
+      },
     });
-  };
+  }
 
-  render() {
+  public render() {
     return (
-      <View style={s.host} testID="HOME_SCREEN">
+      <View style={s.host} testID='HOME_SCREEN'>
         <View style={s.content}>
           <Text style={s.text}>Screen4</Text>
           <Button
-            title="Go to screen5"
+            title='Go to screen5'
             onPress={this.push}
             style={s.counter__button}
           />
@@ -71,11 +71,11 @@ export class Screen4 extends React.Component<IScreen> {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   absolute: {
     width: 300,
-    height: 100
-  }
+    height: 100,
+  },
 });

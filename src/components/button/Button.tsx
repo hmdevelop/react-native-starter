@@ -15,7 +15,7 @@ const s = require('./Button.scss');
 
 export class Button extends React.PureComponent<IProps> {
 
-  render() {
+  public render() {
     const { title, accessibilityLabel, disabled, style, onPress, hasTVPreferredFocus, testID } = this.props;
     const buttonStyles = [s.button];
     const textStyles = [s.text];
@@ -32,7 +32,7 @@ export class Button extends React.PureComponent<IProps> {
 
     return (
       <Touchable
-        accessibilityComponentType="button"
+        accessibilityComponentType='button'
         accessibilityLabel={accessibilityLabel}
         accessibilityTraits={accessibilityTraits}
         testID={testID}

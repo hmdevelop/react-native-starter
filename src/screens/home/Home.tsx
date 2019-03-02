@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   View,
   Text,
@@ -6,22 +6,22 @@ import {
   StyleSheet,
   Platform,
   Linking,
-  ScrollView
-} from "react-native";
-import { observer } from "mobx-react";
-import { Navigation } from "react-native-navigation";
-import CodePush from "react-native-code-push";
+  ScrollView,
+} from 'react-native';
+import { observer } from 'mobx-react';
+import { Navigation } from 'react-native-navigation';
+import CodePush from 'react-native-code-push';
 
-import { UIStore } from "stores/UIStore";
-import { codePushConfig } from "utils/code-push";
-import { COUNTER, IScreen } from "screens";
-import { Button } from "components/button/Button";
-import firebase from "react-native-firebase";
+import { UIStore } from 'stores/UIStore';
+import { codePushConfig } from 'utils/code-push';
+import { COUNTER, IScreen } from 'screens';
+import { Button } from 'components/button/Button';
+import firebase from 'react-native-firebase';
 
-import { getVar } from "react-native-ueno-css-modules";
-import { normalize } from "../../helpers/normalize.js";
+import { getVar } from 'react-native-ueno-css-modules';
+import { normalize } from '../../helpers/normalize.js';
 
-const s = require("./Home.scss");
+const s = require('./Home.scss');
 
 @CodePush(codePushConfig())
 @observer
@@ -30,75 +30,75 @@ export class Home extends React.Component<IScreen> {
     return {
       topBar: {
         title: {
-          text: "Home"
-        }
+          text: 'Home',
+        },
       },
       bottomTab: {
-        text: "Home",
-        badge: "2",
-        badgeColor: "red",
-        testID: "bottomTabTestID",
-        icon: require("../../assets/bird.png"),
-        textColor: "#979191",
-        selectedTextColor: getVar("white_"),
+        text: 'Home',
+        badge: '2',
+        badgeColor: 'red',
+        testID: 'bottomTabTestID',
+        icon: require('../../assets/bird.png'),
+        textColor: '#979191',
+        selectedTextColor: getVar('white_'),
 
-        fontSize: normalize(10)
-      }
+        fontSize: normalize(10),
+      },
     };
   }
 
-  componentDidAppear() {
+  public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
 
-  onCounterScreenPress = () => {
+  public onCounterScreenPress = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: COUNTER
-      }
+        name: COUNTER,
+      },
     });
-  };
+  }
 
-  drawer = () => {
+  public drawer = () => {
     Navigation.mergeOptions(this.props.componentId, {
       sideMenu: {
         left: {
-          visible: true
-        }
-      }
+          visible: true,
+        },
+      },
     });
-  };
+  }
 
-  _goToURL = () => {
-    Linking.openURL("https://github.com/hmdevelop/rigel-app");
-  };
+  public _goToURL = () => {
+    Linking.openURL('https://github.com/hmdevelop/rigel-app');
+  }
 
-  render() {
+  public render() {
     const Banner = firebase.admob.Banner;
     const AdRequest = firebase.admob.AdRequest;
     const request = new AdRequest();
     const unitId =
-      Platform.OS === "ios"
-        ? "ca-app-pub-3940256099942544/2934735716"
-        : "ca-app-pub-3940256099942544/6300978111";
+      Platform.OS === 'ios'
+        ? 'ca-app-pub-3940256099942544/2934735716'
+        : 'ca-app-pub-3940256099942544/6300978111';
     return (
-      <ScrollView style={s.host} testID="HOME_SCREEN">
+      <ScrollView style={s.host} testID='HOME_SCREEN'>
         <View style={s.content}>
           <Text style={s.text}>Welcome Home </Text>
           <Text style={s.text}> Rigel-Native-Eta</Text>
         </View>
 
         <Button
-          title="open drawer"
+          title='open drawer'
           onPress={this.drawer}
-          testID="OPEN_DRAWER"
+          testID='OPEN_DRAWER'
         />
         <Banner
           unitId={unitId}
-          size={"SMART_BANNER"}
+          size={'SMART_BANNER'}
           request={request.build()}
           onAdLoaded={() => {
-            console.log("Advert loaded");
+            console.log('Advert loaded');
           }}
         />
 
@@ -110,11 +110,11 @@ export class Home extends React.Component<IScreen> {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   absolute: {
     width: 300,
-    height: 100
-  }
+    height: 100,
+  },
 });

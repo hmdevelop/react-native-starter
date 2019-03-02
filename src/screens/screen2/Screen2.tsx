@@ -1,20 +1,20 @@
-import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform } from "react-native";
-import { observer } from "mobx-react";
-import { Navigation } from "react-native-navigation";
-import CodePush from "react-native-code-push";
+import * as React from 'react';
+import { View, Text, Image, StyleSheet, Platform } from 'react-native';
+import { observer } from 'mobx-react';
+import { Navigation } from 'react-native-navigation';
+import CodePush from 'react-native-code-push';
 
-import { UIStore } from "stores/UIStore";
-import { codePushConfig } from "utils/code-push";
-import { COUNTER, IScreen } from "screens";
-import { Button } from "components/button/Button";
-import firebase from "react-native-firebase";
+import { UIStore } from 'stores/UIStore';
+import { codePushConfig } from 'utils/code-push';
+import { COUNTER, IScreen } from 'screens';
+import { Button } from 'components/button/Button';
+import firebase from 'react-native-firebase';
 
-import { getVar } from "react-native-ueno-css-modules";
+import { getVar } from 'react-native-ueno-css-modules';
 
-import { normalize } from "../../helpers/normalize.js";
+import { normalize } from '../../helpers/normalize.js';
 
-const s = require("./Screen2.scss");
+const s = require('./Screen2.scss');
 
 @CodePush(codePushConfig())
 @observer
@@ -23,31 +23,31 @@ export class Screen2 extends React.Component<IScreen> {
     return {
       topBar: {
         title: {
-          text: "Screen2"
-        }
+          text: 'Screen2',
+        },
       },
       bottomTab: {
-        text: "Screen2",
-        badge: "Yups!",
-        badgeColor: "red",
-        testID: "bottomTabTestID",
-        icon: require("../../assets/teddy-bear.png"),
+        text: 'Screen2',
+        badge: 'Yups!',
+        badgeColor: 'red',
+        testID: 'bottomTabTestID',
+        icon: require('../../assets/teddy-bear.png'),
 
-        textColor: "#979191",
-        selectedTextColor: getVar("white_"),
+        textColor: '#979191',
+        selectedTextColor: getVar('white_'),
 
-        fontSize: normalize(10)
-      }
+        fontSize: normalize(10),
+      },
     };
   }
 
-  componentDidAppear() {
+  public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
 
-  render() {
+  public render() {
     return (
-      <View style={s.host} testID="HOME_SCREEN">
+      <View style={s.host} testID='HOME_SCREEN'>
         <View style={s.content}>
           <Text style={s.text}>Screen2</Text>
         </View>
@@ -58,11 +58,11 @@ export class Screen2 extends React.Component<IScreen> {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   absolute: {
     width: 300,
-    height: 100
-  }
+    height: 100,
+  },
 });

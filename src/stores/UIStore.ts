@@ -7,7 +7,7 @@ export const UIStore = types.model('UI', {
   componentId: types.optional(types.string, ''),
   isBeta: types.optional(types.boolean, config.isTestFlight || false),
 })
-.actions(self => ({
+.actions((self) => ({
   setComponentId(componentId?: string): void {
     if (componentId) {
       self.componentId = componentId;
@@ -18,7 +18,7 @@ export const UIStore = types.model('UI', {
     self.isBeta = isBeta;
   },
 
-  hydrate: flow(function* (): IterableIterator<Promise<string | null>> {
+  hydrate: flow(function*(): IterableIterator<Promise<string | null>> {
     const data = yield AsyncStorage.getItem('UI');
 
     if (data) {
