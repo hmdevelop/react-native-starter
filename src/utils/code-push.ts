@@ -1,8 +1,8 @@
 import { Platform } from 'react-native';
 import CodePush, { CodePushOptions } from 'react-native-code-push';
 
-import { UIStore } from 'stores/UIStore';
-import { config } from 'config';
+import { UIStore } from '../stores/UIStore';
+import { config } from '../config';
 
 export function codePushConfig(): CodePushOptions {
   const result = {

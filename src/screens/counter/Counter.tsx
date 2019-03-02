@@ -2,10 +2,10 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
 
-import { UIStore } from 'stores/UIStore';
-import { CounterStore } from 'stores/CounterStore';
-import { Button } from 'components/button/Button';
-import { IScreen } from 'screens';
+import { UIStore } from '../../stores/UIStore';
+import { codePushConfig } from '../../utils/code-push';
+import { COUNTER, IScreen } from '../../screens';
+import { Button } from '../../components/button/Button';
 
 const s = require('./Counter.scss');
 

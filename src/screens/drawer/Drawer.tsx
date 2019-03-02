@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { View, Text,   StyleSheet   } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { observer } from 'mobx-react';
 import { Navigation } from 'react-native-navigation';
 import CodePush from 'react-native-code-push';
 
-import { UIStore } from 'stores/UIStore';
-import { codePushConfig } from 'utils/code-push';
-
-import { Button } from 'components/button/Button';
+import { UIStore } from '../../stores/UIStore';
+import { codePushConfig } from '../../utils/code-push';
+import { COUNTER, IScreen } from '../../screens';
+import { Button } from '../../components/button/Button';
 
 import { ListItem } from 'react-native-elements';
 

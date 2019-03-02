@@ -11,10 +11,10 @@ import { observer } from 'mobx-react';
 import { Navigation } from 'react-native-navigation';
 import CodePush from 'react-native-code-push';
 
-import { UIStore } from 'stores/UIStore';
-import { codePushConfig } from 'utils/code-push';
-import { COUNTER, IScreen } from 'screens';
-import { Button } from 'components/button/Button';
+import { UIStore } from '../../stores/UIStore';
+import { codePushConfig } from '../../utils/code-push';
+import { COUNTER, IScreen } from '../../screens';
+import { Button } from '../../components/button/Button';
 import firebase from 'react-native-firebase';
 import { ListItem } from 'react-native-elements';
 import { getVar } from 'react-native-ueno-css-modules';
