@@ -30,13 +30,7 @@ export class Drawer extends React.Component {
     UIStore.setComponentId(this.props.componentId);
   }
 
-  onCounterScreenPress = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: HOME
-      }
-    });
-  };
+ 
 
   push = () => {
     Navigation.mergeOptions(this.props.componentId, {
@@ -94,14 +88,4 @@ export class Drawer extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  absolute: {
-    width: 300,
-    height: 100
-  }
-});
+ 
