@@ -1,9 +1,9 @@
-@import "../../screens/variables.scss";
+@import '../../screens/variables.scss';
 
 .button {
+  margin: 20px;
   border-radius: 4px;
   background-color: $pdark;
-  margin: 20px;
 }
 
 .button__disabled {

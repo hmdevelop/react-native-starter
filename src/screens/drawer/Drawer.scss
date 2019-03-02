@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import '../variables.scss';
 
 .host {
   flex: 1;
@@ -14,15 +14,13 @@
 .logo {
   margin-top: 20px;
   margin-bottom: 40px;
-
   width: 80px;
 }
 
 .text {
-  color: $white;
   margin-bottom: 10px;
-
+  color: $white;
   font-size: $p24;
   font-weight: 500;
-  font-family: "Helvetica";
+  font-family: Helvetica;
 }
