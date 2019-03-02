@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform } from "react-native";
+import { View, Text,   StyleSheet,   } from "react-native";
 import { observer } from "mobx-react";
 import { Navigation } from "react-native-navigation";
 import CodePush from "react-native-code-push";
@@ -15,7 +15,7 @@ const s = require("./Drawer.scss");
 
 @CodePush(codePushConfig())
 @observer
-export class Drawer extends React.Component<IScreen> {
+export class Drawer extends React.Component {
   static get options() {
     return {
       topBar: {

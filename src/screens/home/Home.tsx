@@ -88,7 +88,11 @@ export class Home extends React.Component<IScreen> {
           <Text style={s.text}> Rigel-Native-Eta</Text>
         </View>
 
-        <Button title="open drawer" onPress={this.drawer} />
+        <Button
+          title="open drawer"
+          onPress={this.drawer}
+          testID="OPEN_DRAWER"
+        />
         <Banner
           unitId={unitId}
           size={"SMART_BANNER"}
