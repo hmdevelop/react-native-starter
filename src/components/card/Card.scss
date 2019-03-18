@@ -1,0 +1,39 @@
+@import '../../screens/variables.scss';
+
+.container {
+  width: 90%;
+  height: 300px;
+  background-color: $dark;
+  border-radius: 10px;
+}
+
+.cardImage {
+  width: 100%;
+  background-color: $dark;
+  border-radius: 10px;
+}
+
+.cardImageFooter {
+  flex-direction: row;
+  height: 50px;
+  bottom: 65px;
+
+  padding-left: 10px;
+}
+
+.cardImageUser {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.cardImageUserName {
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 20px;
+}
+
+.cardImageUserNameText {
+  color: white;
+}

@@ -15,7 +15,7 @@ import CodePush from 'react-native-code-push';
 import { UIStore } from '../../stores/UIStore';
 import { codePushConfig } from '../../utils/code-push';
 import { COUNTER, IScreen } from '../../screens';
-import { Card } from '../../components/card/Card';
+import { Button } from '../../components/button/Button';
 import firebase from 'react-native-firebase';
 
 import { getVar } from 'react-native-ueno-css-modules';
@@ -82,12 +82,23 @@ export class Home extends React.Component<IScreen> {
         ? 'ca-app-pub-3940256099942544/2934735716'
         : 'ca-app-pub-3940256099942544/6300978111';
     return (
-      <ScrollView
-        style={s.host}
-        contentContainerStyle={{ alignItems: 'center' }}
-        testID='HOME_SCREEN'
-      >
-        <Card />
+      <ScrollView style={s.host} testID='HOME_SCREEN'>
+        <View style={s.content}>
+          <Text style={s.text}>Welcome Home </Text>
+          <Text style={s.text}> Rigel-Native-Eta</Text>
+        </View>
+
+        <Banner
+          unitId={unitId}
+          size={'SMART_BANNER'}
+          request={request.build()}
+          onAdLoaded={() => {
+            console.log('Advert loaded');
+          }}
+        />
+        <Image source={require('../../assets/Post.png')} />
+        <Image source={require('../../assets/Post2.png')} />
+        <Image source={require('../../assets/Post.png')} />
       </ScrollView>
     );
   }
