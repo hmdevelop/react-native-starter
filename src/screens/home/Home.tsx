@@ -90,6 +90,7 @@ export class Home extends React.Component<IScreen> {
         <Card />
         <Card />
         <Card />
+        <Text style={s.customfont}>Custom Font</Text>
       </ScrollView>
     );
   }

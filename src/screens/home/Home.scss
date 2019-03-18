@@ -22,7 +22,6 @@
   margin-bottom: 10px;
 
   font-size: 28px;
-  font-weight: 200;
 }
 
 .box {
@@ -39,4 +38,8 @@
 
   font-size: $p34;
   margin-top: $p5;
+}
+
+.customfont {
+  font-family: 'Iowan Old Style';
 }
