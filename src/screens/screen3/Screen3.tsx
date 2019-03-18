@@ -45,15 +45,15 @@ export class Screen3 extends React.Component<IScreen> {
     return {
       topBar: {
         title: {
-          text: 'Screen3',
+          text: 'Messages',
         },
       },
       bottomTab: {
-        text: 'Screen3',
+        text: 'Messages',
         badge: '2',
         badgeColor: 'red',
         testID: 'bottomTabTestID',
-        icon: require('../../assets/polar-bear.png'),
+        icon: require('../../assets/Messages.png'),
         textColor: '#979191',
         selectedTextColor: getVar('white_'),
 
@@ -80,7 +80,7 @@ export class Screen3 extends React.Component<IScreen> {
     return (
       <View style={s.host} testID='HOME_SCREEN'>
         <View style={s.content}>
-          <Text style={s.text}>Screen3</Text>
+          <Text style={s.text}>Messages</Text>
           <FlatList
             data={list}
             renderItem={this.renderItem}

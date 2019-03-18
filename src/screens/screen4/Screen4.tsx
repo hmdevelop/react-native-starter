@@ -23,14 +23,14 @@ export class Screen4 extends React.Component<IScreen> {
     return {
       topBar: {
         title: {
-          text: 'Screen4',
+          text: 'Notifications',
         },
       },
       bottomTab: {
-        text: 'Screen4',
+        text: 'Notifications',
 
         testID: 'bottomTabTestID',
-        icon: require('../../assets/dog.png'),
+        icon: require('../../assets/Notifications.png'),
 
         textColor: '#979191',
         selectedTextColor: getVar('white_'),
@@ -57,7 +57,7 @@ export class Screen4 extends React.Component<IScreen> {
     return (
       <View style={s.host} testID='HOME_SCREEN'>
         <View style={s.content}>
-          <Text style={s.text}>Screen4</Text>
+          <Text style={s.text}>Notifications</Text>
           <Button
             title='Go to screen5'
             onPress={this.push}
