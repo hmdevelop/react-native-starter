@@ -47,7 +47,7 @@ const drawer = {
         },
         options: {
           bottomTabs: {
-            backgroundColor: vars.primary,
+            backgroundColor: vars.dark,
           },
         },
       },
@@ -65,7 +65,7 @@ const drawer = {
               },
               options: {
                 bottomTabs: {
-                  backgroundColor: vars.primary,
+                  backgroundColor: vars.dark,
                 },
               },
             },
@@ -78,7 +78,7 @@ const drawer = {
               },
               options: {
                 bottomTabs: {
-                  backgroundColor: vars.primary,
+                  backgroundColor: vars.dark,
                 },
               },
             },
@@ -91,7 +91,7 @@ const drawer = {
               },
               options: {
                 bottomTabs: {
-                  backgroundColor: vars.primary,
+                  backgroundColor: vars.dark,
                 },
               },
             },
@@ -104,7 +104,7 @@ const drawer = {
                     name: SCREEN4,
                     options: {
                       bottomTabs: {
-                        backgroundColor: '#7b1fa2',
+                        backgroundColor: vars.dark,
                       },
                     },
                   },
@@ -114,7 +114,7 @@ const drawer = {
                     name: SCREEN5,
                     options: {
                       bottomTabs: {
-                        backgroundColor: vars.primary,
+                        backgroundColor: vars.dark,
                       },
                     },
                   },
@@ -125,7 +125,7 @@ const drawer = {
                   visible: false,
                 },
                 bottomTabs: {
-                  backgroundColor: vars.primary,
+                  backgroundColor: vars.dark,
                 },
               },
             },

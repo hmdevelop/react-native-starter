@@ -38,7 +38,7 @@ export class Home extends React.Component<IScreen> {
         badge: '2',
         badgeColor: 'red',
         testID: 'bottomTabTestID',
-        icon: require('../../assets/bird.png'),
+        icon: require('../../assets/Home.png'),
         textColor: '#979191',
         selectedTextColor: getVar('white_'),
 
@@ -88,11 +88,6 @@ export class Home extends React.Component<IScreen> {
           <Text style={s.text}> Rigel-Native-Eta</Text>
         </View>
 
-        <Button
-          title='open drawer'
-          onPress={this.drawer}
-          testID='OPEN_DRAWER'
-        />
         <Banner
           unitId={unitId}
           size={'SMART_BANNER'}
@@ -101,8 +96,9 @@ export class Home extends React.Component<IScreen> {
             console.log('Advert loaded');
           }}
         />
-
-        <Text style={s.text2}> text2</Text>
+        <Image source={require('../../assets/Post.png')} />
+        <Image source={require('../../assets/Post2.png')} />
+        <Image source={require('../../assets/Post.png')} />
       </ScrollView>
     );
   }

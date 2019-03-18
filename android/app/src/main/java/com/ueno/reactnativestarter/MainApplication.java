@@ -9,6 +9,7 @@ import java.util.List;
 // React Native
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactApplication;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import cl.json.RNSharePackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;

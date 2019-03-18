@@ -177,6 +177,7 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':react-native-linear-gradient')
     compile project(':react-native-blur')
     compile project(':react-native-share')
     compile project(':react-native-google-signin')

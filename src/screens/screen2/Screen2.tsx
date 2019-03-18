@@ -27,11 +27,11 @@ export class Screen2 extends React.Component<IScreen> {
         },
       },
       bottomTab: {
-        text: 'Screen2',
-        badge: 'Yups!',
+        text: 'Streams',
+
         badgeColor: 'red',
         testID: 'bottomTabTestID',
-        icon: require('../../assets/teddy-bear.png'),
+        icon: require('../../assets/Streams.png'),
 
         textColor: '#979191',
         selectedTextColor: getVar('white_'),
