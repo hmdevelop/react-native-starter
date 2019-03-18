@@ -82,19 +82,25 @@ export class Card extends React.PureComponent<IProps> {
           </View>
           <View style={s.bodyFooter}>
             <View style={s.bodyFooterLeft}>
-              <Image source={require('../../assets/Like.png')} />
+              <TouchableOpacity onPress={() => window.alert('Like')}>
+                <Image source={require('../../assets/Like.png')} />
+              </TouchableOpacity>
               <Text style={s.bodyFooterLeftText}>1125</Text>
-              <Image
-                style={{ marginLeft: 10 }}
-                source={require('../../assets/Comments.png')}
-              />
+              <TouchableOpacity onPress={() => window.alert('Comments')}>
+                <Image
+                  style={{ marginLeft: 10 }}
+                  source={require('../../assets/Comments.png')}
+                />
+              </TouchableOpacity>
               <Text style={s.bodyFooterLeftText}>1125</Text>
             </View>
             <View style={s.bodyFooterRight}>
-              <Image
-                style={{ marginLeft: 10 }}
-                source={require('../../assets/Share.png')}
-              />
+              <TouchableOpacity onPress={() => window.alert('Share')}>
+                <Image
+                  style={{ marginLeft: 10 }}
+                  source={require('../../assets/Share.png')}
+                />
+              </TouchableOpacity>
             </View>
           </View>
         </View>

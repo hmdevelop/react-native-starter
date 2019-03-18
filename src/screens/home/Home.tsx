@@ -88,6 +88,8 @@ export class Home extends React.Component<IScreen> {
         testID='HOME_SCREEN'
       >
         <Card />
+        <Card />
+        <Card />
       </ScrollView>
     );
   }
