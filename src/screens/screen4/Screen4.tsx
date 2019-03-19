@@ -31,9 +31,10 @@ export class Screen4 extends React.Component<IScreen> {
 
         testID: 'bottomTabTestID',
         icon: require('../../assets/Notifications.png'),
-
+        iconColor: '#979191',
         textColor: '#979191',
-        selectedTextColor: getVar('white_'),
+        selectedTextColor: '#F54B64',
+        selectedIconColor: '#F54B64',
 
         fontSize: normalize(10),
       },

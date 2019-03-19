@@ -35,13 +35,14 @@ export class Home extends React.Component<IScreen> {
       },
       bottomTab: {
         text: 'Home',
-        badge: '2',
+
         badgeColor: 'red',
         testID: 'bottomTabTestID',
         icon: require('../../assets/Home.png'),
+        iconColor: '#979191',
         textColor: '#979191',
-        selectedTextColor: getVar('white_'),
-
+        selectedTextColor: '#F54B64',
+        selectedIconColor: '#F54B64',
         fontSize: normalize(10),
       },
     };
