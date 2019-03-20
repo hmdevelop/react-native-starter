@@ -44,11 +44,6 @@ export class Card extends React.PureComponent<IProps> {
       accessibilityTraits.push('disabled');
     }
 
-    const Touchable: any =
-      Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
-    const titleLabel =
-      Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
-
     return (
       <View style={s.container}>
         <View>

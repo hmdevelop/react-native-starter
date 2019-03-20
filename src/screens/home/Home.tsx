@@ -28,10 +28,26 @@ const s = require('./Home.scss');
 export class Home extends React.Component<IScreen> {
   static get options() {
     return {
+      drawBehind: true,
       topBar: {
+        barStyle: 'default' | 'black',
         title: {
           text: 'Home',
+          color: 'white',
         },
+        drawBehind: true,
+        height: 70, // TopBar height in dp
+        visible: true,
+
+        background: {
+          color: '#242A37',
+          translucent: true,
+          blur: false,
+        },
+        backButton: {
+          color: 'red',
+        },
+        hideOnScroll: true,
       },
       bottomTab: {
         text: 'Home',
@@ -44,6 +60,10 @@ export class Home extends React.Component<IScreen> {
         selectedTextColor: '#F54B64',
         selectedIconColor: '#F54B64',
         fontSize: normalize(10),
+      },
+      bottomTabs: {
+        elevation: 8, // BottomTabs elevation in dp
+        titleDisplayMode: 'alwaysShow', // Sets the title state for each tab.
       },
     };
   }
@@ -91,7 +111,45 @@ export class Home extends React.Component<IScreen> {
         <Card />
         <Card />
         <Card />
-        <Text style={s.customfont}>Custom Font</Text>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </ScrollView>
     );
   }
