@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   View,
   Text,
@@ -7,21 +7,23 @@ import {
   Platform,
   Linking,
   ScrollView,
-} from 'react-native';
-import { observer } from 'mobx-react';
-import { Navigation } from 'react-native-navigation';
-import CodePush from 'react-native-code-push';
+  Button,
+  TouchableOpacity
+} from "react-native";
+import { observer } from "mobx-react";
+import { Navigation } from "react-native-navigation";
+import CodePush from "react-native-code-push";
 
-import { UIStore } from '../../stores/UIStore';
-import { codePushConfig } from '../../utils/code-push';
-import { COUNTER, IScreen } from '../../screens';
-import { Card } from '../../components/card/Card';
-import firebase from 'react-native-firebase';
+import { UIStore } from "../../stores/UIStore";
+import { codePushConfig } from "../../utils/code-push";
+import { COUNTER, IScreen } from "../../screens";
+import { Card } from "../../components/card/Card";
+import firebase from "react-native-firebase";
 
-import { getVar } from 'react-native-ueno-css-modules';
-import { normalize } from '../../helpers/normalize.js';
+import { getVar } from "react-native-ueno-css-modules";
+import { normalize } from "../../helpers/normalize.js";
 
-const s = require('./Home.scss');
+const s = require("./Home.scss");
 
 @CodePush(codePushConfig())
 @observer
@@ -30,41 +32,41 @@ export class Home extends React.Component<IScreen> {
     return {
       drawBehind: true,
       topBar: {
-        barStyle: 'default' | 'black',
+        barStyle: "default" | "black",
         title: {
-          text: 'Home',
-          color: 'white',
+          text: "Home",
+          color: "white"
         },
         drawBehind: true,
         height: 70, // TopBar height in dp
         visible: true,
 
         background: {
-          color: '#242A37',
+          color: "#242A37",
           translucent: true,
-          blur: false,
+          blur: false
         },
         backButton: {
-          color: 'red',
+          color: "red"
         },
-        hideOnScroll: true,
+        hideOnScroll: true
       },
       bottomTab: {
-        text: 'Home',
+        text: "Home",
 
-        badgeColor: 'red',
-        testID: 'bottomTabTestID',
-        icon: require('../../assets/Home.png'),
-        iconColor: '#979191',
-        textColor: '#979191',
-        selectedTextColor: '#F54B64',
-        selectedIconColor: '#F54B64',
-        fontSize: normalize(10),
+        badgeColor: "red",
+        testID: "bottomTabTestID",
+        icon: require("../../assets/Home.png"),
+        iconColor: "#979191",
+        textColor: "#979191",
+        selectedTextColor: "#F54B64",
+        selectedIconColor: "#F54B64",
+        fontSize: normalize(10)
       },
       bottomTabs: {
         elevation: 8, // BottomTabs elevation in dp
-        titleDisplayMode: 'alwaysShow', // Sets the title state for each tab.
-      },
+        titleDisplayMode: "alwaysShow" // Sets the title state for each tab.
+      }
     };
   }
 
@@ -75,93 +77,117 @@ export class Home extends React.Component<IScreen> {
   public onCounterScreenPress = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: COUNTER,
-      },
+        name: COUNTER
+      }
     });
-  }
+  };
 
   public drawer = () => {
     Navigation.mergeOptions(this.props.componentId, {
       sideMenu: {
         left: {
-          visible: true,
-        },
-      },
+          visible: true
+        }
+      }
     });
-  }
+  };
 
   public _goToURL = () => {
-    Linking.openURL('https://github.com/hmdevelop/rigel-app');
-  }
+    Linking.openURL("https://github.com/hmdevelop/rigel-app");
+  };
+
+  public push = () => {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: "ueno-rns.Screen5",
+        options: {}
+      }
+    });
+  };
 
   public render() {
     const Banner = firebase.admob.Banner;
     const AdRequest = firebase.admob.AdRequest;
     const request = new AdRequest();
     const unitId =
-      Platform.OS === 'ios'
-        ? 'ca-app-pub-3940256099942544/2934735716'
-        : 'ca-app-pub-3940256099942544/6300978111';
+      Platform.OS === "ios"
+        ? "ca-app-pub-3940256099942544/2934735716"
+        : "ca-app-pub-3940256099942544/6300978111";
     return (
-      <ScrollView
-        style={s.host}
-        contentContainerStyle={{ alignItems: 'center' }}
-        testID='HOME_SCREEN'
-      >
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </ScrollView>
+      <View style={{ flex: 1 }}>
+        <ScrollView
+          style={s.host}
+          contentContainerStyle={{ alignItems: "center" }}
+          testID="HOME_SCREEN"
+        >
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ScrollView>
+        <TouchableOpacity
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+            position: "absolute",
+            bottom: 30,
+            right: 15
+          }}
+          onPress={this.push}
+        >
+          <Image source={require("../../assets/quill.png")} />
+        </TouchableOpacity>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
   },
   absolute: {
     width: 300,
-    height: 100,
-  },
+    height: 100
+  }
 });
