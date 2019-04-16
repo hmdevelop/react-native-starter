@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   View,
   Text,
@@ -8,8 +8,9 @@ import {
   Platform,
   AccessibilityTrait,
   ViewStyle,
-  Image,
-} from 'react-native';
+  Image
+} from "react-native";
+import Share from "react-native-share";
 
 interface IProps {
   title: string;
@@ -21,9 +22,19 @@ interface IProps {
   onPress?(event: GestureResponderEvent): void;
 }
 
-const s = require('./Card.scss');
+const s = require("./Card.scss");
 
 export class Card extends React.PureComponent<IProps> {
+  public share = () => {
+    const shareOptions = {
+      title: "Share via",
+      message: "some message",
+      url: "some share url",
+      social: Share.Social.WHATSAPP
+    };
+    Share.shareSingle(shareOptions);
+  };
+
   public render() {
     const {
       title,
@@ -32,16 +43,16 @@ export class Card extends React.PureComponent<IProps> {
       style,
       onPress,
       hasTVPreferredFocus,
-      testID,
+      testID
     } = this.props;
     const buttonStyles = [s.button];
     const textStyles = [s.text];
-    const accessibilityTraits: AccessibilityTrait[] = ['button'];
+    const accessibilityTraits: AccessibilityTrait[] = ["button"];
 
     if (disabled) {
       buttonStyles.push(s.button__disabled);
       textStyles.push(s.text__disabled);
-      accessibilityTraits.push('disabled');
+      accessibilityTraits.push("disabled");
     }
 
     return (
@@ -49,12 +60,12 @@ export class Card extends React.PureComponent<IProps> {
         <View>
           <Image
             style={s.cardImage}
-            source={require('../../assets/postImg.png')}
+            source={require("../../assets/postImg.png")}
           />
 
           <View style={s.cardImageFooter}>
             <Image
-              source={require('../../assets/User.png')}
+              source={require("../../assets/User.png")}
               style={s.cardImageUser}
             />
 
@@ -77,23 +88,23 @@ export class Card extends React.PureComponent<IProps> {
           </View>
           <View style={s.bodyFooter}>
             <View style={s.bodyFooterLeft}>
-              <TouchableOpacity onPress={() => window.alert('Like')}>
-                <Image source={require('../../assets/Like.png')} />
+              <TouchableOpacity onPress={() => window.alert("Like")}>
+                <Image source={require("../../assets/Like.png")} />
               </TouchableOpacity>
               <Text style={s.bodyFooterLeftText}>1125</Text>
-              <TouchableOpacity onPress={() => window.alert('Comments')}>
+              <TouchableOpacity onPress={() => window.alert("Comments")}>
                 <Image
                   style={{ marginLeft: 10 }}
-                  source={require('../../assets/Comments.png')}
+                  source={require("../../assets/Comments.png")}
                 />
               </TouchableOpacity>
               <Text style={s.bodyFooterLeftText}>1125</Text>
             </View>
             <View style={s.bodyFooterRight}>
-              <TouchableOpacity onPress={() => window.alert('Share')}>
+              <TouchableOpacity onPress={this.share}>
                 <Image
                   style={{ marginLeft: 10 }}
-                  source={require('../../assets/Share.png')}
+                  source={require("../../assets/Share.png")}
                 />
               </TouchableOpacity>
             </View>
