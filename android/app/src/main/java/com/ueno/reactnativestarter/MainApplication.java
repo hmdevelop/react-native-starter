@@ -9,6 +9,8 @@ import java.util.List;
 // React Native
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactApplication;
+import com.horcrux.svg.SvgPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.cmcewen.blurview.BlurViewPackage;
 import cl.json.RNSharePackage;
@@ -35,6 +37,10 @@ import com.brentvatne.react.ReactVideoPackage;
 import cl.json.ShareApplication;
 import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactRootView;
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
 public class MainApplication extends NavigationApplication implements ShareApplication, ReactApplication {
 
@@ -85,4 +91,5 @@ public class MainApplication extends NavigationApplication implements ShareAppli
     public String getFileProviderAuthority() {
         return BuildConfig.APPLICATION_ID + ".provider";
     }
+
 }
