@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native'
-import colors from '../colors'
+import { StyleSheet } from "react-native";
+import colors from "../colors";
 
 const style = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: "row",
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: 100,
@@ -23,6 +23,6 @@ const style = StyleSheet.create({
     backgroundColor: colors.primary,
     padding: 8
   }
-})
+});
 
-export default style
+export default style;

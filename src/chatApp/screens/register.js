@@ -1,24 +1,24 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, Dimensions, Image } from 'react-native'
-import PhoneInput from 'react-native-phone-input'
-import { inject } from 'mobx-react'
-import * as Animatable from 'react-native-animatable'
+import React, { Component } from "react";
+import { View, Text, TouchableOpacity, Dimensions, Image } from "react-native";
+import PhoneInput from "react-native-phone-input";
+import { inject } from "mobx-react";
+import * as Animatable from "react-native-animatable";
 
-import style from '../theme/index'
-import colors from '../theme/colors'
-@inject('User')
+import style from "../theme/index";
+import colors from "../theme/colors";
+@inject("User")
 export default class Register extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      countryCode: '+91',
-      phoneNumber: ''
-    }
-    this.screenWidth = Dimensions.get('window').width
+      countryCode: "+90",
+      phoneNumber: ""
+    };
+    this.screenWidth = Dimensions.get("window").width;
   }
 
   componentDidMount() {
-    this.setState({ countryCode: this.phone.getCountryCode() })
+    this.setState({ countryCode: this.phone.getCountryCode() });
     // this.phone.focus()
   }
 
@@ -26,17 +26,17 @@ export default class Register extends Component {
     return (
       <View style={style.container}>
         <Image
-          source={require('../img/register-bg.png')}
+          source={require("../img/register-bg.png")}
           style={{
             width: this.screenWidth,
-            position: 'absolute',
+            position: "absolute",
             bottom: 0
           }}
         />
         <Animatable.View
           ref={inst => (this.content = inst)}
           style={style.content}
-          animation={'flipInX'}
+          animation={"flipInX"}
         >
           <Text style={style.verifyText}>Verify your number</Text>
           <Text style={style.smsText}>{"You'll get a code via SMS"}</Text>
@@ -50,7 +50,7 @@ export default class Register extends Component {
               borderWidth: 0.5,
               elevation: 8
             }}
-            initialCountry={'in'}
+            initialCountry={"in"}
             textStyle={{ fontSize: 18, color: colors.text }}
             flagStyle={{ height: 32, width: 42 }}
             onChangePhoneNumber={phoneNumber =>
@@ -64,7 +64,7 @@ export default class Register extends Component {
             }
           />
           <Text style={style.signinText}>
-            By signin up, You agree to the{' '}
+            By signin up, You agree to the{" "}
             {<Text style={style.termsText}>Terms &amp; Conditions</Text>}
           </Text>
           <TouchableOpacity
@@ -75,16 +75,17 @@ export default class Register extends Component {
           </TouchableOpacity>
         </Animatable.View>
       </View>
-    )
+    );
   }
 
   sendOTP() {
     this.content.flipOutX(400).then(async () => {
-      const _phoneNumber = '+' + this.state.countryCode + this.state.phoneNumber
-      const isConfirm = await this.props.User.auth(_phoneNumber)
+      const _phoneNumber =
+        "+" + this.state.countryCode + this.state.phoneNumber;
+      const isConfirm = await this.props.User.auth(_phoneNumber);
       if (isConfirm) {
-        this.props.navigation.replace('Verify')
+        this.props.navigation.replace("Verify");
       }
-    })
+    });
   }
 }

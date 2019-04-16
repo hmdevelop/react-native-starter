@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import colors from './colors'
+import { StyleSheet } from "react-native";
+import colors from "./colors";
 
 const style = StyleSheet.create({
   container: {
@@ -12,11 +12,11 @@ const style = StyleSheet.create({
   verifyText: {
     fontSize: 24,
     color: colors.text,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
   smsText: {
     fontSize: 18,
-    color: 'rgb(91,82,121)',
+    color: "#F44159",
     marginTop: 12
   },
   signinText: {
@@ -24,7 +24,7 @@ const style = StyleSheet.create({
   },
   termsText: {
     color: colors.primary,
-    textDecorationLine: 'underline'
+    textDecorationLine: "underline"
   },
   nextButton: {
     backgroundColor: colors.primary,
@@ -33,18 +33,18 @@ const style = StyleSheet.create({
     paddingLeft: 22,
     marginTop: 46,
     borderRadius: 100,
-    alignSelf: 'center',
+    alignSelf: "center",
     elevation: 8
   },
   footerButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end'
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end"
   },
   footerButtonText: {
     color: colors.white,
     fontSize: 20,
-    fontWeight: '500'
+    fontWeight: "500"
   },
   textInput: {
     marginTop: 32,
@@ -54,18 +54,18 @@ const style = StyleSheet.create({
   },
   load: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: "center",
+    alignItems: "center"
   },
   addButton: {
     padding: 12,
     borderRadius: 50,
     backgroundColor: colors.primary,
-    position: 'absolute',
+    position: "absolute",
     bottom: 24,
     right: 24,
     elevation: 10
   }
-})
+});
 
-export default style
+export default style;

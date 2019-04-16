@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 import ProgressiveImage from "./progressiveImage";
@@ -15,7 +15,7 @@ export const ChatHeader = props => {
         alignItems: "center",
         paddingLeft: 4,
         paddingRight: 4,
-        paddingTop: 4,
+        paddingTop: 10,
         paddingBottom: 4
       }}
     >
@@ -29,14 +29,9 @@ export const ChatHeader = props => {
           marginLeft: 12
         }}
       >
-        <ProgressiveImage
+        <Image
+          style={{ width: 60, height: 60, borderRadius: 30 }}
           source={{ uri: props.uri }}
-          style={{
-            width: 42,
-            height: 42,
-            borderRadius: 100,
-            borderWidth: 1
-          }}
           thumbnail={require("../img/profile.png")}
         />
       </View>

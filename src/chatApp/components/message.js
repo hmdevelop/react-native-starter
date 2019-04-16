@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
-import PropTypes from 'prop-types'
-import Svg, { Path } from 'react-native-svg'
-import { moderateScale } from 'react-native-size-matters'
-import { inject } from 'mobx-react'
+import React, { Component } from "react";
+import { View, Text } from "react-native";
+import PropTypes from "prop-types";
+import Svg, { Path } from "react-native-svg";
+import { moderateScale } from "react-native-size-matters";
+import { inject } from "mobx-react";
 
-import styles from '../theme/component/message'
+import styles from "../theme/component/message";
 
-@inject('Chat')
+@inject("Chat")
 export default class Message extends Component {
   render() {
     return (
@@ -16,16 +16,16 @@ export default class Message extends Component {
           ? this.senderMsgView()
           : this.receiverMsgView()}
       </View>
-    )
+    );
   }
 
   receiverMsgView = () => {
     return (
       <View style={[styles.item, styles.itemIn]}>
         <View
-          style={[styles.balloon, { padding: 4, backgroundColor: '#e2e2e2' }]}
+          style={[styles.balloon, { padding: 4, backgroundColor: "#e2e2e2" }]}
         >
-          <Text style={{ color: '#333' }}>{this.props.text}</Text>
+          <Text style={{ color: "#333" }}>{this.props.text}</Text>
           <View style={[styles.arrowContainer, styles.arrowLeftContainer]}>
             <Svg
               style={styles.arrowLeft}
@@ -44,14 +44,14 @@ export default class Message extends Component {
           </View>
         </View>
       </View>
-    )
-  }
+    );
+  };
 
   senderMsgView = () => {
     return (
       <View style={[styles.item, styles.itemOut]}>
-        <View style={[styles.balloon, { backgroundColor: '#7264af' }]}>
-          <Text style={{ color: '#fff' }}>{this.props.text}</Text>
+        <View style={[styles.balloon, { backgroundColor: "#F56157" }]}>
+          <Text style={{ color: "#fff" }}>{this.props.text}</Text>
           <View style={[styles.arrowContainer, styles.arrowRightContainer]}>
             <Svg
               style={styles.arrowRight}
@@ -62,7 +62,7 @@ export default class Message extends Component {
             >
               <Path
                 d="M48,35c-7-4-6-8.75-6-17.5C28,17.5,29,35,48,35z"
-                fill={'#7264af'}
+                fill={"#F56157"}
                 x="0"
                 y="0"
               />
@@ -70,10 +70,10 @@ export default class Message extends Component {
           </View>
         </View>
       </View>
-    )
-  }
+    );
+  };
 }
 
 Message.propTypes = {
   text: PropTypes.string.isRequired
-}
+};

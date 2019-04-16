@@ -6,16 +6,7 @@ import HeaderIcon from "./headerIcon";
 
 export const Header = props => {
   return (
-    <ImageBackground
-      source={require("../img/header-bg.png")}
-      style={{
-        height: 70,
-        position: props.absolute ? "absolute" : "relative",
-        top: 0,
-        zIndex: -99,
-        width: Dimensions.get("window").width
-      }}
-    >
+    <View style={{ backgroundColor: "#212530", paddingTop: 15 }}>
       <View
         style={{
           flexDirection: "row",
@@ -27,7 +18,7 @@ export const Header = props => {
           {props.back ? (
             <HeaderIcon
               name={"arrow-back"}
-              style={{ marginTop: 8 }}
+              style={{ marginTop: 8, color: "#7E797B" }}
               onPress={() => props.nav.goBack()}
             />
           ) : (
@@ -35,7 +26,7 @@ export const Header = props => {
           )}
           <Text
             style={{
-              color: colors.white,
+              color: "#7E797B",
               fontSize: 20,
               margin: 8,
               marginLeft: props.back ? 8 : 16,
@@ -49,13 +40,13 @@ export const Header = props => {
         {props.rightIcon ? (
           <HeaderIcon
             name={props.rightIcon}
-            style={{ marginRight: 16 }}
+            style={{ marginRight: 16, color: "#7E797B" }}
             onPress={() => props.nav.navigate("Profile")}
           />
         ) : (
           <View />
         )}
       </View>
-    </ImageBackground>
+    </View>
   );
 };

@@ -31,26 +31,7 @@ export class Home extends React.Component<IScreen> {
   static get options() {
     return {
       drawBehind: true,
-      topBar: {
-        barStyle: "default" | "black",
-        title: {
-          text: "Home",
-          color: "white"
-        },
-        drawBehind: true,
-        height: 70, // TopBar height in dp
-        visible: true,
 
-        background: {
-          color: "#242A37",
-          translucent: true,
-          blur: false
-        },
-        backButton: {
-          color: "red"
-        },
-        hideOnScroll: true
-      },
       bottomTab: {
         text: "Home",
 
