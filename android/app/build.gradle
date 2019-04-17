@@ -177,8 +177,8 @@ configurations.all {
 }
 
 dependencies {
-    compile project(':react-native-svg')
     compile project(':react-native-gesture-handler')
+    compile project(':react-native-svg')
     compile project(':react-native-linear-gradient')
     compile project(':react-native-blur')
     compile project(':react-native-share')
@@ -206,6 +206,8 @@ dependencies {
 
   // Authentication
   implementation "com.google.firebase:firebase-auth:16.1.0"
+
+    implementation "com.google.firebase:firebase-database:16.1.0"
 
 
     // Other implementations
