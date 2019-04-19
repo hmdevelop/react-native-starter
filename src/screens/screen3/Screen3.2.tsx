@@ -7,7 +7,7 @@ import {
   Platform,
   FlatList
 } from "react-native";
-import { observer, Provider, inject } from "mobx-react";
+import { observer } from "mobx-react";
 import { Navigation } from "react-native-navigation";
 import CodePush from "react-native-code-push";
 
@@ -22,9 +22,6 @@ import { getVar } from "react-native-ueno-css-modules";
 import { normalize } from "../../helpers/normalize.js";
 
 import Chat from "../../chatApp/App";
-
-import User from "../../chatApp/store/user";
-import stores from "../../chatApp/store";
 
 const list = [
   {
@@ -44,8 +41,8 @@ const list = [
 const s = require("./Screen3.scss");
 
 @CodePush(codePushConfig())
-@inject("User")
-export class Screen extends React.Component<IScreen> {
+@observer
+export class Screen3 extends React.Component<IScreen> {
   static get options() {
     return {
       bottomTab: {
@@ -86,10 +83,7 @@ export class Screen extends React.Component<IScreen> {
   public render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
-        <View style={s.content}>
-          <Text>{this.props.phoneNumber}</Text>
-          <Text>his.props.phoneNumber </Text>
-        </View>
+        <Chat />
       </View>
     );
   }
@@ -105,35 +99,3 @@ const styles = StyleSheet.create({
     height: 100
   }
 });
-
-export class Screen3 extends React.Component {
-  static get options() {
-    return {
-      bottomTab: {
-        text: "Messages",
-        badge: "2",
-        badgeColor: "#F54B64",
-        testID: "bottomTabTestID",
-        icon: require("../../assets/Messages.png"),
-
-        iconColor: "#979191",
-        textColor: "#979191",
-        selectedTextColor: "#F54B64",
-        selectedIconColor: "#F54B64",
-
-        fontSize: normalize(10)
-      },
-      bottomTabs: {
-        elevation: 8, // BottomTabs elevation in dp
-        titleDisplayMode: "alwaysShow" // Sets the title state for each tab.
-      }
-    };
-  }
-  render() {
-    return (
-      <Provider {...stores}>
-        <Screen />
-      </Provider>
-    );
-  }
-}

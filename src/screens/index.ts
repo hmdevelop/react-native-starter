@@ -87,12 +87,33 @@ const drawer = {
             }
           },
           {
-            component: {
-              name: SCREEN3,
-              passProps: {
-                text: "This is tab 2"
-              },
+            stack: {
+              children: [
+                {
+                  component: {
+                    name: SCREEN3,
+                    options: {
+                      bottomTabs: {
+                        backgroundColor: vars.dark
+                      }
+                    }
+                  }
+                },
+                {
+                  component: {
+                    name: SCREEN5,
+                    options: {
+                      bottomTabs: {
+                        backgroundColor: vars.dark
+                      }
+                    }
+                  }
+                }
+              ],
               options: {
+                topBar: {
+                  visible: false
+                },
                 bottomTabs: {
                   backgroundColor: vars.dark
                 }

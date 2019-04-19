@@ -67,10 +67,6 @@ export default class Register extends Component {
             By signin up, You agree to the{" "}
             {<Text style={style.termsText}>Terms &amp; Conditions</Text>}
           </Text>
-          <Text style={style.signinText}>
-            By signin up, You agree to the{" "}
-            {<Text style={style.termsText}>Terms &amp; Conditions</Text>}
-          </Text>
           <TouchableOpacity
             style={style.nextButton}
             onPress={() => this.sendOTP()}
@@ -86,10 +82,9 @@ export default class Register extends Component {
     this.content.flipOutX(400).then(async () => {
       const _phoneNumber =
         "+" + this.state.countryCode + this.state.phoneNumber;
-      try {
-        const isConfirm = await this.props.User.auth(_phoneNumber);
-      } catch {
-        this.props.navigation.replace("Profile");
+      const isConfirm = await this.props.User.auth(_phoneNumber);
+      if (isConfirm) {
+        this.props.navigation.replace("Verify");
       }
     });
   }
