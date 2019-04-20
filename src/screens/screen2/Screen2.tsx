@@ -54,6 +54,7 @@ export class Screen2 extends React.Component<IScreen> {
     return (
       <View style={s.host} testID='HOME_SCREEN'>
         <View style={s.content}>
+          <Text style={s.text}>Screen2</Text>
           <Text style={s.text}>Streams</Text>
         </View>
       </View>

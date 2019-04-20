@@ -58,13 +58,14 @@ export class Screen4 extends React.Component<IScreen> {
     return (
       <View style={s.host} testID='HOME_SCREEN'>
         <View style={s.content}>
+        <Text style={s.text}>Screen4</Text>
           <Text style={s.text}>Notifications</Text>
           <Button
             title='Go to screen5'
             onPress={this.push}
             style={s.counter__button}
           />
-          <Text style={s.text}>Screen4ss</Text>
+      
           <LinearGradient
             colors={['#4c669f', '#3b5998', '#192f6a']}
             style={{
