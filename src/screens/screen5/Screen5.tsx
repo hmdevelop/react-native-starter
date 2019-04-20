@@ -22,15 +22,14 @@ export class Screen5 extends React.Component<IScreen> {
     return {
       topBar: {
         title: {
-          text: 'Screen5',
+          text: 'Notifications',
         },
       },
       bottomTab: {
-        text: 'Screen5',
+        text: 'Notifications',
 
         testID: 'bottomTabTestID',
-        icon: require('../../assets/dog.png'),
-
+        icon: require('../../assets/Notifications.png'),
         iconColor: '#979191',
         textColor: '#979191',
         selectedTextColor: '#F54B64',

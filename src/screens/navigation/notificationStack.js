@@ -22,7 +22,7 @@ export const    notificationStack = {
               children: [
                 {
                     component: {
-                      name: SCREEN4,
+                      name: SCREEN5,
                       options: {
                         bottomTabs: {
                           backgroundColor: vars.dark
@@ -32,7 +32,7 @@ export const    notificationStack = {
                   },
                   {
                     component: {
-                      name: SCREEN5,
+                      name: SCREEN4,
                       options: {
                         bottomTabs: {
                           backgroundColor: vars.dark
