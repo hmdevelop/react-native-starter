@@ -1,6 +1,5 @@
 import { Navigation } from "react-native-navigation";
 
-import { Home } from "../home/Home";
  
 import vars from "../../utils/themevars.js";
  

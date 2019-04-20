@@ -1,9 +1,5 @@
 import { Navigation } from "react-native-navigation";
-
  
-import { Screen3 } from "../screen3/Screen3";
- 
-import { Screen5 } from "../screen5/Screen5";
  
 import vars from "../../utils/themevars.js";
 

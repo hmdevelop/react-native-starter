@@ -1,8 +1,6 @@
 import { Navigation } from "react-native-navigation";
 
  
-import { Screen4 } from "../screen4/Screen4";
-import { Screen5 } from "../screen5/Screen5";
  
 // @ts-ignore
 import vars from "../../utils/themevars.js";
