@@ -9,17 +9,13 @@ import vars from "../../utils/themevars.js";
 
  
  
-
-export const Screens = new Map();
+ 
 
  
 export const SCREEN4 = "ueno-rns.Screen4";
 export const SCREEN5 = "ueno-rns.Screen5";
  
-
  
-Screens.set(SCREEN4, Screen4);
-Screens.set(SCREEN5, Screen5);
  
 
 

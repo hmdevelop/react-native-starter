@@ -5,12 +5,12 @@ import { Home } from "../home/Home";
 import vars from "../../utils/themevars.js";
  
 
-export const Screens = new Map();
+ 
 
 export const HOME = "ueno-rns.Home";
  
 
-Screens.set(HOME, Home);
+ 
  
 
 
