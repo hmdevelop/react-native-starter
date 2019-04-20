@@ -88,7 +88,10 @@ export class Card extends React.PureComponent<IProps> {
           </View>
           <View style={s.bodyFooter}>
             <View style={s.bodyFooterLeft}>
-              <TouchableOpacity onPress={() => window.alert("Like")}>
+              <TouchableOpacity onPress={() => {
+                window.alert("Like");
+                console.log("Like");
+                }}>
                 <Image source={require("../../assets/Like.png")} />
               </TouchableOpacity>
               <Text style={s.bodyFooterLeftText}>1125</Text>

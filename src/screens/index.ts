@@ -12,6 +12,9 @@ import { getVar } from "react-native-ueno-css-modules";
 // @ts-ignore
 import vars from "../utils/themevars.js";
 
+import {left} from './navigation/left'
+import {center} from './navigation/center'
+
 export interface IScreen {
   componentId: string;
   testID?: string;
@@ -39,124 +42,8 @@ Screens.set(DRAWER, Drawer);
 
 const drawer = {
   sideMenu: {
-    left: {
-      component: {
-        name: DRAWER,
-        passProps: {
-          text: "This is a left side menu screen"
-        },
-        options: {
-          bottomTabs: {
-            backgroundColor: vars.dark
-          }
-        }
-      }
-    },
-    center: {
-      bottomTabs: {
-        topBar: {
-          visible: false
-        },
-        backgroundColor: "blue",
-        children: [
-          {
-            component: {
-              name: HOME,
-              passProps: {
-                text: "This is tab 1",
-                myFunction: () => "Hello from a function!"
-              },
-              options: {
-                bottomTabs: {
-                  backgroundColor: vars.dark
-                }
-              }
-            }
-          },
-          {
-            component: {
-              name: SCREEN2,
-              passProps: {
-                text: "This is tab 2"
-              },
-              options: {
-                bottomTabs: {
-                  backgroundColor: vars.dark
-                }
-              }
-            }
-          },
-          {
-            stack: {
-              children: [
-                {
-                  component: {
-                    name: SCREEN3,
-                    options: {
-                      bottomTabs: {
-                        backgroundColor: vars.dark
-                      }
-                    }
-                  }
-                },
-                {
-                  component: {
-                    name: SCREEN5,
-                    options: {
-                      bottomTabs: {
-                        backgroundColor: vars.dark
-                      }
-                    }
-                  }
-                }
-              ],
-              options: {
-                topBar: {
-                  visible: false
-                },
-                bottomTabs: {
-                  backgroundColor: vars.dark
-                }
-              }
-            }
-          },
-          {
-            stack: {
-              children: [
-                {
-                  component: {
-                    name: SCREEN4,
-                    options: {
-                      bottomTabs: {
-                        backgroundColor: vars.dark
-                      }
-                    }
-                  }
-                },
-                {
-                  component: {
-                    name: SCREEN5,
-                    options: {
-                      bottomTabs: {
-                        backgroundColor: vars.dark
-                      }
-                    }
-                  }
-                }
-              ],
-              options: {
-                topBar: {
-                  visible: false
-                },
-                bottomTabs: {
-                  backgroundColor: vars.dark
-                }
-              }
-            }
-          }
-        ]
-      }
-    }
+    left: left,
+    center:center
   }
 };
 
