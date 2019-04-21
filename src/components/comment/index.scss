@@ -1,116 +1,89 @@
-@import '../../screens/variables.scss';
+@import "../../screens/variables.scss";
 
 .container {
   width: 370px;
- 
+
   background-color: $pdark;
   border-radius: 10px;
   margin-top: 5px;
- 
+
   border-bottom-color: black;
   border-bottom-width: 1px;
-   
 }
 
-.header{
+.header {
   width: 375px;
- 
- 
+
   display: flex;
   flex-direction: row;
-
 }
-.headerLeft{
+.headerLeft {
   width: 75px;
   padding: 10px;
- 
-  
-  
-
 }
 
-.headerRight{
-  width:300px;
+.headerRight {
+  width: 300px;
   height: 60px;
 
   padding: 10px;
- 
-  
-  
 }
 
-.headerRightTop{
-  width:300px;
-  height:30px;
- 
-  
-}
-
-.headerRightBottom{
-  width:300px;
+.headerRightTop {
+  width: 300px;
   height: 30px;
- 
-  
 }
 
+.headerRightBottom {
+  width: 300px;
+  height: 30px;
+}
 
-.body{
+.body {
   padding: 20px;
 }
 
- 
-
-.headerImg{
-  width:60px;
-  height:60px;
-
+.headerImg {
+  width: 60px;
+  height: 60px;
 
   padding: 10px;
   border-radius: 30px;
- 
 }
-
-
 
 .text {
-  color: white
+  color: white;
 }
 
-
-
 .headerRightTopText {
-  height: 22px;	
-width: 114px;
-  color: #FFFFFF;
-    font-family: Avenir;
-      font-size: 17px;
-        font-weight: 900;	
-        letter-spacing: -0.41px;
-          line-height: 22px;
-        }
+  height: 22px;
+  width: 114px;
+  color: #ffffff;
+  font-family: Avenir;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: -0.41px;
+  line-height: 22px;
+}
 
+.headerRightBottomText {
+  height: 18px;
+  width: 68px;
+  color: #4e586e;
+  font-family: Avenir;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: -0.08px;
+  line-height: 18px;
+}
 
-.headerRightBottomText{
-          height: 18px;
-          width: 68px;
-          color: #4E586E;
-          font-family: Avenir;
-          font-size: 13px;
-          font-weight: 300;
-          letter-spacing: -0.08px;
-          line-height: 18px;
-        }
-
-
-  .bodyText {
-          height: 66px;
-          width: 290px;
-          color: #FFFFFF;
-          font-family: Avenir;
-          font-size: 17px;
-          font-weight: 300;
-          letter-spacing: -0.41px;
-          line-height: 22px;
-        }
-
- 
+.bodyText {
+  height: 66px;
+  width: 290px;
+  color: #ffffff;
+  font-family: Avenir;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: -0.41px;
+  line-height: 22px;
+}

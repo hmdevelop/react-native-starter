@@ -11,12 +11,12 @@ import {
   Image
 } from "react-native";
 import Share from "react-native-share";
-import TimeAgo from 'react-native-timeago';
+import TimeAgo from "react-native-timeago";
 
 import { Navigation } from "react-native-navigation";
 import { UIStore } from "../../stores/UIStore";
 
-import {cards} from '../../mock/card';
+import { cards } from "../../mock/card";
 
 const s = require("./Card.scss");
 
@@ -31,11 +31,9 @@ export class Card extends React.PureComponent {
     Share.shareSingle(shareOptions);
   };
 
-
   public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
-
 
   public push = () => {
     Navigation.push(this.props.componentId, {
@@ -46,34 +44,32 @@ export class Card extends React.PureComponent {
     });
   };
 
-
-
   public render() {
-    const {username,
+    const {
+      username,
       profilpic,
       bodypic,
-      createdAt,body
-      ,comments,likes
-      ,tag,push}=this.props; 
- 
+      createdAt,
+      body,
+      comments,
+      likes,
+      tag,
+      push
+    } = this.props;
 
     return (
       <View style={s.container}>
         <View>
-          <Image
-             style={s.cardImage}
-            source={{uri:bodypic}}
-          />
+          <Image style={s.cardImage} source={{ uri: bodypic }} />
 
           <View style={s.cardImageFooter}>
-            <Image
-                source={{uri:profilpic}}
-              style={s.cardImageUser}
-            />
+            <Image source={{ uri: profilpic }} style={s.cardImageUser} />
 
             <View style={s.cardImageUserName}>
               <Text style={s.cardImageUserNameText}>{username}</Text>
-              <Text style={s.cardImageTimeAgo}><TimeAgo time={createdAt} /> </Text>
+              <Text style={s.cardImageTimeAgo}>
+                <TimeAgo time={createdAt} />{" "}
+              </Text>
             </View>
           </View>
         </View>
@@ -82,16 +78,16 @@ export class Card extends React.PureComponent {
             <Text style={s.bodyTopText}>{tag}</Text>
           </View>
           <View style={s.bodyMid}>
-            <Text style={s.bodyMidText}>
-          {body}
-            </Text>
+            <Text style={s.bodyMidText}>{body}</Text>
           </View>
           <View style={s.bodyFooter}>
             <View style={s.bodyFooterLeft}>
-              <TouchableOpacity onPress={() => {
-                window.alert("Like");
-                console.log("Like");
-                }}>
+              <TouchableOpacity
+                onPress={() => {
+                  window.alert("Like");
+                  console.log("Like");
+                }}
+              >
                 <Image source={require("../../assets/Like.png")} />
               </TouchableOpacity>
               <Text style={s.bodyFooterLeftText}>{likes}</Text>
@@ -118,5 +114,4 @@ export class Card extends React.PureComponent {
   }
 }
 {
-
 }

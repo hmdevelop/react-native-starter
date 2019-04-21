@@ -18,7 +18,7 @@ import { UIStore } from "../../stores/UIStore";
 import { codePushConfig } from "../../utils/code-push";
 import { COUNTER, IScreen } from "../../screens";
 import Comment from "../../components/comment";
-import {Card} from "../../components/card/Card";
+import { Card } from "../../components/card/Card";
 import firebase from "react-native-firebase";
 
 import { getVar } from "react-native-ueno-css-modules";
@@ -26,10 +26,8 @@ import { normalize } from "../../helpers/normalize.js";
 
 const s = require("./Home.scss");
 
-import {comments,cards} from '../../mock'
-import List from '../../components/list';
-
-
+import { comments, cards } from "../../mock";
+import List from "../../components/list";
 
 @CodePush(codePushConfig())
 @observer
@@ -92,14 +90,9 @@ export class Home extends React.Component<IScreen> {
     });
   };
 
-
-
-
-
   public render() {
-
     const comment = comments[0];
-    
+
     return (
       <View style={{ flex: 1 }}>
         <ScrollView
@@ -107,8 +100,11 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-       <List  data={cards}  RenderItem={Card } componentId={this.props.componentId} /> 
-         
+          <List
+            data={cards}
+            RenderItem={Card}
+            componentId={this.props.componentId}
+          />
         </ScrollView>
         <TouchableOpacity
           style={{
