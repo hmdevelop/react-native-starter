@@ -14,7 +14,7 @@ export const cards = [
     {
         id:2,
         username:"ahmet topal",
-        bodypic:"https://sfwallpaper.com/images/random-image-29.jpg",
+        bodypic:"https://sfwallpaper.com/images/random-image-12.jpg",
         profilpic:"https://randomuser.me/api/portraits/men/19.jpg",
         createdAt:"2015-06-21T06:24:44.124Z",
         tag:"#relax",
@@ -25,7 +25,7 @@ export const cards = [
     {   
         id:3,
         username:"mehmet topal",
-        bodypic:"https://sfwallpaper.com/images/random-image-19.jpg",
+        bodypic:"https://sfwallpaper.com/images/random-image-15.jpg",
         profilpic:"https://randomuser.me/api/portraits/men/22.jpg",
         createdAt:"2015-06-21T06:24:44.124Z",
         tag:"#relax",

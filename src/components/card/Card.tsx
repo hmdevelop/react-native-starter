@@ -96,11 +96,5 @@ export class Card extends React.PureComponent {
   }
 }
 {
-  /* <View style={s.cardBody}>
-<Text style={s.cardBodyText}>
-  Coventry is a city with a thousand years of history that has
-  plenty to offer the visiting tourist. Located in the heart of
-  Warwickshire, which is well-known as Shakespeare’s county.
-</Text>
-</View> */
+
 }

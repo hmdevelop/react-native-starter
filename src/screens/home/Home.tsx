@@ -103,7 +103,7 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-          <Card {...cards[0]} />
+       <List  data={cards}  RenderItem={Card} /> 
          
         </ScrollView>
         <TouchableOpacity
