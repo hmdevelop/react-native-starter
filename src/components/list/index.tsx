@@ -14,7 +14,7 @@ export default class List extends Component {
       <View>
       <FlatList
         data={this.props.data}
-         _keyExtractor={({item,index})=> item.username}
+        keyExtractor={(item, index) => index.toString()}
        
         renderItem={({item}) => <RenderItem {...item} /> }
       />
