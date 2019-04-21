@@ -26,6 +26,7 @@ import { normalize } from "../../helpers/normalize.js";
 const s = require("./Home.scss");
 
 import {comments} from '../../mock/comments'
+import List from '../../components/list';
 
 
 
@@ -101,31 +102,8 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-          <Comment  {...comment} />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-           
-          <Comment />
-          <Comment />
-          <Comment />
+          <List  data={comments}  RenderItem={Comment} /> 
+         
         </ScrollView>
         <TouchableOpacity
           style={{
