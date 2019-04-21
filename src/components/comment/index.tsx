@@ -17,7 +17,7 @@ import TimeAgo from 'react-native-timeago';
  
 // Timestamp can be any valid data type accepted in a Moment.js constructor
 // Currently accepts string, number, array, or a Date instance
-let timestamp = "2015-06-21T06:24:44.124Z";
+ 
  
  
 
@@ -45,24 +45,7 @@ export default  class Comment extends React.PureComponent<IProps> {
   };
 
   public render() {
-    const {
-      title,
-      accessibilityLabel,
-      disabled,
-      style,
-      onPress,
-      hasTVPreferredFocus,
-      testID
-    } = this.props;
-    const buttonStyles = [s.button];
-    const textStyles = [s.text];
-    const accessibilityTraits: AccessibilityTrait[] = ["button"];
-
-    if (disabled) {
-      buttonStyles.push(s.button__disabled);
-      textStyles.push(s.text__disabled);
-      accessibilityTraits.push("disabled");
-    }
+     
 
     const {username,profilpic,createdAt,body}=this.props; 
 

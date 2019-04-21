@@ -18,6 +18,7 @@ import { UIStore } from "../../stores/UIStore";
 import { codePushConfig } from "../../utils/code-push";
 import { COUNTER, IScreen } from "../../screens";
 import Comment from "../../components/comment";
+import {Card} from "../../components/card/Card";
 import firebase from "react-native-firebase";
 
 import { getVar } from "react-native-ueno-css-modules";
@@ -25,7 +26,7 @@ import { normalize } from "../../helpers/normalize.js";
 
 const s = require("./Home.scss");
 
-import {comments} from '../../mock/comments'
+import {comments,cards} from '../../mock'
 import List from '../../components/list';
 
 
@@ -102,7 +103,7 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-          <List  data={comments}  RenderItem={Comment} /> 
+          <Card {...cards[0]} />
          
         </ScrollView>
         <TouchableOpacity

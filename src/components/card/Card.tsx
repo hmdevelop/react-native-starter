@@ -11,20 +11,13 @@ import {
   Image
 } from "react-native";
 import Share from "react-native-share";
+import TimeAgo from 'react-native-timeago';
 
-interface IProps {
-  title: string;
-  accessibilityLabel?: string;
-  testID?: string;
-  disabled?: boolean;
-  style?: ViewStyle;
-  hasTVPreferredFocus?: boolean;
-  onPress?(event: GestureResponderEvent): void;
-}
+import {cards} from '../../mock/card';
 
 const s = require("./Card.scss");
 
-export class Card extends React.PureComponent<IProps> {
+export class Card extends React.PureComponent {
   public share = () => {
     const shareOptions = {
       title: "Share via",
@@ -35,55 +28,40 @@ export class Card extends React.PureComponent<IProps> {
     Share.shareSingle(shareOptions);
   };
 
-  public render() {
-    const {
-      title,
-      accessibilityLabel,
-      disabled,
-      style,
-      onPress,
-      hasTVPreferredFocus,
-      testID
-    } = this.props;
-    const buttonStyles = [s.button];
-    const textStyles = [s.text];
-    const accessibilityTraits: AccessibilityTrait[] = ["button"];
 
-    if (disabled) {
-      buttonStyles.push(s.button__disabled);
-      textStyles.push(s.text__disabled);
-      accessibilityTraits.push("disabled");
-    }
+
+
+  public render() {
+    const {username,profilpic,bodypic,createdAt,body,comments,likes,tag}=this.props; 
+ 
 
     return (
       <View style={s.container}>
         <View>
           <Image
-            style={s.cardImage}
-            source={require("../../assets/postImg.png")}
+             style={s.cardImage}
+            source={{uri:bodypic}}
           />
 
           <View style={s.cardImageFooter}>
             <Image
-              source={require("../../assets/User.png")}
+                source={{uri:profilpic}}
               style={s.cardImageUser}
             />
 
             <View style={s.cardImageUserName}>
-              <Text style={s.cardImageUserNameText}>Pearl Freeman</Text>
-              <Text style={s.cardImageTimeAgo}>2 hours ago</Text>
+              <Text style={s.cardImageUserNameText}>{username}</Text>
+              <Text style={s.cardImageTimeAgo}><TimeAgo time={createdAt} /> </Text>
             </View>
           </View>
         </View>
         <View>
           <View style={s.bodyTop}>
-            <Text style={s.bodyTopText}>#relax, #travel</Text>
+            <Text style={s.bodyTopText}>{tag}</Text>
           </View>
           <View style={s.bodyMid}>
             <Text style={s.bodyMidText}>
-              Coventry is a city with a thousand years of history that has
-              plenty to offer the visiting tourist. Located in the heart of
-              Warwickshire, which is well-known as Shakespeare’s county.
+          {body}
             </Text>
           </View>
           <View style={s.bodyFooter}>
@@ -94,14 +72,14 @@ export class Card extends React.PureComponent<IProps> {
                 }}>
                 <Image source={require("../../assets/Like.png")} />
               </TouchableOpacity>
-              <Text style={s.bodyFooterLeftText}>1125</Text>
+              <Text style={s.bodyFooterLeftText}>{likes}</Text>
               <TouchableOpacity onPress={() => window.alert("Comments")}>
                 <Image
                   style={{ marginLeft: 10 }}
                   source={require("../../assets/Comments.png")}
                 />
               </TouchableOpacity>
-              <Text style={s.bodyFooterLeftText}>1125</Text>
+              <Text style={s.bodyFooterLeftText}>{comments}</Text>
             </View>
             <View style={s.bodyFooterRight}>
               <TouchableOpacity onPress={this.share}>
