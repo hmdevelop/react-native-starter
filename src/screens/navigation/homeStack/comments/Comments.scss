@@ -1,0 +1,41 @@
+@import '../../../variables.scss';
+
+.host {
+  flex: 1;
+  background-color: $pdark;
+  padding: 4px;
+}
+
+.content {
+  margin-bottom: 16px;
+  margin-top: 6px;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  width: 80px;
+}
+
+.text {
+  margin-bottom: 10px;
+
+  font-size: 28px;
+}
+
+.box {
+  flex: 2;
+  flex-direction: column;
+  width: 100%;
+
+  padding: 10px;
+}
+
+.text2 {
+  margin-bottom: 10px;
+  color: $white;
+
+  font-size: $p34;
+  margin-top: $p5;
+}

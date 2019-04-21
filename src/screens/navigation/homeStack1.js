@@ -1,7 +1,7 @@
 import { Navigation } from "react-native-navigation";
 
  
-import vars from "../../utils/themevars.js";
+import vars from "../../../utils/themevars.js";
  
 
  
