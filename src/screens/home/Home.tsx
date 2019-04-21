@@ -17,7 +17,7 @@ import CodePush from "react-native-code-push";
 import { UIStore } from "../../stores/UIStore";
 import { codePushConfig } from "../../utils/code-push";
 import { COUNTER, IScreen } from "../../screens";
-import { Card } from "../../components/card/Card";
+import Comment from "../../components/comment";
 import firebase from "react-native-firebase";
 
 import { getVar } from "react-native-ueno-css-modules";
@@ -101,48 +101,31 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+           
+          <Comment />
+          <Comment />
+          <Comment />
         </ScrollView>
         <TouchableOpacity
           style={{
