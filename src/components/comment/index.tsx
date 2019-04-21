@@ -64,6 +64,8 @@ export default  class Comment extends React.PureComponent<IProps> {
       accessibilityTraits.push("disabled");
     }
 
+    const {username,profilpic,createdAt,body}=this.props; 
+
     return (
       <View style={s.container} >
 
@@ -73,7 +75,7 @@ export default  class Comment extends React.PureComponent<IProps> {
           <View style={s.headerLeft} >
     
           <Image
-              source={require("../../assets/Oval.png")}
+              source={{uri:profilpic}}
               style={s.headerImg}
             />
 
@@ -83,14 +85,14 @@ export default  class Comment extends React.PureComponent<IProps> {
               <View style={s.headerRight} >
               <View style={s.headerRightTop} >
 
-               <Text style={s.headerRightTopText}>Augusta Welch</Text>
+               <Text style={s.headerRightTopText}>{ username}</Text>
                   </View>
 
                   <View style={s.headerRightBottomText} >
                 
 
                  <Text style={s.headerRightBottomText}>   
-                 <TimeAgo time={timestamp} />
+                 <TimeAgo time={createdAt} />
                   </Text>
 
               
@@ -103,9 +105,7 @@ export default  class Comment extends React.PureComponent<IProps> {
         </View>
 
         <View style={s.body}> 
-         <Text style={s.bodyText}> I am upset. At this moment,
-         as I sit here typing this up, I am truly upset.
-         Something happened a little while ago.</Text>
+         <Text style={s.bodyText}> {body}</Text>
           </View>
 
        

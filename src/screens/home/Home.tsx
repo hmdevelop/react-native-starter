@@ -25,6 +25,10 @@ import { normalize } from "../../helpers/normalize.js";
 
 const s = require("./Home.scss");
 
+import {comments} from '../../mock/comments'
+
+
+
 @CodePush(codePushConfig())
 @observer
 export class Home extends React.Component<IScreen> {
@@ -87,13 +91,9 @@ export class Home extends React.Component<IScreen> {
   };
 
   public render() {
-    const Banner = firebase.admob.Banner;
-    const AdRequest = firebase.admob.AdRequest;
-    const request = new AdRequest();
-    const unitId =
-      Platform.OS === "ios"
-        ? "ca-app-pub-3940256099942544/2934735716"
-        : "ca-app-pub-3940256099942544/6300978111";
+
+    const comment = comments[0];
+    
     return (
       <View style={{ flex: 1 }}>
         <ScrollView
@@ -101,7 +101,7 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-          <Comment />
+          <Comment  {...comment} />
           <Comment />
           <Comment />
           <Comment />
