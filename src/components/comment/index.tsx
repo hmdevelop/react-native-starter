@@ -13,6 +13,14 @@ import {
 import Share from "react-native-share";
 import { defaultCipherList } from 'constants';
 
+import TimeAgo from 'react-native-timeago';
+ 
+// Timestamp can be any valid data type accepted in a Moment.js constructor
+// Currently accepts string, number, array, or a Date instance
+let timestamp = "2015-06-21T06:24:44.124Z";
+ 
+ 
+
 interface IProps {
   title: string;
   accessibilityLabel?: string;
@@ -79,8 +87,13 @@ export default  class Comment extends React.PureComponent<IProps> {
                   </View>
 
                   <View style={s.headerRightBottomText} >
+                
 
-                 <Text style={s.headerRightBottomText}>5 hours ago</Text>
+                 <Text style={s.headerRightBottomText}>   
+                 <TimeAgo time={timestamp} />
+                  </Text>
+
+              
                  </View>
               
          
@@ -90,7 +103,7 @@ export default  class Comment extends React.PureComponent<IProps> {
         </View>
 
         <View style={s.body}> 
-         <Text style={s.text}> I am upset. At this moment,
+         <Text style={s.bodyText}> I am upset. At this moment,
          as I sit here typing this up, I am truly upset.
          Something happened a little while ago.</Text>
           </View>

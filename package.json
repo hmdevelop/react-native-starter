@@ -62,12 +62,14 @@
     "react-native-share": "^1.1.3",
     "react-native-size-matters": "^0.1.4",
     "react-native-svg": "^9.4.0",
+    "react-native-timeago": "^0.4.0",
     "react-native-ueno-css-modules": "1.0.12",
     "react-native-vector-icons": "^6.1.0",
     "react-native-version-number": "0.3.5",
     "react-native-video": "^4.4.0",
     "react-navigation": "^3.0.2",
-    "react-navigation-transitions": "github:binbytes/react-navigation-transitions"
+    "react-navigation-transitions": "github:binbytes/react-navigation-transitions",
+    "react-timeago": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",

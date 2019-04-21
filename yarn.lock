@@ -8616,6 +8616,11 @@ react-native-tab-view@^1.2.0, react-native-tab-view@^1.3.4:
   dependencies:
     prop-types "^15.6.1"
 
+react-native-timeago@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-timeago/-/react-native-timeago-0.4.0.tgz#653b3a11217a3c6a331de99f9d614b3e58faf523"
+  integrity sha512-L/ephXkzv3cddmHVuBxDFa0gjTpw0Dfe9ccKOnHyjQJgdkapvmumCJtKSgDf1CatfNXaBRgz6ffxTZkRLxICfA==
+
 react-native-ueno-css-modules@1.0.12:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/react-native-ueno-css-modules/-/react-native-ueno-css-modules-1.0.12.tgz#3829291f5012dedf87c68477fd5c3e00316a8bc3"
@@ -8770,6 +8775,11 @@ react-test-renderer@^16.0.0-0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
     react-is "^16.4.1"
+
+react-timeago@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/react-timeago/-/react-timeago-4.4.0.tgz#4520dd9ba63551afc4d709819f52b14b9343ba2b"
+  integrity sha512-Zj8RchTqZEH27LAANemzMR2RpotbP2aMd+UIajfYMZ9KW4dMcViUVKzC7YmqfiqlFfz8B0bjDw2xUBjmcxDngA==
 
 react-timer-mixin@^0.13.2:
   version "0.13.4"
