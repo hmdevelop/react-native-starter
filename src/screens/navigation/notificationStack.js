@@ -11,7 +11,7 @@ import vars from "../../utils/themevars.js";
 
  
 export const SCREEN4 = "ueno-rns.Screen4";
-export const SCREEN5 = "ueno-rns.Screen5";
+export const SCREEN5 = "ueno-rns.Comments";
  
  
  

@@ -13,6 +13,9 @@ import {
 import Share from "react-native-share";
 import TimeAgo from 'react-native-timeago';
 
+import { Navigation } from "react-native-navigation";
+import { UIStore } from "../../stores/UIStore";
+
 import {cards} from '../../mock/card';
 
 const s = require("./Card.scss");
@@ -29,10 +32,29 @@ export class Card extends React.PureComponent {
   };
 
 
+  public componentDidAppear() {
+    UIStore.setComponentId(this.props.componentId);
+  }
+
+
+  public push = () => {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: "ueno-rns.Screen2",
+        options: {}
+      }
+    });
+  };
+
 
 
   public render() {
-    const {username,profilpic,bodypic,createdAt,body,comments,likes,tag}=this.props; 
+    const {username,
+      profilpic,
+      bodypic,
+      createdAt,body
+      ,comments,likes
+      ,tag,push}=this.props; 
  
 
     return (
@@ -73,7 +95,7 @@ export class Card extends React.PureComponent {
                 <Image source={require("../../assets/Like.png")} />
               </TouchableOpacity>
               <Text style={s.bodyFooterLeftText}>{likes}</Text>
-              <TouchableOpacity onPress={() => window.alert("Comments")}>
+              <TouchableOpacity onPress={this.push}>
                 <Image
                   style={{ marginLeft: 10 }}
                   source={require("../../assets/Comments.png")}

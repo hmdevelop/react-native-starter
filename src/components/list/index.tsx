@@ -8,7 +8,7 @@ export default class List extends Component {
  
   render() {
 
-    const {RenderItem} =  this.props ;
+    const {RenderItem,componentId} =  this.props ;
 
     return (
       <View>
@@ -16,7 +16,7 @@ export default class List extends Component {
         data={this.props.data}
         keyExtractor={(item, index) => index.toString()}
        
-        renderItem={({item}) => <RenderItem {...item} /> }
+        renderItem={({item}) => <RenderItem componentId {...item} /> }
       />
       </View>
     )

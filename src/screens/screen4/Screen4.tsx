@@ -48,7 +48,7 @@ export class Screen4 extends React.Component<IScreen> {
   public push = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: 'ueno-rns.Screen5',
+        name: "ueno-rns.Comments",
         options: {},
       },
     });

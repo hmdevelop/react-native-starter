@@ -39,7 +39,7 @@ export class Comments extends React.Component<IScreen> {
       drawBehind: true,
 
       bottomTab: {
-        text: "Home",
+        text: "Comments",
 
         badgeColor: "red",
         testID: "bottomTabTestID",
@@ -103,8 +103,8 @@ export class Comments extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-       <Text> Comments</Text>
-       <List  data={cards}  RenderItem={Card} /> 
+        
+       <List  data={comments}  RenderItem={Comment} /> 
 
          
         </ScrollView>

@@ -86,11 +86,15 @@ export class Home extends React.Component<IScreen> {
   public push = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: "ueno-rns.Screen5",
+        name: "ueno-rns.Comments",
         options: {}
       }
     });
   };
+
+
+
+
 
   public render() {
 
@@ -103,7 +107,7 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-       <List  data={cards}  RenderItem={Card} /> 
+       <List  data={cards}  RenderItem={Card } componentId={this.props.componentId} /> 
          
         </ScrollView>
         <TouchableOpacity
