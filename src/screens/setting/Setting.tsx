@@ -14,6 +14,7 @@ import { getVar } from "react-native-ueno-css-modules";
 import { normalize } from "../../helpers/normalize.js";
 
 const s = require("./Setting.scss");
+import ListItem from "../../components/listitem";
 
 @CodePush(codePushConfig())
 @observer
@@ -52,6 +53,24 @@ export class Setting extends React.Component<IScreen> {
     };
   }
 
+  public list = [
+    {
+      id: 1,
+      title: "User Profile",
+      push: "ueno-rns.Profile"
+    },
+    {
+      id: 2,
+      title: "Settings",
+      push: "ueno-rns.Settings"
+    },
+    {
+      id: 3,
+      title: "Send Us",
+      push: "ueno-rns.SendUs"
+    }
+  ];
+
   public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
@@ -63,7 +82,9 @@ export class Setting extends React.Component<IScreen> {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
-          <Switch value={false} />
+          {this.list.map((item, index) => (
+            <ListItem key={index} title={item.title} val />
+          ))}
         </View>
       </View>
     );
