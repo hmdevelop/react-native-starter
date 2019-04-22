@@ -28,6 +28,8 @@ const s = require("./Home.scss");
 
 import { comments, cards } from "../../mock";
 import List from "../../components/list";
+import listitem from "../../components/listitem";
+import ListItem from "../../components/listitem";
 
 @CodePush(codePushConfig())
 @observer
@@ -100,6 +102,8 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
+          <ListItem title="Profil Ayarları" val />
+          <ListItem title="Profil Ayarları" />
           <List
             funcs={[this.push]}
             data={cards}

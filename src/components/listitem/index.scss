@@ -1,0 +1,30 @@
+@import "../../screens/variables.scss";
+
+.container {
+  width: 92%;
+
+  border-radius: 5px;
+  margin-top: 5px;
+  box-shadow: 1px 2px rgb(68, 66, 66);
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+  display: flex;
+  flex-direction: row;
+}
+.left {
+  border-radius: 5px;
+  width: 66%;
+
+  padding: 10px;
+}
+.right {
+  border-radius: 5px;
+  width: 34%;
+
+  padding: 10px;
+}
+
+.text {
+  color: $white;
+  font-size: 20;
+}

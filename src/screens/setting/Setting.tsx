@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform } from "react-native";
+import { View, Text, Image, StyleSheet, Platform, Switch } from "react-native";
 import { observer } from "mobx-react";
 import { Navigation } from "react-native-navigation";
 import CodePush from "react-native-code-push";
@@ -63,11 +63,7 @@ export class Setting extends React.Component<IScreen> {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
-          <Button
-            title="Go back"
-            onPress={this.push}
-            style={s.counter__button}
-          />
+          <Switch value={false} />
         </View>
       </View>
     );
