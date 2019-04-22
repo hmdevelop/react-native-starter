@@ -10,6 +10,7 @@ export default class List extends Component {
     return (
       <View>
         <FlatList
+          {...this.props}
           data={this.props.data}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => <RenderItem componentId {...item} />}

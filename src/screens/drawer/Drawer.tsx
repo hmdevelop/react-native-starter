@@ -9,7 +9,9 @@ import { codePushConfig } from "../../utils/code-push";
 import { COUNTER, IScreen } from "../../screens";
 import { Button } from "../../components/button/Button";
 
-import { ListItem } from "react-native-elements";
+import { ListItem, Image } from "react-native-elements";
+
+import { cards } from "../../mock/card";
 
 const s = require("./Drawer.scss");
 
@@ -27,16 +29,19 @@ export class Drawer extends React.Component {
   }
   public list = [
     {
-      title: "Appointments",
-      icon: "av-timer"
+      id: 1,
+      title: "User Profile",
+      push: "ueno-rns.Profile"
     },
     {
-      title: "Trips",
-      icon: "flight-takeoff"
+      id: 2,
+      title: "Settings",
+      push: "ueno-rns.Settings"
     },
     {
-      title: "Payments",
-      icon: "shopping-cart"
+      id: 3,
+      title: "Send Us",
+      push: "ueno-rns.SendUs"
     }
   ];
 
@@ -56,11 +61,11 @@ export class Drawer extends React.Component {
     });
   };
 
-  public push2 = () => {
+  public push2 = screen => {
     // @ts-ignore
     Navigation.push(this.props.componentId, {
       component: {
-        name: "ueno-rns.Screen6",
+        name: screen,
         options: {}
       }
     });
@@ -69,21 +74,15 @@ export class Drawer extends React.Component {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
-          <Text style={s.text}>Drawer Menu</Text>
-
-          {this.list.map((item, i) => (
-            <ListItem
-              key={i}
-              title={item.title}
-              leftIcon={{ name: item.icon }}
-              onPress={() => window.alert(item.title)}
-            />
+          <Image style={s.profilpic} source={{ uri: cards[0].profilpic }} />
+          <Text style={s.profilText}> {cards[0].username} </Text>
+          {this.list.map((item, index) => (
+            <View key={index} style={s.ListItem}>
+              <Text style={s.Drawertext} onPress={() => this.push2(item.push)}>
+                {item.title}
+              </Text>
+            </View>
           ))}
-          <Button
-            title="Go to screen6"
-            onPress={this.push2}
-            style={s.counter__button}
-          />
         </View>
       </View>
     );

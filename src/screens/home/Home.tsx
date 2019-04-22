@@ -101,6 +101,7 @@ export class Home extends React.Component<IScreen> {
           testID="HOME_SCREEN"
         >
           <List
+            funcs={[this.push]}
             data={cards}
             RenderItem={Card}
             componentId={this.props.componentId}

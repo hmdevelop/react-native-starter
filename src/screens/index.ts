@@ -9,13 +9,15 @@ import { Screen6 } from "./screen6/Screen6";
 import { Counter } from "./counter/Counter";
 import { Drawer } from "./drawer/Drawer";
 
+import { Setting } from "./setting/Setting";
+
 import { Comments } from "./navigation/homeStack/comments/Comments";
 import { getVar } from "react-native-ueno-css-modules";
 // @ts-ignore
 import vars from "../utils/themevars.js";
 
-import {left} from './navigation/left'
-import {center} from './navigation/center'
+import { left } from "./navigation/left";
+import { center } from "./navigation/center";
 
 export interface IScreen {
   componentId: string;
@@ -32,6 +34,7 @@ export const SCREEN5 = "ueno-rns.Screen5";
 export const SCREEN6 = "ueno-rns.Screen6";
 export const COUNTER = "ueno-rns.Counter";
 export const DRAWER = "ueno-rns.Drawer";
+export const SETTING = "ueno-rns.Settings";
 
 export const COMMENTS = "ueno-rns.Comments";
 
@@ -44,11 +47,12 @@ Screens.set(SCREEN6, Screen6);
 Screens.set(COUNTER, Counter);
 Screens.set(DRAWER, Drawer);
 Screens.set(COMMENTS, Comments);
+Screens.set(SETTING, Setting);
 
 const drawer = {
   sideMenu: {
     left: left,
-    center:center
+    center: center
   }
 };
 

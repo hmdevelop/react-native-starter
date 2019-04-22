@@ -68,7 +68,7 @@ export class Card extends React.PureComponent {
             <View style={s.cardImageUserName}>
               <Text style={s.cardImageUserNameText}>{username}</Text>
               <Text style={s.cardImageTimeAgo}>
-                <TimeAgo time={createdAt} />{" "}
+                <TimeAgo time={createdAt} />
               </Text>
             </View>
           </View>
