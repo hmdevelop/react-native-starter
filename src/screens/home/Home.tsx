@@ -36,11 +36,8 @@ import ListItem from "../../components/listitem";
 export class Home extends React.Component<IScreen> {
   static get options() {
     return {
-      drawBehind: true,
-
       bottomTab: {
         text: "Home",
-
         badgeColor: "red",
         testID: "bottomTabTestID",
         icon: require("../../assets/Home.png"),
@@ -102,8 +99,6 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
-          <ListItem title="Profil Ayarları" val />
-          <ListItem title="Profil Ayarları" />
           <List
             funcs={[this.push]}
             data={cards}

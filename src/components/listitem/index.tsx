@@ -17,6 +17,7 @@ export default class ListItem extends Component {
         <View style={s.right}>
           {val && (
             <Switch
+              thumbColor="#F77662"
               value={this.state.switchValue}
               onValueChange={e =>
                 this.setState({ switchValue: !this.state.switchValue })

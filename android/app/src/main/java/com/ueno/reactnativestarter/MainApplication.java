@@ -45,6 +45,8 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 
+import com.BV.LinearGradient.LinearGradientPackage;
+
 public class MainApplication extends NavigationApplication implements ShareApplication, ReactApplication {
 
     @Override
@@ -83,6 +85,7 @@ public class MainApplication extends NavigationApplication implements ShareAppli
                 new RNFirebasePackage(), new BlurViewPackage(), new RNGoogleSigninPackage(), new RNSharePackage(),
                 new ReactVideoPackage(), new RNFirebaseAuthPackage(), new RNFirebaseAdMobPackage(),
                 new RNFirebaseAnalyticsPackage(), new RNGestureHandlerPackage(), new RNFirebaseDatabasePackage(),
+                new LinearGradientPackage(),
                 new ImagePickerPackage());
     }
 
