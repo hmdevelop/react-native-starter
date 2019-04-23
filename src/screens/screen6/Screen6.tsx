@@ -48,6 +48,10 @@ export class Screen6 extends React.Component<IScreen> {
         selectedIconColor: "#F54B64",
 
         fontSize: normalize(10)
+      },
+      bottomTabs: {
+        elevation: 8, // BottomTabs elevation in dp
+        titleDisplayMode: "alwaysShow" // Sets the title state for each tab.
       }
     };
   }

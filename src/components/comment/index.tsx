@@ -15,9 +15,6 @@ import { defaultCipherList } from "constants";
 
 import TimeAgo from "react-native-timeago";
 
-// Timestamp can be any valid data type accepted in a Moment.js constructor
-// Currently accepts string, number, array, or a Date instance
-
 interface IProps {
   title: string;
   accessibilityLabel?: string;
@@ -72,11 +69,4 @@ export default class Comment extends React.PureComponent<IProps> {
   }
 }
 {
-  /* <View style={s.cardBody}>
-<Text style={s.cardBodyText}>
-  Coventry is a city with a thousand years of history that has
-  plenty to offer the visiting tourist. Located in the heart of
-  Warwickshire, which is well-known as Shakespeare’s county.
-</Text>
-</View> */
 }

@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { View, Text, Image, StyleSheet, Platform } from 'react-native';
-import { observer } from 'mobx-react';
-import { Navigation } from 'react-native-navigation';
-import CodePush from 'react-native-code-push';
+import * as React from "react";
+import { View, Text, Image, StyleSheet, Platform } from "react-native";
+import { observer } from "mobx-react";
+import { Navigation } from "react-native-navigation";
+import CodePush from "react-native-code-push";
 
-import { UIStore } from '../../stores/UIStore';
-import { codePushConfig } from '../../utils/code-push';
-import { COUNTER, IScreen } from '../index';
-import { Button } from '../../components/button/Button';
-import firebase from 'react-native-firebase';
+import { UIStore } from "../../stores/UIStore";
+import { codePushConfig } from "../../utils/code-push";
+import { COUNTER, IScreen } from "../index";
+import { Button } from "../../components/button/Button";
+import firebase from "react-native-firebase";
 
-import { getVar } from 'react-native-ueno-css-modules';
+import { getVar } from "react-native-ueno-css-modules";
 
-import { normalize } from '../../helpers/normalize.js';
-const s = require('./Screen5.scss');
+import { normalize } from "../../helpers/normalize.js";
+const s = require("./Screen5.scss");
 
 @CodePush(codePushConfig())
 @observer
@@ -22,21 +22,25 @@ export class Screen5 extends React.Component<IScreen> {
     return {
       topBar: {
         title: {
-          text: 'Notifications',
-        },
+          text: "Notifications"
+        }
       },
       bottomTab: {
-        text: 'Notifications',
+        text: "Notifications",
 
-        testID: 'bottomTabTestID',
-        icon: require('../../assets/Notifications.png'),
-        iconColor: '#979191',
-        textColor: '#979191',
-        selectedTextColor: '#F54B64',
-        selectedIconColor: '#F54B64',
+        testID: "bottomTabTestID",
+        icon: require("../../assets/Notifications.png"),
+        iconColor: "#979191",
+        textColor: "#979191",
+        selectedTextColor: "#F54B64",
+        selectedIconColor: "#F54B64",
 
-        fontSize: normalize(10),
+        fontSize: normalize(10)
       },
+      bottomTabs: {
+        elevation: 8, // BottomTabs elevation in dp
+        titleDisplayMode: "alwaysShow" // Sets the title state for each tab.
+      }
     };
   }
 
@@ -45,15 +49,15 @@ export class Screen5 extends React.Component<IScreen> {
   }
   public push = () => {
     Navigation.pop(this.props.componentId);
-  }
+  };
 
   public render() {
     return (
-      <View style={s.host} testID='HOME_SCREEN'>
+      <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
           <Text style={s.text}>Screen5</Text>
           <Button
-            title='Go to screen4'
+            title="Go to screen4"
             onPress={this.push}
             style={s.counter__button}
           />
@@ -65,11 +69,11 @@ export class Screen5 extends React.Component<IScreen> {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
   },
   absolute: {
     width: 300,
-    height: 100,
-  },
+    height: 100
+  }
 });

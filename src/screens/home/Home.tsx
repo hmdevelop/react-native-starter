@@ -58,14 +58,6 @@ export class Home extends React.Component<IScreen> {
     UIStore.setComponentId(this.props.componentId);
   }
 
-  public onCounterScreenPress = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: COUNTER
-      }
-    });
-  };
-
   public drawer = () => {
     Navigation.mergeOptions(this.props.componentId, {
       sideMenu: {
@@ -123,14 +115,3 @@ export class Home extends React.Component<IScreen> {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  absolute: {
-    width: 300,
-    height: 100
-  }
-});

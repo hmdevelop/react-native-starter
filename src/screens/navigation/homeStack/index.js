@@ -1,5 +1,3 @@
-import { Navigation } from "react-native-navigation";
-
 import vars from "../../../utils/themevars.js";
 
 export const HOME = "ueno-rns.Home";
@@ -9,6 +7,9 @@ export const COMMENTS = "ueno-rns.Comments";
 export const SCREEN2 = "ueno-rns.Screen2";
 
 export const homeStack = {
+  topBar: {
+    visible: false
+  },
   children: [
     {
       component: {
