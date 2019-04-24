@@ -50,6 +50,10 @@ export class Home extends React.Component<IScreen> {
       bottomTabs: {
         elevation: 8, // BottomTabs elevation in dp
         titleDisplayMode: "alwaysShow" // Sets the title state for each tab.
+      },
+      topBar: {
+        visible: false,
+        drawBehind: true
       }
     };
   }

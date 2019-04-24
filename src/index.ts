@@ -11,6 +11,8 @@ import { CounterStore } from "./stores/CounterStore";
 
 import { gestureHandlerRootHOC } from "react-native-gesture-handler";
 
+import vars from "./utils/themevars.js";
+
 // Register screens
 Screens.forEach((ScreenComponent, key) =>
   Navigation.registerComponent(key, () =>
@@ -23,6 +25,19 @@ if (__DEV__) {
   makeInspectable(UIStore);
   makeInspectable(CounterStore);
 }
+
+export const defaultOptions = {
+  topBar: {
+    visible: false,
+    drawBehind: true,
+    animate: false
+  },
+  bottomTabs: {
+    elevation: 18,
+    titleDisplayMode: "alwaysShow",
+    backgroundColor: vars.dark
+  }
+};
 
 // Start application
 Navigation.events().registerAppLaunchedListener(async () => {
