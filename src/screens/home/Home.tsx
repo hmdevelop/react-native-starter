@@ -30,34 +30,11 @@ import { comments, cards } from "../../mock";
 import List from "../../components/list";
 import listitem from "../../components/listitem";
 import ListItem from "../../components/listitem";
+import { joinJsonPath } from "mobx-state-tree";
 
 @CodePush(codePushConfig())
 @observer
 export class Home extends React.Component<IScreen> {
-  static get options() {
-    return {
-      bottomTab: {
-        text: "Home",
-        badgeColor: "red",
-        testID: "bottomTabTestID",
-        icon: require("../../assets/Home.png"),
-        iconColor: "#979191",
-        textColor: "#979191",
-        selectedTextColor: "#F54B64",
-        selectedIconColor: "#F54B64",
-        fontSize: normalize(10)
-      },
-      bottomTabs: {
-        elevation: 8, // BottomTabs elevation in dp
-        titleDisplayMode: "alwaysShow" // Sets the title state for each tab.
-      },
-      topBar: {
-        visible: false,
-        drawBehind: true
-      }
-    };
-  }
-
   public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
@@ -95,6 +72,8 @@ export class Home extends React.Component<IScreen> {
           contentContainerStyle={{ alignItems: "center" }}
           testID="HOME_SCREEN"
         >
+          <Text onPress={this.props.myFunction}> {this.props.text}</Text>
+
           <List
             funcs={[this.push]}
             data={cards}

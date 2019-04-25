@@ -10067,6 +10067,13 @@ string-length@^2.0.0:
     astral-regex "^1.0.0"
     strip-ansi "^4.0.0"
 
+string-to-json@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/string-to-json/-/string-to-json-0.1.0.tgz#c210f738fd0689546ec572074ef251dd2a50f141"
+  integrity sha1-whD3OP0GiVRuxXIHTvJR3SpQ8UE=
+  dependencies:
+    underscore-x ">= 0.1.0"
+
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
@@ -11060,6 +11067,18 @@ ultron@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ultron/-/ultron-1.1.1.tgz#9fe1536a10a664a65266a1e3ccf85fd36302bc9c"
   integrity sha512-UIEXBNeYmKptWH6z8ZnqTeS8fV74zG0/eRU9VGkpzz+LIJNs8W/zM/L+7ctCkRrgbNnnR0xxw4bKOr0cW0N0Og==
+
+"underscore-x@>= 0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/underscore-x/-/underscore-x-0.1.0.tgz#84208b0b8e8487f429a18a5ae60d7f4e799cea6e"
+  integrity sha1-hCCLC46Eh/QpoYpa5g1/Tnmc6m4=
+  dependencies:
+    underscore ">= 1.4.4"
+
+"underscore@>= 1.4.4":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.1.tgz#06dce34a0e68a7babc29b365b8e74b8925203961"
+  integrity sha512-5/4etnCkd9c8gwgowi5/om/mYO5ajCaOgdzj/oW+0eQV9WxKBDZw5+ycmKmeaTXjInS/W0BzpGLo2xR2aBwZdg==
 
 underscore@~1.4.4:
   version "1.4.4"

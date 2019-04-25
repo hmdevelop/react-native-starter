@@ -69,7 +69,8 @@
     "react-native-video": "^4.4.0",
     "react-navigation": "^3.0.2",
     "react-navigation-transitions": "github:binbytes/react-navigation-transitions",
-    "react-timeago": "^4.4.0"
+    "react-timeago": "^4.4.0",
+    "string-to-json": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
