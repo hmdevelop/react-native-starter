@@ -54,6 +54,13 @@ export class Counter extends React.Component<IScreen> {
             style={s.counter__button}
           />
 
+          <Button
+            title="name"
+            onPress={CounterStore.setname("topal")}
+            testID="BUTTON_DECREMENT"
+            style={s.counter__button}
+          />
+
           <View style={s.counter__spacer} />
 
           <Button
