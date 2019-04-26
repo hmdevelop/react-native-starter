@@ -29,6 +29,8 @@ const s = require("./Screen2.scss");
 @CodePush(codePushConfig())
 @observer
 export class Screen2 extends React.Component<IScreen> {
+  state = { text: "" };
+
   static get options() {
     return {
       topBar: {
@@ -59,7 +61,7 @@ export class Screen2 extends React.Component<IScreen> {
   public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
-  state = { text: "Useless Placeholder" };
+
   cars = ["lkjk", "lkjklj"];
   public render() {
     return (
@@ -85,7 +87,9 @@ export class Screen2 extends React.Component<IScreen> {
               .slice()
               .reverse()
               .map(item => (
-                <Text style={s.text}> {item.brand} </Text>
+                <Text key={item} style={s.text}>
+                  {item.brand}
+                </Text>
               ))}
           </View>
         </ScrollView>
