@@ -1,11 +1,24 @@
 import { types, flow, applySnapshot, onSnapshot } from "mobx-state-tree";
 import { AsyncStorage } from "react-native";
+
 // @ts-ignore
+
+const Car = types
+  .model("Car", {
+    brand: types.string
+  })
+  .actions(self => ({
+    // note the `({`, we are returning an object literal
+    setbrand(newbrand) {
+      self.brand = newbrand;
+    }
+  }));
 
 export const CounterStore = types
   .model("CounterStore", {
     counter: 0,
-    name: "mustafa"
+    name: "mustafa",
+    cars: types.array(Car)
   })
   .actions(self => ({
     increment(): void {
@@ -16,6 +29,9 @@ export const CounterStore = types
     },
     setname(name): void {
       self.name = name;
+    },
+    setcars(newcar: string): void {
+      self.cars.push(newcar);
     },
     hydrate: flow(function*(): IterableIterator<Promise<string | null>> {
       const data = yield AsyncStorage.getItem("counter");

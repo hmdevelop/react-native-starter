@@ -1,5 +1,13 @@
 import * as React from "react";
-import { View, Text, Image, StyleSheet, Platform } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Platform,
+  TextInput,
+  ScrollView
+} from "react-native";
 import { observer } from "mobx-react";
 import { Navigation } from "react-native-navigation";
 import CodePush from "react-native-code-push";
@@ -51,16 +59,36 @@ export class Screen2 extends React.Component<IScreen> {
   public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
-
+  state = { text: "Useless Placeholder" };
+  cars = ["lkjk", "lkjklj"];
   public render() {
     return (
       <View style={s.host} testID="HOME_SCREEN">
-        <View style={s.content}>
-          <Text style={s.text}>Screen2</Text>
-          <Text style={s.counter__text}>Counter: {CounterStore.counter}</Text>
-          <Text style={s.counter__text}>Counter: {CounterStore.name}</Text>
-          <Text style={s.text}>Streams</Text>
-        </View>
+        <ScrollView>
+          <View style={s.content}>
+            <Text style={s.text}>Screen2</Text>
+            <Text style={s.counter__text}>Counter: {CounterStore.counter}</Text>
+            <Text style={s.counter__text}>Counter: {CounterStore.name}</Text>
+            <Text style={s.text}>Streams</Text>
+            <TextInput
+              style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
+              onChangeText={text => this.setState({ text })}
+              value={this.state.text}
+            />
+
+            <Button
+              onPress={() => CounterStore.setcars({ brand: this.state.text })}
+              title="cars"
+            />
+
+            {CounterStore.cars
+              .slice()
+              .reverse()
+              .map(item => (
+                <Text style={s.text}> {item.brand} </Text>
+              ))}
+          </View>
+        </ScrollView>
       </View>
     );
   }
