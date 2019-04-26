@@ -7,7 +7,7 @@ import makeInspectable from "mobx-devtools-mst";
 import { updateTheme } from "./utils/theme";
 import { Screens, startApp } from "./screens";
 import { UIStore } from "./stores/UIStore";
-import { CounterStore } from "./stores/CounterStore";
+import { CounterStore, someStore } from "./stores/CounterStore";
 
 import { gestureHandlerRootHOC } from "react-native-gesture-handler";
 
@@ -42,6 +42,7 @@ export const defaultOptions = {
 // Start application
 Navigation.events().registerAppLaunchedListener(async () => {
   await UIStore.hydrate();
+  await CounterStore.hydrate();
   await updateTheme();
 
   startApp();
