@@ -72,7 +72,7 @@ export class Counter extends React.Component<IScreen> {
 
           <Button
             title="IncrementAsync"
-            onPress={CounterStore.fetchProjects}
+            onPress={CounterStore.incrementAsync}
             testID="BUTTON_INCREMENT"
             style={s.counter__button}
           />

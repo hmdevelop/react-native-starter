@@ -8,6 +8,13 @@ const getMoviesFromApiAsync = async () => {
 };
 const time = () => setTimeout(() => console.log("hey"), 2000);
 
+const promise1 = () =>
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve("foo");
+    }, 2000);
+  });
+
 const Car = types
   .model("Car", {
     brand: types.string
@@ -37,6 +44,16 @@ export const CounterStore = types
     setname(name): void {
       self.name = name;
     },
+    incrementAsync: flow(function* incrementAsync() {
+      try {
+        // ... yield can be used in async/await style
+        const asd = yield promise1();
+        console.log(asd);
+        self.counter += 1;
+      } catch (error) {
+        console.log("Failed to fetch projects", error);
+      }
+    }),
 
     fetchProjects: flow(function* fetchProjects() {
       try {
