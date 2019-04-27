@@ -19,6 +19,7 @@ import { Button } from "../../components/button/Button";
 import firebase from "react-native-firebase";
 
 import { CounterStore } from "../../stores/CounterStore";
+import { MovieStore } from "../../stores/MovieStore";
 
 import { getVar } from "react-native-ueno-css-modules";
 
@@ -71,7 +72,8 @@ export class Screen2 extends React.Component<IScreen> {
 
     const veri = JSON.parse(data._bodyText);
     console.log(veri);
-    this.setState({ movies: veri.movies });
+    //this.setState({ movies: veri.movies });
+    MovieStore.setmovies(veri.movies);
   };
 
   cars = ["lkjk", "lkjklj"];
@@ -94,10 +96,21 @@ export class Screen2 extends React.Component<IScreen> {
               onPress={() => CounterStore.setcars({ brand: this.state.text })}
               title="cars"
             />
+            <Button
+              onPress={() =>
+                MovieStore.setmovies({
+                  id: "1",
+                  title: "Star Wars",
+                  releaseYear: "1977"
+                })
+              }
+              title="add movie"
+            />
             <Button onPress={this.getMoviesFromApiAsync} title="Fetch" />
+            <Button onPress={MovieStore.fetchProjects} title="fetchProjects" />
             {console.log(this.state)}
 
-            {this.state.movies.map(item => (
+            {MovieStore.Movies.map(item => (
               <Text key={item} style={s.text}>
                 {item.title}
               </Text>

@@ -2,6 +2,11 @@ import { types, flow, applySnapshot, onSnapshot } from "mobx-state-tree";
 import { AsyncStorage } from "react-native";
 
 // @ts-ignore
+const getMoviesFromApiAsync = async () => {
+  const az = await time();
+  return await fetch("https://facebook.github.io/react-native/movies.json");
+};
+const time = () => setTimeout(() => console.log("hey"), 2000);
 
 const Car = types
   .model("Car", {
@@ -25,11 +30,27 @@ export const CounterStore = types
       self.counter += 1;
     },
     decrement(): void {
+      const asd = fetch("https://facebook.github.io/react-native/movies.json");
+      console.warn(asd);
       self.counter -= 1;
     },
     setname(name): void {
       self.name = name;
     },
+
+    fetchProjects: flow(function* fetchProjects() {
+      try {
+        // ... yield can be used in async/await style
+        const asd = yield fetch(
+          "https://facebook.github.io/react-native/movies.json"
+        );
+        console.log(asd);
+        //  const tt = yield time();
+      } catch (error) {
+        console.error("Failed to fetch projects", error);
+      }
+    }),
+
     setcars(newcar: string): void {
       self.cars.push(newcar);
     },

@@ -7,7 +7,8 @@ import makeInspectable from "mobx-devtools-mst";
 import { updateTheme } from "./utils/theme";
 import { Screens, startApp } from "./screens";
 import { UIStore } from "./stores/UIStore";
-import { CounterStore, someStore } from "./stores/CounterStore";
+import { CounterStore } from "./stores/CounterStore";
+import { MovieStore } from "./stores/MovieStore";
 
 import { gestureHandlerRootHOC } from "react-native-gesture-handler";
 
@@ -21,10 +22,10 @@ Screens.forEach((ScreenComponent, key) =>
 );
 
 // Make inspectable
-if (__DEV__) {
-  makeInspectable(UIStore);
-  makeInspectable(CounterStore);
-}
+
+makeInspectable(UIStore);
+makeInspectable(CounterStore);
+makeInspectable(MovieStore);
 
 export const defaultOptions = {
   topBar: {
