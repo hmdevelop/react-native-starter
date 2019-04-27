@@ -29,7 +29,10 @@ const s = require("./Screen2.scss");
 @CodePush(codePushConfig())
 @observer
 export class Screen2 extends React.Component<IScreen> {
-  state = { text: "" };
+  state = {
+    text: "",
+    movies: []
+  };
 
   static get options() {
     return {
@@ -61,6 +64,15 @@ export class Screen2 extends React.Component<IScreen> {
   public componentDidAppear() {
     UIStore.setComponentId(this.props.componentId);
   }
+  public getMoviesFromApiAsync = async () => {
+    const data = await fetch(
+      "https://facebook.github.io/react-native/movies.json"
+    );
+
+    const veri = JSON.parse(data._bodyText);
+    console.log(veri);
+    this.setState({ movies: veri.movies });
+  };
 
   cars = ["lkjk", "lkjklj"];
   public render() {
@@ -82,7 +94,14 @@ export class Screen2 extends React.Component<IScreen> {
               onPress={() => CounterStore.setcars({ brand: this.state.text })}
               title="cars"
             />
+            <Button onPress={this.getMoviesFromApiAsync} title="Fetch" />
+            {console.log(this.state)}
 
+            {this.state.movies.map(item => (
+              <Text key={item} style={s.text}>
+                {item.title}
+              </Text>
+            ))}
             {CounterStore.cars
               .slice()
               .reverse()
