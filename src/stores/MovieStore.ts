@@ -1,6 +1,8 @@
 import { types, flow, applySnapshot, onSnapshot } from "mobx-state-tree";
 import { AsyncStorage } from "react-native";
 
+import remotedev from "mobx-remotedev";
+
 // @ts-ignore
 
 const Movie = types.model("Movie", {

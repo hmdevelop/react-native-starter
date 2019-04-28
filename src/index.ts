@@ -14,6 +14,8 @@ import { gestureHandlerRootHOC } from "react-native-gesture-handler";
 
 import vars from "./utils/themevars.js";
 
+import remotedev from "mobx-remotedev/lib/dev";
+
 // Register screens
 Screens.forEach((ScreenComponent, key) =>
   Navigation.registerComponent(key, () =>
@@ -25,7 +27,11 @@ Screens.forEach((ScreenComponent, key) =>
 
 makeInspectable(UIStore);
 makeInspectable(CounterStore);
+
 makeInspectable(MovieStore);
+
+remotedev(MovieStore);
+remotedev(CounterStore);
 
 export const defaultOptions = {
   topBar: {
