@@ -13,11 +13,15 @@ const Movie = types.model("Movie", {
 
 export const MovieStore = types
   .model("MovieStore", {
+    name: "mustafa",
     Movies: types.array(Movie)
   })
   .actions(self => ({
     setmovies(newmovies): void {
       self.Movies.push(newmovies);
+    },
+    setname(name): void {
+      self.name = name;
     },
 
     fetchProjects: flow(function* fetchProjects() {
