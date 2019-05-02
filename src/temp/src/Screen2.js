@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { Navigation } from "react-native-navigation";
+import App from "../../chatApp/App";
 
 export default class Screen2 extends React.Component {
   static get options() {
@@ -13,15 +14,7 @@ export default class Screen2 extends React.Component {
     };
   }
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Screen 2</Text>
-        <Button
-          onPress={() => Navigation.pop(this.props.componentId)}
-          title="Go Back"
-        />
-      </View>
-    );
+    return <App />;
   }
 }
 

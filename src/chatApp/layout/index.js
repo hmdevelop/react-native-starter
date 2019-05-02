@@ -27,6 +27,7 @@ const AppNavigator = createStackNavigator(
         header: null
       }
     },
+
     Register: {
       screen: Register,
       navigationOptions: {
@@ -39,6 +40,7 @@ const AppNavigator = createStackNavigator(
         header: null
       }
     },
+
     Profile: {
       screen: Profile,
       navigationOptions: ({ navigation }) => {

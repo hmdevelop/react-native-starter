@@ -48,6 +48,17 @@ export default class Home extends React.Component {
           }}
           title="View next screen"
         />
+
+        <Button
+          onPress={() => {
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Contacts"
+              }
+            });
+          }}
+          title="Chat"
+        />
       </View>
     );
   }

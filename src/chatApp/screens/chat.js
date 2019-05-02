@@ -1,30 +1,32 @@
-import React, { Component } from 'react'
-import { View, FlatList } from 'react-native'
+import React, { Component } from "react";
+import { View, FlatList } from "react-native";
 
-import MsgBar from '../components/msgbar'
-import Message from '../components/message'
-import { observer, inject } from 'mobx-react'
+import MsgBar from "../components/msgbar";
+import Message from "../components/message";
+import { observer, inject } from "mobx-react";
 
-@inject('Chat')
+import { withProvider } from "../helpers/withProvider";
+
+@inject("Chat")
 @observer
 export default class Chat extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      text: '',
+      text: "",
       messages: []
-    }
-    this.initY = 0
-    this.scrolledY = 0
-    this.conversationKey = this.props.navigation.state.params.conversationKey
+    };
+    this.initY = 0;
+    this.scrolledY = 0;
+    this.conversationKey = this.props.navigation.state.params.conversationKey;
   }
 
   componentDidMount() {
     this.props.Chat.onMessages(this.conversationKey, messages => {
       if (messages !== null) {
-        this.setState({ messages: messages })
+        this.setState({ messages: messages });
       }
-    })
+    });
   }
 
   render() {
@@ -46,14 +48,16 @@ export default class Chat extends Component {
         />
         <MsgBar conversationKey={this.conversationKey} />
       </View>
-    )
+    );
   }
 
   onScrollBeginDrag = event => {
-    this.initY = event.nativeEvent.contentOffset.y
-  }
+    this.initY = event.nativeEvent.contentOffset.y;
+  };
 
   onScrollEndDrag = event => {
-    this.scrolledY = event.nativeEvent.contentOffset.y
-  }
+    this.scrolledY = event.nativeEvent.contentOffset.y;
+  };
 }
+
+withProvider(Chat);

@@ -17,6 +17,9 @@ export default class Home extends React.Component {
     };
   }
 
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -46,6 +49,8 @@ export default class Home extends React.Component {
           }}
           title="Pass demo "
         />
+
+        <Text>merhaba</Text>
       </View>
     );
   }

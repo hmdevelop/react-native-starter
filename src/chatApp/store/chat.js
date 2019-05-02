@@ -1,13 +1,15 @@
-import firebase from 'react-native-firebase'
-import { action, observable } from 'mobx'
+import firebase from "react-native-firebase";
+import { action, observable } from "mobx";
 
-export default class Chat {
+import remotedev from "mobx-remotedev";
+
+class Chat {
   constructor() {
-    this.database = firebase.database()
+    this.database = firebase.database();
   }
 
   @observable
-  userKey = ''
+  userKey = "";
 
   @action
   async sendMessage(key, text) {
@@ -15,42 +17,49 @@ export default class Chat {
       sender: this.userKey,
       text: text,
       timeStamp: Math.floor(Date.now())
-    }
+    };
 
     const messageKey = await this.database
-      .ref('Messages')
+      .ref("Messages")
       .child(key)
-      .push(message).key
+      .push(message).key;
 
     await this.database
-      .ref('Conversations')
+      .ref("Conversations")
       .child(key)
-      .child('lastMsg')
-      .set(messageKey)
+      .child("lastMsg")
+      .set(messageKey);
 
     await this.database
-      .ref('Conversations')
+      .ref("Conversations")
       .child(key)
-      .child('lastTime')
-      .set(message.timeStamp)
+      .child("lastTime")
+      .set(message.timeStamp);
   }
 
   @action
   async onMessages(key, callback) {
-    let messages = []
+    let messages = [];
 
     this.database
-      .ref('Messages')
+      .ref("Messages")
       .child(key)
-      .on('child_added', snapshot => {
+      .on("child_added", snapshot => {
         const message = {
           key: snapshot.key,
           ...snapshot.val()
-        }
+        };
 
-        messages.push(message)
+        messages.push(message);
 
-        callback(messages)
-      })
+        callback(messages);
+      });
   }
 }
+
+export default remotedev(Chat, [
+  { name: "myChat" },
+  { remote: true },
+  { hostname: "localhost" },
+  { port: 8098 }
+]);

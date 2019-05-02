@@ -50,7 +50,7 @@ export default class Register extends Component {
               borderWidth: 0.5,
               elevation: 8
             }}
-            initialCountry={"in"}
+            initialCountry={"tr"}
             textStyle={{ fontSize: 18, color: colors.text }}
             flagStyle={{ height: 32, width: 42 }}
             onChangePhoneNumber={phoneNumber =>
