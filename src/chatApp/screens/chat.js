@@ -18,16 +18,16 @@ export default class Chat extends Component {
     };
     this.initY = 0;
     this.scrolledY = 0;
-    this.conversationKey = this.props.navigation.state.params.conversationKey;
+    this.conversationKey = this.props.conversationKey;
   }
 
-  componentDidMount() {
-    this.props.Chat.onMessages(this.conversationKey, messages => {
-      if (messages !== null) {
-        this.setState({ messages: messages });
-      }
-    });
-  }
+  // componentDidMount() {
+  //   this.props.Chat.onMessages(this.conversationKey, messages => {
+  //     if (messages !== null) {
+  //       this.setState({ messages: messages });
+  //     }
+  //   });
+  // }
 
   render() {
     return (

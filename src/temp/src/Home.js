@@ -57,7 +57,68 @@ export default class Home extends React.Component {
               }
             });
           }}
+          title="Contacts"
+        />
+        <Button
+          onPress={() => {
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Register"
+              }
+            });
+          }}
+          title="Register"
+        />
+        <Button
+          onPress={() => {
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Conversations"
+              }
+            });
+          }}
+          title="Conversations"
+        />
+        <Button
+          onPress={() => {
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Chat"
+              }
+            });
+          }}
           title="Chat"
+        />
+        <Button
+          onPress={() => {
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Verify"
+              }
+            });
+          }}
+          title="Verify"
+        />
+        <Button
+          onPress={() => {
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Profile"
+              }
+            });
+          }}
+          title="Profile"
+        />
+
+        <Button
+          onPress={() => {
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Splash"
+              }
+            });
+          }}
+          title="Splash"
         />
       </View>
     );

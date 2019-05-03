@@ -1,6 +1,7 @@
 import firebase from "react-native-firebase";
 import { action, observable } from "mobx";
 import remotedev from "mobx-remotedev";
+
 export const FETCH_CONTACTS = "FETCH_CONTACTS";
 export const START_CONVERSATION = "START_CONVERSATION";
 

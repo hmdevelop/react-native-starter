@@ -48,4 +48,16 @@ export function registerScreens() {
   Navigation.registerComponent("Contacts", () =>
     addStore(require("../../chatApp/screens/contacts").default)
   );
+
+  Navigation.registerComponent("Register", () =>
+    addStore(require("../../chatApp/screens/register").default)
+  );
+
+  Navigation.registerComponent("Verify", () =>
+    addStore(require("../../chatApp/screens/verify").default)
+  );
+
+  Navigation.registerComponent("Profile", () =>
+    addStore(require("../../chatApp/screens/profile").default)
+  );
 }

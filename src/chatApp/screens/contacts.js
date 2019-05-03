@@ -5,6 +5,8 @@ import Contact from "../components/contact";
 import style from "../theme/index";
 import { inject, observer } from "mobx-react";
 
+console.disableYellowBox = true;
+
 @inject("Contact")
 @observer
 export default class Contacts extends Component {
@@ -39,14 +41,16 @@ export default class Contacts extends Component {
             <Contact
               name={item.name}
               avatarUrl={{ uri: item.avatarSource }}
-              onPress={() =>
+              onPress={() => {
+                console.log("item.key", item.key);
                 this.props.Contact.startConversation(item.key).then(key => {
+                  console.log("key", key);
                   this.props.navigation.replace("Chat", {
                     conversationKey: key,
                     title: item.name
                   });
-                })
-              }
+                });
+              }}
             />
           )}
         />

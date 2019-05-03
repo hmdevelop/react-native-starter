@@ -1,22 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import {
   View,
   FlatList,
   ActivityIndicator,
   TouchableOpacity
-} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import { inject, observer } from 'mobx-react'
+} from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import { inject, observer } from "mobx-react";
+import { Navigation } from "react-native-navigation";
 
-import Conversation from '../components/conversation'
-import style from '../theme/index'
-import colors from '../theme/colors'
+import Conversation from "../components/conversation";
+import style from "../theme/index";
+import colors from "../theme/colors";
 
-@inject('Conversation')
+@inject("Conversation")
 @observer
 export default class Conversations extends Component {
   componentWillMount() {
-    this.props.Conversation.fetchConversations()
+    this.props.Conversation.fetchConversations();
   }
 
   render() {
@@ -25,20 +26,26 @@ export default class Conversations extends Component {
         {this.props.Conversation.isLoading ? this.loadView() : this.listView()}
         <TouchableOpacity
           style={style.addButton}
-          onPress={() => this.props.navigation.navigate('Contact')}
+          onPress={() =>
+            Navigation.push(this.props.componentId, {
+              component: {
+                name: "Contacts"
+              }
+            })
+          }
         >
-          <Icon size={24} name={'message'} color={colors.white} />
+          <Icon size={24} name={"message"} color={colors.white} />
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 
   loadView() {
     return (
       <View style={style.load}>
-        <ActivityIndicator size={'large'} />
+        <ActivityIndicator size={"large"} />
       </View>
-    )
+    );
   }
 
   listView() {
@@ -52,10 +59,15 @@ export default class Conversations extends Component {
               name={item.name}
               avatarUrl={{ uri: item.avatarSource }}
               onPress={() =>
-                this.props.navigation.navigate('Chat', {
-                  conversationKey: item.key,
-                  imageURL: item.avatarSource,
-                  title: item.name
+                Navigation.push(this.props.componentId, {
+                  component: {
+                    name: "Chat",
+                    passProps: {
+                      conversationKey: item.key,
+                      imageURL: item.avatarSource,
+                      title: item.name
+                    }
+                  }
                 })
               }
               lastMessage={item.lastMessage}
@@ -63,6 +75,6 @@ export default class Conversations extends Component {
           )}
         />
       </View>
-    )
+    );
   }
 }
