@@ -21,13 +21,13 @@ export default class Chat extends Component {
     this.conversationKey = this.props.conversationKey;
   }
 
-  // componentDidMount() {
-  //   this.props.Chat.onMessages(this.conversationKey, messages => {
-  //     if (messages !== null) {
-  //       this.setState({ messages: messages });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    this.props.Chat.onMessages(this.conversationKey, messages => {
+      if (messages !== null) {
+        this.setState({ messages: messages });
+      }
+    });
+  }
 
   render() {
     return (

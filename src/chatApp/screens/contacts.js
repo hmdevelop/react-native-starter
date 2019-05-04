@@ -4,6 +4,7 @@ import { View, FlatList, ActivityIndicator } from "react-native";
 import Contact from "../components/contact";
 import style from "../theme/index";
 import { inject, observer } from "mobx-react";
+import { Navigation } from "react-native-navigation";
 
 console.disableYellowBox = true;
 
@@ -42,13 +43,15 @@ export default class Contacts extends Component {
               name={item.name}
               avatarUrl={{ uri: item.avatarSource }}
               onPress={() => {
-                console.log("item.key", item.key);
-                this.props.Contact.startConversation(item.key).then(key => {
-                  console.log("key", key);
-                  this.props.navigation.replace("Chat", {
-                    conversationKey: key,
-                    title: item.name
-                  });
+                Navigation.push(this.props.componentId, {
+                  component: {
+                    name: "Chat",
+                    passProps: {
+                      conversationKey: item.key,
+                      imageURL: item.avatarSource,
+                      title: item.name
+                    }
+                  }
                 });
               }}
             />
