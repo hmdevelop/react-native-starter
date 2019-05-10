@@ -2,22 +2,27 @@ import { Navigation } from "react-native-navigation";
 
 import React from "react";
 
-import { Provider } from "mobx-react";
+import { Provider as MobxProvider } from "mobx-react";
+
+import { ApolloProvider } from "react-apollo";
 
 import stores from "../../chatApp/store";
+import client from "./ApolloClient";
 
 const addStore = (Component, ...props) => {
   return class App extends React.Component {
     render() {
       return (
-        <Provider {...stores}>
-          <Component
-            {...{
-              ...this.props,
-              ...props
-            }}
-          />
-        </Provider>
+        <ApolloProvider client={client}>
+          <MobxProvider {...stores}>
+            <Component
+              {...{
+                ...this.props,
+                ...props
+              }}
+            />
+          </MobxProvider>
+        </ApolloProvider>
       );
     }
   };
@@ -29,7 +34,7 @@ export function registerScreens() {
     "Initializing",
     sc => require("./Initializing").default
   );
-  Navigation.registerComponent("SignIn", () => require("./SignIn").default);
+
   Navigation.registerComponent("SignUp", () => require("./SignUp").default);
   Navigation.registerComponent("Screen2", () => require("./Screen2").default);
   Navigation.registerComponent("Walk", () => require("./Walk").default);
@@ -61,3 +66,7 @@ export function registerScreens() {
     addStore(require("../../chatApp/screens/profile").default)
   );
 }
+
+Navigation.registerComponent("SignIn", () =>
+  addStore(require("./SignIn").default)
+);

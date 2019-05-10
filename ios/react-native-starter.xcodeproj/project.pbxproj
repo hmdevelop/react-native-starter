@@ -196,7 +196,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = M2TF8SAQF9;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -376,12 +376,12 @@
 			baseConfigurationReference = F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = M2TF8SAQF9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "react-native-starter/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
@@ -395,7 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
 				PRODUCT_NAME = "react-native-starter";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = Saulife;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -405,11 +405,11 @@
 			baseConfigurationReference = D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = M2TF8SAQF9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "react-native-starter/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
@@ -423,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
 				PRODUCT_NAME = "react-native-starter";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = Saulife;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

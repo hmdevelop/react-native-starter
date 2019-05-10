@@ -9,13 +9,23 @@ import {
   AsyncStorage
 } from "react-native";
 
+import Snaplist from "./Snaplist";
+
 import { goHome } from "./navigation";
 import { USER_KEY } from "./config";
 
+import { Mutation } from "react-apollo";
+
+import { SIGNIN_USER } from "./queries";
+
+const initialState = {
+  username: "",
+  password: ""
+};
+
 export default class SignIn extends React.Component {
   state = {
-    username: "",
-    password: ""
+    ...initialState
   };
   onChangeText = (key, value) => {
     this.setState({ [key]: value });
@@ -31,27 +41,63 @@ export default class SignIn extends React.Component {
       console.log("error:", err);
     }
   };
+  onSubmit = async (e, signinUser) => {
+    e.preventDefault();
+    try {
+      signinUser()
+        .then(async ({ data }) => {
+          console.log(data);
+          await AsyncStorage.setItem("token", data.signIn.token);
+          //  await this.props.refetch();
+
+          console.log(data);
+          goHome();
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    } catch (err) {
+      window.alert(err);
+    }
+  };
+
   render() {
+    const { username, password } = this.state;
     return (
-      <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          placeholder="Username"
-          autoCapitalize="none"
-          autoCorrect={false}
-          placeholderTextColor="white"
-          onChangeText={val => this.onChangeText("username", val)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          autoCapitalize="none"
-          secureTextEntry={true}
-          placeholderTextColor="white"
-          onChangeText={val => this.onChangeText("password", val)}
-        />
-        <Button title="Sign In" onPress={this.signIn} />
-      </View>
+      <Mutation mutation={SIGNIN_USER} variables={{ username, password }}>
+        {(signinUser, { loading, error }) => (
+          <View style={styles.container}>
+            <TextInput
+              style={styles.input}
+              placeholder="Username"
+              autoCapitalize="none"
+              autoCorrect={false}
+              placeholderTextColor="white"
+              onChangeText={val => this.onChangeText("username", val)}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              autoCapitalize="none"
+              secureTextEntry={true}
+              placeholderTextColor="white"
+              onChangeText={val => this.onChangeText("password", val)}
+            />
+
+            <Button
+              title="Sign In"
+              onPress={e => {
+                this.onSubmit(e, signinUser);
+              }}
+            />
+
+            {loading && <Text>loading...</Text>}
+            {error && <Text>error...</Text>}
+
+            <Snaplist />
+          </View>
+        )}
+      </Mutation>
     );
   }
 }
