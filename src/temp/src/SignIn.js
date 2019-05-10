@@ -54,7 +54,7 @@ export default class SignIn extends React.Component {
           goHome();
         })
         .catch(e => {
-          console.log(e);
+          window.alert(e);
         });
     } catch (err) {
       window.alert(err);
