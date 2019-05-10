@@ -14,9 +14,14 @@ import Snaplist from "./Snaplist";
 import { goHome } from "./navigation";
 import { USER_KEY } from "./config";
 
-import { Mutation } from "react-apollo";
+import { Mutation, Query } from "react-apollo";
 
-import { SIGNIN_USER } from "./queries";
+import { ApolloConsumer } from "react-apollo";
+
+import { Navigation } from "react-native-navigation";
+
+import { SIGNIN_USER, GET_SNAPS } from "./queries";
+import client from "./ApolloClient";
 
 const initialState = {
   username: "",
@@ -24,9 +29,20 @@ const initialState = {
 };
 
 export default class SignIn extends React.Component {
+  constructor(props) {
+    super(props);
+    Navigation.events().bindComponent(this);
+    this.state = {
+      text: "nothing yet"
+    };
+  }
+
   state = {
     ...initialState
   };
+
+  componentDidAppear() {}
+
   onChangeText = (key, value) => {
     this.setState({ [key]: value });
   };
@@ -65,38 +81,49 @@ export default class SignIn extends React.Component {
     const { username, password } = this.state;
     return (
       <Mutation mutation={SIGNIN_USER} variables={{ username, password }}>
-        {(signinUser, { loading, error }) => (
-          <View style={styles.container}>
-            <TextInput
-              style={styles.input}
-              placeholder="Username"
-              autoCapitalize="none"
-              autoCorrect={false}
-              placeholderTextColor="white"
-              onChangeText={val => this.onChangeText("username", val)}
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Password"
-              autoCapitalize="none"
-              secureTextEntry={true}
-              placeholderTextColor="white"
-              onChangeText={val => this.onChangeText("password", val)}
-            />
+        {(signinUser, ctx) => {
+          return (
+            <View style={styles.container}>
+              <TextInput
+                style={styles.input}
+                placeholder="Username"
+                autoCapitalize="none"
+                autoCorrect={false}
+                placeholderTextColor="white"
+                onChangeText={val => this.onChangeText("username", val)}
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Password"
+                autoCapitalize="none"
+                secureTextEntry={true}
+                placeholderTextColor="white"
+                onChangeText={val => this.onChangeText("password", val)}
+              />
 
-            <Button
-              title="Sign In"
-              onPress={e => {
-                this.onSubmit(e, signinUser);
-              }}
-            />
+              <Button
+                title="Sign In"
+                onPress={e => {
+                  this.onSubmit(e, signinUser);
+                }}
+              />
 
-            {loading && <Text>loading...</Text>}
-            {error && <Text>error...</Text>}
+              <Button
+                title="refecth"
+                onPress={() => {
+                  ctx.client.reFetchObservableQueries();
+                }}
+              />
 
-            <Snaplist />
-          </View>
-        )}
+              {console.log("ctx", ctx)}
+
+              {ctx.loading && <Text>loading...</Text>}
+              {ctx.error && <Text>error...</Text>}
+
+              <Snaplist />
+            </View>
+          );
+        }}
       </Mutation>
     );
   }

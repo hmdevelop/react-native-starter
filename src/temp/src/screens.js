@@ -13,16 +13,16 @@ const addStore = (Component, ...props) => {
   return class App extends React.Component {
     render() {
       return (
-        <ApolloProvider client={client}>
-          <MobxProvider {...stores}>
+        <MobxProvider {...stores}>
+          <ApolloProvider client={client}>
             <Component
               {...{
                 ...this.props,
                 ...props
               }}
             />
-          </MobxProvider>
-        </ApolloProvider>
+          </ApolloProvider>
+        </MobxProvider>
       );
     }
   };
