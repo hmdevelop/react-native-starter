@@ -35,7 +35,6 @@ export function registerScreens() {
     sc => require("./Initializing").default
   );
 
-  Navigation.registerComponent("SignUp", () => require("./SignUp").default);
   Navigation.registerComponent("Screen2", () => require("./Screen2").default);
   Navigation.registerComponent("Walk", () => require("./Walk").default);
   Navigation.registerComponent("Chat", () =>
@@ -69,4 +68,8 @@ export function registerScreens() {
 
 Navigation.registerComponent("SignIn", () =>
   addStore(require("./SignIn").default)
+);
+
+Navigation.registerComponent("SignUp", () =>
+  addStore(require("./SignUp").default)
 );

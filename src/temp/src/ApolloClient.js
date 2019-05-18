@@ -16,14 +16,14 @@ const middlewareLink = new ApolloLink((operation, forward) => {
 });
 
 const wsLink = new WebSocketLink(
-  new SubscriptionClient("http://localhost:4001/graphql", {
+  new SubscriptionClient("http://192.168.1.25:4001/graphql", {
     reconnect: true
   })
 );
 
 const httpLink = middlewareLink.concat(
   createHttpLink({
-    uri: "http://localhost:4001/graphql"
+    uri: "http://192.168.1.25:4001/graphql"
   })
 );
 

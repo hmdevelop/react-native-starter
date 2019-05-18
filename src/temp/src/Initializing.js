@@ -2,7 +2,14 @@
 import React from "react";
 import { View, Text, StyleSheet, AsyncStorage } from "react-native";
 
-import { goToAuth, goHome, goWalk } from "./navigation";
+import {
+  goToAuth,
+  goHome,
+  goWalk,
+  goSignIn,
+  goSignUp,
+  goToAuth2
+} from "./navigation";
 
 import { USER_KEY, FIRST_RUN } from "./config";
 
@@ -11,7 +18,6 @@ export default class Initialising extends React.Component {
     try {
       const user = await AsyncStorage.getItem(USER_KEY);
       const firstrun = await AsyncStorage.getItem(FIRST_RUN);
-
       if (firstrun === "done") {
         goWalk();
       } else if (user) {

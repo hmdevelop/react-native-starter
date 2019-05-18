@@ -13,7 +13,8 @@ export const goToAuth = () =>
               options: {
                 bottomTab: {
                   fontSize: 12,
-                  text: "Sign In"
+                  text: "Sign In",
+                  icon: require("../../assets/Like.png")
                 }
               }
             }
@@ -24,7 +25,28 @@ export const goToAuth = () =>
               options: {
                 bottomTab: {
                   text: "Sign Up",
-                  fontSize: 12
+                  fontSize: 12,
+                  icon: require("../../assets/Like.png")
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  });
+
+export const goToAuth2 = () =>
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: "SignIn",
+              options: {
+                bottomTab: {
+                  text: "Tab 2"
                 }
               }
             }
@@ -59,6 +81,38 @@ export const goWalk = () =>
           {
             component: {
               name: "Walk"
+            }
+          }
+        ]
+      }
+    }
+  });
+
+export const goSignIn = () =>
+  Navigation.setRoot({
+    root: {
+      stack: {
+        id: "App",
+        children: [
+          {
+            component: {
+              name: "SignIn"
+            }
+          }
+        ]
+      }
+    }
+  });
+
+export const goSignUp = () =>
+  Navigation.setRoot({
+    root: {
+      stack: {
+        id: "App",
+        children: [
+          {
+            component: {
+              name: "SignUp"
             }
           }
         ]
